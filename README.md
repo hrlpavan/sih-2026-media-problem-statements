@@ -4,6 +4,11 @@
 > **Associated Project**: [HRL International Pvt. Ltd.](https://hrl-brand-seo.vercel.app) ([Repository](https://github.com/hrlpavan/hrl-international-website-))  
 > **Dedicated Integration Blueprint**: [`HRL_SIH2026_INTEGRATION_MAP.md`](https://github.com/hrlpavan/sih-2026-media-problem-statements/blob/main/HRL_SIH2026_INTEGRATION_MAP.md)
 
+
+> [!IMPORTANT]
+> ### 🏆 #1 Winning Strategy Document Available:
+> 👉 **[WINNING_STRATEGY_PS26154.md](https://github.com/hrlpavan/sih-2026-media-problem-statements/blob/main/WINNING_STRATEGY_PS26154.md)** – Comprehensive game plan, jury pitch script, and architecture for **PS ID 26154 (NTRO - Gen AI Platform for Automated Content Transformation)**.
+
 ---
 
 ## 🔗 HRL International × SIH 2026 Problem Statement Synergy Matrix
