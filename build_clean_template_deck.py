@@ -8,7 +8,6 @@ from pptx.enum.shapes import MSO_SHAPE
 
 def build_official_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
     prs = Presentation()
-    # Official 16:9 Widescreen (13.333 in x 7.5 in)
     prs.slide_width = Inches(13.333)
     prs.slide_height = Inches(7.5)
     blank_layout = prs.slide_layouts[6]
@@ -18,15 +17,15 @@ def build_official_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"
     COLOR_PRIMARY_BLUE = RGBColor(27, 54, 93)    # Official SIH Navy Blue (#1B365D)
     COLOR_ORANGE = RGBColor(243, 112, 33)        # SIH Saffron/Orange (#F37021)
     COLOR_FOOTER_BLUE = RGBColor(0, 119, 200)    # SIH Footer Bar Blue (#0077C8)
-    COLOR_TEXT_DARK = RGBColor(20, 24, 30)       # High contrast pure dark text (#14181E)
+    COLOR_TEXT_DARK = RGBColor(20, 24, 30)       # High contrast dark text (#14181E)
 
-    # EXACT FONTS FROM OFFICIAL TEMPLATE
     FONT_TITLE = "Times New Roman"
     FONT_BODY = "Arial"
     LOGO_PATH = "sih_official_logo.png"
+    FLOWCHART_PATH = "omnitransform_pipeline_flowchart.png"
 
     def apply_header_footer(slide, slide_num, slide_title_text):
-        # 1. Top Left Team Oval (Clean, non-intrusive, fully editable)
+        # 1. Top Left Team Oval
         team_oval = slide.shapes.add_shape(MSO_SHAPE.OVAL, Inches(0.55), Inches(0.3), Inches(1.8), Inches(1.0))
         team_oval.fill.solid()
         team_oval.fill.fore_color.rgb = COLOR_BG
@@ -48,7 +47,7 @@ def build_official_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"
         p2.font.color.rgb = COLOR_TEXT_DARK
         p2.alignment = PP_ALIGN.CENTER
 
-        # 2. Top Center Slide Title in Times New Roman (Exact Template Style)
+        # 2. Top Center Slide Title in Times New Roman
         if slide_title_text:
             tb_title = slide.shapes.add_textbox(Inches(2.5), Inches(0.35), Inches(6.8), Inches(0.85))
             tf_title = tb_title.text_frame
@@ -61,11 +60,11 @@ def build_official_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"
             p_t.font.color.rgb = COLOR_PRIMARY_BLUE
             p_t.alignment = PP_ALIGN.CENTER
 
-        # 3. Top Right Official SIH 2026 Logo (New uploaded standalone logo)
+        # 3. Top Right Official SIH 2026 Logo
         if os.path.exists(LOGO_PATH):
             slide.shapes.add_picture(LOGO_PATH, Inches(9.8), Inches(0.25), width=Inches(3.0))
 
-        # 4. Bottom Footer Ribbon (Exact SIH Blue #0077C8)
+        # 4. Bottom Footer Ribbon
         footer = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(0), Inches(7.05), Inches(13.333), Inches(0.45))
         footer.fill.solid()
         footer.fill.fore_color.rgb = COLOR_FOOTER_BLUE
@@ -90,11 +89,10 @@ def build_official_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"
         p_num.alignment = PP_ALIGN.RIGHT
 
     # =========================================================================
-    # SLIDE 1: TITLE PAGE (Exact Match to Official Template)
+    # SLIDE 1: TITLE PAGE
     # =========================================================================
     slide1 = prs.slides.add_slide(blank_layout)
 
-    # Top Header Text (Times New Roman)
     tb1_top = slide1.shapes.add_textbox(Inches(0.8), Inches(0.4), Inches(11.7), Inches(0.6))
     p_t1 = tb1_top.text_frame.paragraphs[0]
     p_t1.text = "SMART INDIA HACKATHON 2026"
@@ -113,7 +111,6 @@ def build_official_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"
     p_sub.font.color.rgb = COLOR_TEXT_DARK
     p_sub.alignment = PP_ALIGN.CENTER
 
-    # Left Side: Mandatory Official Pointers (Independent, easy-to-edit text frame)
     tb1_fields = slide1.shapes.add_textbox(Inches(0.8), Inches(1.8), Inches(7.8), Inches(5.1))
     tf1_f = tb1_fields.text_frame
     tf1_f.word_wrap = True
@@ -146,7 +143,6 @@ def build_official_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"
         r2.font.color.rgb = COLOR_ORANGE if (highlight and idx == 0) else COLOR_TEXT_DARK
         p.space_after = Pt(10)
 
-    # Right Side: Official SIH Logo (Large on Title Slide)
     if os.path.exists(LOGO_PATH):
         slide1.shapes.add_picture(LOGO_PATH, Inches(8.8), Inches(2.0), width=Inches(3.8))
 
@@ -156,7 +152,6 @@ def build_official_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"
     slide2 = prs.slides.add_slide(blank_layout)
     apply_header_footer(slide2, 2, "IDEA TITLE: OmniTransform AI")
 
-    # Main Section Header Pointer (Exact Template Underline)
     tb2_head = slide2.shapes.add_textbox(Inches(0.8), Inches(1.35), Inches(11.7), Inches(0.5))
     p2_h = tb2_head.text_frame.paragraphs[0]
     p2_h.text = "• Proposed Solution (Describe your Idea/Solution/Prototype)"
@@ -166,7 +161,6 @@ def build_official_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"
     p2_h.font.name = FONT_TITLE
     p2_h.font.color.rgb = COLOR_PRIMARY_BLUE
 
-    # 3 Easy-to-Edit Columns (No trapping shapes; purely clean layout)
     col_w = Inches(3.7)
     col_gap = Inches(0.35)
     top_pos = Inches(2.0)
@@ -284,31 +278,32 @@ def build_official_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"
         p.space_after = Pt(8)
 
     # =========================================================================
-    # SLIDE 3: TECHNICAL APPROACH (With Visual Process Flow Infographic)
+    # SLIDE 3: TECHNICAL APPROACH (With Professional Flowchart Infographic Embedded)
     # =========================================================================
     slide3 = prs.slides.add_slide(blank_layout)
     apply_header_footer(slide3, 3, "TECHNICAL APPROACH")
 
-    # Left Container (4.8 in): Technologies to be used
-    tb3_l = slide3.shapes.add_textbox(Inches(0.8), Inches(1.4), Inches(4.8), Inches(5.4))
+    # Left Container (4.6 in): Technologies to be used
+    tb3_l = slide3.shapes.add_textbox(Inches(0.8), Inches(1.35), Inches(4.6), Inches(5.5))
     tf3_l = tb3_l.text_frame
     tf3_l.word_wrap = True
 
     p = tf3_l.paragraphs[0]
-    p.text = "• Technologies to be used (e.g. programming languages, frameworks, hardware)"
+    p.text = "• Technologies to be used"
     p.font.size = Pt(15)
     p.font.bold = True
+    p.font.underline = True
     p.font.name = FONT_TITLE
     p.font.color.rgb = COLOR_PRIMARY_BLUE
     p.space_after = Pt(10)
 
     techs = [
-        ("Frontend:", "Next.js 14, React, Tailwind CSS, Lucide Icons, PDF.js canvas viewer."),
-        ("Backend Engine:", "Python FastAPI, PyMuPDF spatial coordinate extractor, LangChain."),
-        ("AI / Foundation LLMs:", "Llama 3.3 (70B), Mistral Large, IndicBERT for regional translation."),
-        ("Rendering Compilers:", "Satori HTML-to-Image Canvas API, Marp slide engine, FFmpeg."),
-        ("Voice AI Synthesis:", "Piper Neural TTS & ElevenLabs API."),
-        ("Deployment & Security:", "Docker containerized, air-gapped Linux host, zero telemetry.")
+        ("Frontend:", "Next.js 14, React, Tailwind CSS, Lucide Icons, PDF.js viewer."),
+        ("Backend & Parser:", "Python FastAPI, PyMuPDF coordinate parser, LangChain."),
+        ("Foundation AI:", "Llama 3.3 (70B), Mistral Large, IndicBERT (translation)."),
+        ("Slide/Canvas Engines:", "Satori HTML-to-Image Canvas, Marp slide compiler, FFmpeg."),
+        ("Voice AI Pipeline:", "Piper Neural TTS & ElevenLabs API."),
+        ("Deployment:", "Docker containerized, air-gapped Linux host, zero telemetry.")
     ]
     for cat, desc in techs:
         p = tf3_l.add_paragraph()
@@ -320,45 +315,24 @@ def build_official_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"
         r1.font.color.rgb = COLOR_PRIMARY_BLUE
         r2 = p.add_run()
         r2.text = desc
-        r2.font.size = Pt(11.5)
+        r2.font.size = Pt(11)
         r2.font.name = FONT_BODY
         r2.font.color.rgb = COLOR_TEXT_DARK
         p.space_after = Pt(6)
 
-    # Right Container (6.8 in): Methodology & Process Infographic
-    tb3_r = slide3.shapes.add_textbox(Inches(5.8), Inches(1.4), Inches(6.8), Inches(5.4))
-    tf3_r = tb3_r.text_frame
-    tf3_r.word_wrap = True
+    # Right Container (7.0 in): Methodology & Flow Chart Image
+    tb3_r_title = slide3.shapes.add_textbox(Inches(5.6), Inches(1.35), Inches(7.0), Inches(0.5))
+    p_rt = tb3_r_title.text_frame.paragraphs[0]
+    p_rt.text = "• Methodology and process for implementation (Flow Chart)"
+    p_rt.font.size = Pt(15)
+    p_rt.font.bold = True
+    p_rt.font.underline = True
+    p_rt.font.name = FONT_TITLE
+    p_rt.font.color.rgb = COLOR_PRIMARY_BLUE
 
-    p = tf3_r.paragraphs[0]
-    p.text = "• Methodology and process for implementation (Flow Charts/Images/ working prototype)"
-    p.font.size = Pt(15)
-    p.font.bold = True
-    p.font.name = FONT_TITLE
-    p.font.color.rgb = COLOR_PRIMARY_BLUE
-    p.space_after = Pt(10)
-
-    flow_infographic = [
-        ("1. Document Ingestion", "PyMuPDF parses raw PDF/DOCX, tagging text blocks, tables, and diagrams with exact coordinate bounding boxes."),
-        ("2. Structured Chunking & RAG", "Contextual embeddings are indexed into an in-memory vector store (FAISS/Qdrant) enforcing strict citation boundaries."),
-        ("3. Multi-Persona Orchestration", "Constrained JSON Schema prompts instruct the LLM to extract key insights, slide structures, and press summaries."),
-        ("4. Parallel Synthesis Engines", "Simultaneously compiles HTML5 presentation slides, auto-renders visual cards (Canvas API), and synthesizes neural audio."),
-        ("5. Interactive Verification UI", "Delivers a live dashboard with side-by-side asset previews and clickable citation coordinates directly linking to the source PDF.")
-    ]
-    for step_title, step_desc in flow_infographic:
-        p = tf3_r.add_paragraph()
-        r1 = p.add_run()
-        r1.text = f"Step {step_title}: "
-        r1.font.bold = True
-        r1.font.size = Pt(12)
-        r1.font.name = FONT_BODY
-        r1.font.color.rgb = COLOR_PRIMARY_BLUE
-        r2 = p.add_run()
-        r2.text = step_desc
-        r2.font.size = Pt(11.5)
-        r2.font.name = FONT_BODY
-        r2.font.color.rgb = COLOR_TEXT_DARK
-        p.space_after = Pt(6)
+    # Embed High-Resolution Professional Flowchart Picture
+    if os.path.exists(FLOWCHART_PATH):
+        slide3.shapes.add_picture(FLOWCHART_PATH, Inches(5.6), Inches(1.9), width=Inches(6.9))
 
     # =========================================================================
     # SLIDE 4: FEASIBILITY AND VIABILITY
@@ -600,7 +574,7 @@ def build_official_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"
         p.space_after = Pt(6)
 
     prs.save(output_path)
-    print(f"Official SIH 2026 deck created successfully at: {output_path}")
+    print(f"Official SIH 2026 deck with flowchart created successfully at: {output_path}")
 
 if __name__ == "__main__":
     out = sys.argv[1] if len(sys.argv) > 1 else "SIH2026_Idea_Presentation_PS26154.pptx"
