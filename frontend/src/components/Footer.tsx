@@ -40,7 +40,7 @@ export const Footer: React.FC = () => {
               <li>Problem ID: <strong className="text-classic-navy">26154</strong></li>
               <li>Organization: <strong className="text-classic-navy">NTRO (Govt. of India)</strong></li>
               <li>Category: <strong className="text-classic-navy">Software / AI & Cyber Defense</strong></li>
-              <li>Team Name: <strong className="text-classic-navy">OmniTransform</strong></li>
+              <li>Team Name: <strong className="text-classic-navy">HRL</strong></li>
             </ul>
           </div>
 
@@ -70,7 +70,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="mt-6 pt-4 border-t border-classic-border flex flex-col sm:flex-row items-center justify-between text-xs text-classic-slate-muted">
-          <span>@SIH Idea Submission - OmniTransform AI Team</span>
+          <span>@SIH Idea Submission - Team HRL</span>
           <span>Classic Color Theory • Single-Pass Multi-Format AI Pipeline</span>
         </div>
       </div>
