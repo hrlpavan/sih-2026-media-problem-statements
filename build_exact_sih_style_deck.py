@@ -29,8 +29,8 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
     LOGO_PATH = "sih_official_logo.png"
     FLOWCHART_PATH = "omnitransform_pipeline_flowchart.png"
     
-    # LIVE PROTOTYPE & DEMO LINKS
-    LIVE_DEMO_URL = "https://hrl-brand-seo.vercel.app"
+    # LIVE PROTOTYPE & DEMO REPOSITORY
+    LIVE_DEMO_URL = "https://github.com/hrlpavan/sih-2026-media-problem-statements"
     GITHUB_REPO_URL = "https://github.com/hrlpavan/sih-2026-media-problem-statements"
 
     def add_header_footer(slide, slide_num, center_title, team_name="OmniTransform"):

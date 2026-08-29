@@ -1,17 +1,16 @@
 # 🚀 Smart India Hackathon (SIH 2026) – Media & Related Problem Statements Guide
 
 > **Official SIH Portal**: [sih.gov.in/sih2026PS](https://www.sih.gov.in/sih2026PS)  
-> **App Prototype Live Demo**: [hrl-brand-seo.vercel.app](https://hrl-brand-seo.vercel.app)  
 > **Official SIH 2026 Presentation (.pptx)**: [Download SIH2026_Idea_Presentation_PS26154.pptx](https://github.com/hrlpavan/sih-2026-media-problem-statements/raw/main/SIH2026_Idea_Presentation_PS26154.pptx)  
 > **Architecture Flowchart**: [View omnitransform_pipeline_flowchart.png](https://github.com/hrlpavan/sih-2026-media-problem-statements/blob/main/omnitransform_pipeline_flowchart.png)  
-> **Associated Project**: [HRL International Pvt. Ltd.](https://hrl-brand-seo.vercel.app) ([Repository](https://github.com/hrlpavan/hrl-international-website-))  
-> **Dedicated Integration Blueprint**: [`HRL_SIH2026_INTEGRATION_MAP.md`](https://github.com/hrlpavan/sih-2026-media-problem-statements/blob/main/HRL_SIH2026_INTEGRATION_MAP.md)
+> **Dedicated Integration Blueprint**: [`HRL_SIH2026_INTEGRATION_MAP.md`](https://github.com/hrlpavan/sih-2026-media-problem-statements/blob/main/HRL_SIH2026_INTEGRATION_MAP.md)  
 
 > [!IMPORTANT]
-> ### 🏆 Live Links & Official Pitch Deck:
-> 👉 **Live Prototype Demo**: **[https://hrl-brand-seo.vercel.app](https://hrl-brand-seo.vercel.app)**  
+> ### 🏆 Official Pitch Deck & Strategy Documents:
 > 👉 **Official PowerPoint Deck**: **[SIH2026_Idea_Presentation_PS26154.pptx](https://github.com/hrlpavan/sih-2026-media-problem-statements/raw/main/SIH2026_Idea_Presentation_PS26154.pptx)**  
-> 👉 **Winning Strategy & Pitch Guide**: **[WINNING_STRATEGY_PS26154.md](https://github.com/hrlpavan/sih-2026-media-problem-statements/blob/main/WINNING_STRATEGY_PS26154.md)**
+> 👉 **Winning Strategy & Pitch Guide**: **[WINNING_STRATEGY_PS26154.md](https://github.com/hrlpavan/sih-2026-media-problem-statements/blob/main/WINNING_STRATEGY_PS26154.md)**  
+> 👉 **Technical Development Spec**: **[PROJECT_DEVELOPMENT_SPECIFICATION.md](https://github.com/hrlpavan/sih-2026-media-problem-statements/blob/main/PROJECT_DEVELOPMENT_SPECIFICATION.md)**  
+> 👉 **Open-Source Resources & Datasets**: **[OPEN_SOURCE_RESOURCES_AND_DATASETS.md](https://github.com/hrlpavan/sih-2026-media-problem-statements/blob/main/OPEN_SOURCE_RESOURCES_AND_DATASETS.md)**  
 
 ---
 

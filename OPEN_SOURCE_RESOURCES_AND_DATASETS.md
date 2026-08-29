@@ -2,7 +2,6 @@
 
 > **Project**: OmniTransform AI (SIH 2026 PS ID: 26154)  
 > **Repository**: [https://github.com/hrlpavan/sih-2026-media-problem-statements](https://github.com/hrlpavan/sih-2026-media-problem-statements)  
-> **Live Web Prototype**: [https://hrl-brand-seo.vercel.app](https://hrl-brand-seo.vercel.app)  
 
 ---
 

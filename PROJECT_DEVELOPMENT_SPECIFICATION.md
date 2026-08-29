@@ -3,7 +3,6 @@
 > **Problem Statement ID**: 26154 (Smart India Hackathon 2026)  
 > **Title**: Gen AI Platform for Automated Content Transformation  
 > **Organization**: National Technical Research Organisation (NTRO)  
-> **Live Prototype Demo**: [https://hrl-brand-seo.vercel.app](https://hrl-brand-seo.vercel.app)  
 > **GitHub Repository**: [https://github.com/hrlpavan/sih-2026-media-problem-statements](https://github.com/hrlpavan/sih-2026-media-problem-statements)  
 
 ---
