@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SAMPLE_DOCUMENTS } from '../data/sampleAdvisories';
 import type { SampleDocument } from '../types';
-import { UploadCloud, FileText, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
+import { UploadCloud, FileText, CheckCircle2, ArrowRight, Sparkles, Download } from 'lucide-react';
 
 interface DocumentUploaderProps {
   selectedDoc: SampleDocument | null;
@@ -25,45 +25,45 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
         id: 'uploaded-custom-doc',
         title: file.name.replace(/\.[^/.]+$/, '').replace(/_/g, ' '),
         fileName: file.name,
-        category: 'Uploaded Document',
-        pageCount: Math.floor(Math.random() * 20) + 10,
-        classification: 'OFFICIAL DOCUMENT',
-        summary: 'Your uploaded document is ready for instant transformation.',
-        rawTextPreview: 'Parsed document text ready for automated multi-format extraction.'
+        category: 'Uploaded Technical PDF',
+        pageCount: Math.floor(Math.random() * 20) + 12,
+        classification: 'OFFICIAL USE',
+        summary: 'Your uploaded document is ready for single-pass multi-format transformation.',
+        rawTextPreview: 'Parsed document text with bounding box coordinate indexing.'
       };
       onSelectDoc(customDoc);
     }
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-zinc-200 p-6 sm:p-8 shadow-sm mb-6 uploader-container no-print">
-      {/* Title & Guidance */}
+    <div className="bg-white rounded-2xl border border-classic-border p-6 sm:p-8 shadow-classic-sm mb-6 uploader-container no-print">
+      {/* Title & Classic Editorial Intro */}
       <div className="text-center max-w-2xl mx-auto mb-8">
-        <h1 className="text-2xl sm:text-3xl font-bold text-zinc-900 tracking-tight">
-          Turn Any Long Document into 5 Clear Formats
+        <h1 className="text-2xl sm:text-3xl font-serif font-bold text-classic-navy tracking-tight">
+          Automated Multi-Format Content Transformation
         </h1>
-        <p className="text-sm text-zinc-600 mt-2">
-          Upload a long PDF or choose a sample report below. Get a 1-page summary, meeting slides, infographics, regional news, and voice audio in under 10 seconds.
+        <p className="text-xs sm:text-sm text-classic-slate-muted mt-2 leading-relaxed">
+          Transform 50+ page intelligence whitepapers, threat advisories, and policy documents into 5 synchronized communication formats in under 10 seconds.
         </p>
       </div>
 
-      {/* Step 1: Choose Sample or Upload */}
+      {/* Step 1: Document Selection */}
       <div className="space-y-4">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-          <span className="text-xs font-bold text-zinc-900 uppercase tracking-wider">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pb-1 border-b border-classic-border">
+          <span className="font-serif font-bold text-xs text-classic-navy uppercase tracking-wider">
             Step 1: Choose a Sample Document or Upload Your Own
           </span>
           <a
             href="/NTRO_Cyber_Threat_Advisory_Q3_2026_Sample.pdf"
             download="NTRO_Cyber_Threat_Advisory_Q3_2026_Sample.pdf"
-            className="text-xs font-bold text-orange-600 hover:text-orange-700 bg-orange-50 hover:bg-orange-100 px-3 py-1 rounded-md border border-orange-200 transition-colors flex items-center gap-1.5"
+            className="text-xs font-bold text-classic-ochre hover:text-classic-ochre-dark bg-classic-ochre-light px-3 py-1 rounded-md border border-classic-ochre/30 transition-colors flex items-center gap-1.5"
           >
-            <span>Download Sample PDF File to Test</span>
-            <span className="text-[10px] font-normal text-zinc-500">(PDF)</span>
+            <Download className="w-3.5 h-3.5" />
+            <span>Download Sample Test PDF</span>
           </a>
         </div>
 
-        {/* 2 Big Easy Sample Cards */}
+        {/* 2 Clean Classic Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {SAMPLE_DOCUMENTS.map((doc) => {
             const isSelected = selectedDoc?.id === doc.id;
@@ -71,32 +71,32 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
               <div
                 key={doc.id}
                 onClick={() => onSelectDoc(doc)}
-                className={`p-4 rounded-xl border-2 cursor-pointer transition-all flex items-start justify-between gap-4 ${
+                className={`p-5 rounded-xl border-2 cursor-pointer transition-all flex items-start justify-between gap-4 ${
                   isSelected
-                    ? 'border-orange-500 bg-orange-50/40 shadow-sm'
-                    : 'border-zinc-200 bg-zinc-50/50 hover:bg-zinc-50 hover:border-zinc-300'
+                    ? 'border-classic-navy bg-classic-bg shadow-classic-sm'
+                    : 'border-classic-border bg-white hover:border-classic-navy/40 hover:bg-classic-bg/50'
                 }`}
               >
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-3.5">
                   <div className={`p-2.5 rounded-lg shrink-0 mt-0.5 ${
-                    isSelected ? 'bg-orange-500 text-white' : 'bg-zinc-200 text-zinc-700'
+                    isSelected ? 'bg-classic-navy text-white' : 'bg-classic-bg text-classic-navy border border-classic-border'
                   }`}>
                     <FileText className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="flex items-center gap-2">
-                      <h3 className="font-bold text-sm text-zinc-900">{doc.title}</h3>
+                    <h3 className="font-serif font-bold text-sm text-classic-navy">{doc.title}</h3>
+                    <p className="text-xs text-classic-slate-muted mt-1 leading-relaxed">{doc.summary}</p>
+                    <div className="flex items-center gap-3 mt-2 text-[11px] font-medium text-classic-slate-muted">
+                      <span>{doc.pageCount} Pages</span>
+                      <span>•</span>
+                      <span>{doc.category}</span>
                     </div>
-                    <p className="text-xs text-zinc-600 mt-1 leading-relaxed">{doc.summary}</p>
-                    <span className="inline-block font-bold text-[11px] text-zinc-500 mt-2">
-                      {doc.pageCount} Pages • {doc.category}
-                    </span>
                   </div>
                 </div>
 
                 <div className="shrink-0 mt-1">
                   {isSelected ? (
-                    <span className="w-5 h-5 rounded-full bg-orange-500 text-white flex items-center justify-center text-xs font-bold">
+                    <span className="w-5 h-5 rounded-full bg-classic-navy text-white flex items-center justify-center text-xs font-bold">
                       ✓
                     </span>
                   ) : (
@@ -108,7 +108,7 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
           })}
         </div>
 
-        {/* Or Dropzone */}
+        {/* Dropzone */}
         <div
           onDragOver={(e) => { e.preventDefault(); setDragActive(true); }}
           onDragLeave={() => setDragActive(false)}
@@ -121,27 +121,27 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
                 id: 'drag-uploaded-doc',
                 title: file.name.replace(/\.[^/.]+$/, '').replace(/_/g, ' '),
                 fileName: file.name,
-                category: 'Uploaded PDF',
+                category: 'Uploaded Technical PDF',
                 pageCount: 32,
-                classification: 'OFFICIAL DOCUMENT',
+                classification: 'OFFICIAL USE',
                 summary: 'Uploaded PDF ready for single-pass multi-format transformation.',
                 rawTextPreview: 'Parsed uploaded document content.'
               };
               onSelectDoc(customDoc);
             }
           }}
-          className={`border-2 border-dashed rounded-xl p-4 text-center transition-all ${
+          className={`border-2 border-dashed rounded-xl p-5 text-center transition-all ${
             dragActive
-              ? 'border-orange-500 bg-orange-50/50'
-              : 'border-zinc-200 bg-zinc-50/30 hover:bg-zinc-50'
+              ? 'border-classic-navy bg-classic-bg'
+              : 'border-classic-border bg-classic-bg/50 hover:bg-classic-bg'
           }`}
         >
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <UploadCloud className="w-5 h-5 text-zinc-400" />
-            <span className="text-xs font-medium text-zinc-700">
-              Or drag & drop your own PDF/DOCX file here
+            <UploadCloud className="w-5 h-5 text-classic-slate-muted" />
+            <span className="text-xs font-medium text-classic-slate">
+              Or drag & drop any PDF/DOCX file here
             </span>
-            <label className="cursor-pointer text-xs font-bold text-orange-600 hover:text-orange-700 underline">
+            <label className="cursor-pointer text-xs font-bold text-classic-navy hover:text-classic-ochre underline">
               <span>Browse Computer</span>
               <input type="file" className="hidden" accept=".pdf,.docx,.txt" onChange={handleCustomUpload} />
             </label>
@@ -149,27 +149,27 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
         </div>
       </div>
 
-      {/* Step 2: One Big Transform Button */}
+      {/* Step 2: Execute Action Button */}
       {selectedDoc && (
-        <div className="mt-6 pt-6 border-t border-zinc-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2 text-xs font-medium text-zinc-700">
-            <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-            <span>Ready: <strong>{selectedDoc.title}</strong> ({selectedDoc.pageCount} pages)</span>
+        <div className="mt-6 pt-5 border-t border-classic-border flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2 text-xs font-medium text-classic-slate">
+            <CheckCircle2 className="w-4 h-4 text-classic-green" />
+            <span>Ready: <strong className="text-classic-navy">{selectedDoc.title}</strong> ({selectedDoc.pageCount} pages)</span>
           </div>
 
           <button
             onClick={onStartTransform}
             disabled={isProcessing}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 group disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
+            className="w-full sm:w-auto px-8 py-3 rounded-xl bg-classic-navy hover:bg-classic-navy-dark text-white font-bold text-xs shadow-classic-md hover:shadow-classic-lg transition-all flex items-center justify-center gap-2 group disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
           >
             {isProcessing ? (
               <>
-                <Sparkles className="w-4 h-4 animate-spin text-white" />
-                <span>Creating 5 Formats... Please wait</span>
+                <Sparkles className="w-4 h-4 animate-spin text-classic-ochre" />
+                <span>Synthesizing 5 Output Formats...</span>
               </>
             ) : (
               <>
-                <Sparkles className="w-4 h-4 text-white" />
+                <Sparkles className="w-4 h-4 text-classic-ochre" />
                 <span>Transform Document Now (10 Seconds)</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </>
