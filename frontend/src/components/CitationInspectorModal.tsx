@@ -14,71 +14,74 @@ export const CitationInspectorModal: React.FC<CitationInspectorModalProps> = ({
   if (!citation) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl max-w-3xl w-full border border-surface-300 shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
-        <div className="bg-sih-navy text-white p-5 flex items-center justify-between">
+    <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-md flex items-center justify-center p-4">
+      <div className="bg-white rounded-3xl max-w-3xl w-full border border-black/[0.08] shadow-apple-float overflow-hidden flex flex-col max-h-[90vh] animate-in fade-in zoom-in-95 duration-200">
+        {/* Modal Header */}
+        <div className="bg-apple-bg px-6 py-4 border-b border-black/[0.06] flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-lg bg-sih-orange text-white">
-              <ShieldCheck className="w-5 h-5" />
+            <div className="p-2 rounded-xl bg-sih-navy text-white shadow-apple-sm">
+              <ShieldCheck className="w-4 h-4 text-sih-orange" />
             </div>
             <div>
-              <h3 className="text-base font-bold">Source Document Citation Inspector</h3>
-              <p className="text-xs text-surface-300">
-                Verifying Fact Grounding • Page {citation.pageNumber} • {citation.lineNumber}
+              <h3 className="text-sm font-semibold text-apple-text">Source Document Citation Inspector</h3>
+              <p className="text-[11px] text-apple-subtext">
+                Verified Grounding • Page {citation.pageNumber} • {citation.lineNumber}
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors"
+            className="p-2 rounded-full hover:bg-black/[0.05] text-apple-subtext hover:text-apple-text transition-colors"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4" />
           </button>
         </div>
 
+        {/* Modal Content */}
         <div className="p-6 overflow-y-auto space-y-6">
           <div>
-            <span className="text-xs font-bold text-surface-400 uppercase tracking-wider block mb-1">
-              Generated Intelligence Fact
+            <span className="text-[10px] font-semibold text-apple-subtext uppercase tracking-wider block mb-1">
+              Synthesized Output Fact
             </span>
-            <div className="p-3.5 rounded-xl bg-sih-blue-light/50 border border-sih-blue/30 text-sih-navy text-sm font-semibold">
+            <div className="p-4 rounded-2xl bg-sih-blue/5 border border-sih-blue/20 text-apple-text text-sm font-medium">
               "{citation.sourceText}"
             </div>
           </div>
 
           <div>
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-bold text-surface-400 uppercase tracking-wider flex items-center gap-1.5">
-                <FileText className="w-4 h-4 text-sih-navy" /> Raw Ingested PDF Document (Page {citation.pageNumber})
+              <span className="text-[10px] font-semibold text-apple-subtext uppercase tracking-wider flex items-center gap-1.5">
+                <FileText className="w-3.5 h-3.5 text-sih-navy" /> Raw Source Document (Page {citation.pageNumber})
               </span>
-              <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-300 flex items-center gap-1">
-                <CheckCircle2 className="w-3.5 h-3.5" /> Bounding Box Matches [x0: {citation.boundingBox[0]}, y0: {citation.boundingBox[1]}]
+              <span className="text-[10px] font-semibold text-emerald-800 bg-sih-green-light px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                <CheckCircle2 className="w-3 h-3 text-sih-green" /> Bounding Box Matches [x0: {citation.boundingBox[0]}, y0: {citation.boundingBox[1]}]
               </span>
             </div>
 
-            <div className="p-5 rounded-xl border-2 border-surface-300 bg-surface-50 font-serif text-sm text-surface-800 leading-relaxed shadow-inner">
-              <p className="text-surface-400 text-xs mb-2 italic">
-                ... [Preceding raw document context on page {citation.pageNumber}] ...
+            <div className="p-6 rounded-2xl bg-apple-bg border border-black/[0.06] text-sm text-apple-text leading-relaxed">
+              <p className="text-apple-subtext text-xs mb-2 italic">
+                ... [Preceding context on page {citation.pageNumber}] ...
               </p>
-              <div className="bg-amber-200/90 text-surface-900 px-2 py-1 rounded shadow-sm border border-amber-400/50 my-2 font-medium">
+              <div className="bg-amber-200/80 text-apple-text px-3 py-2 rounded-xl shadow-apple-sm border border-amber-300 my-2 font-medium">
                 "{citation.contextSnippet}"
               </div>
-              <p className="text-surface-400 text-xs mt-2 italic">
-                ... [Succeeding telemetry log and technical appendix] ...
+              <p className="text-apple-subtext text-xs mt-2 italic">
+                ... [Succeeding telemetry log] ...
               </p>
             </div>
           </div>
         </div>
 
-        <div className="bg-surface-100 p-4 border-t border-surface-200 flex items-center justify-between">
-          <span className="text-xs text-surface-500 font-medium">
-            Strict RAG Boundary: 0 Hallucinations Enforced
+        {/* Modal Footer */}
+        <div className="bg-apple-bg px-6 py-4 border-t border-black/[0.06] flex items-center justify-between">
+          <span className="text-xs text-apple-subtext font-normal">
+            Zero Hallucination Guaranteed via Reverse Coordinate Indexing
           </span>
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-xl bg-sih-navy text-white text-xs font-bold hover:bg-sih-navy-light transition-all"
+            className="px-5 py-2 rounded-xl bg-sih-navy text-white text-xs font-semibold hover:bg-sih-navy-light shadow-apple-sm transition-all"
           >
-            Close Inspector
+            Done
           </button>
         </div>
       </div>

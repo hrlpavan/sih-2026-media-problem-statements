@@ -26,90 +26,92 @@ export const PressReleaseTab: React.FC<PressReleaseTabProps> = ({ pressReleases 
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-surface-200">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-black/[0.06]">
         <div>
-          <span className="text-xs font-bold text-sih-navy uppercase tracking-wider bg-sih-blue-light px-2.5 py-1 rounded-md border border-sih-blue/20">
-            Format 4: Multilingual Press Release Engine
+          <span className="text-[11px] font-semibold text-sih-navy uppercase tracking-wider bg-sih-blue-light px-2.5 py-1 rounded-full">
+            Format 4: Multilingual Press Engine
           </span>
-          <h3 className="text-lg font-bold text-surface-900 mt-1">
+          <h3 className="text-lg font-semibold text-apple-text mt-1">
             Official Media Statement & Regional Press Brief
           </h3>
         </div>
 
         <div className="flex items-center gap-2">
-          <div className="flex items-center bg-surface-100 p-1 rounded-xl border border-surface-200">
+          {/* Apple Segmented Language Switcher */}
+          <div className="flex items-center bg-apple-gray/70 p-1 rounded-xl border border-black/[0.04]">
             <button
               onClick={() => setLang('en')}
-              className={`text-xs px-3 py-1.5 rounded-lg font-bold transition-all ${
-                lang === 'en' ? 'bg-sih-navy text-white shadow-sm' : 'text-surface-600 hover:text-surface-900'
+              className={`text-xs px-3 py-1.5 rounded-lg font-medium transition-all duration-200 ${
+                lang === 'en' ? 'bg-white text-apple-text shadow-apple-sm font-semibold' : 'text-apple-subtext hover:text-apple-text'
               }`}
             >
               English
             </button>
             <button
               onClick={() => setLang('hi')}
-              className={`text-xs px-3 py-1.5 rounded-lg font-bold transition-all ${
-                lang === 'hi' ? 'bg-sih-navy text-white shadow-sm' : 'text-surface-600 hover:text-surface-900'
+              className={`text-xs px-3 py-1.5 rounded-lg font-medium transition-all duration-200 ${
+                lang === 'hi' ? 'bg-white text-apple-text shadow-apple-sm font-semibold' : 'text-apple-subtext hover:text-apple-text'
               }`}
             >
-              हिंदी (Hindi)
+              हिंदी
             </button>
             <button
               onClick={() => setLang('kn')}
-              className={`text-xs px-3 py-1.5 rounded-lg font-bold transition-all ${
-                lang === 'kn' ? 'bg-sih-navy text-white shadow-sm' : 'text-surface-600 hover:text-surface-900'
+              className={`text-xs px-3 py-1.5 rounded-lg font-medium transition-all duration-200 ${
+                lang === 'kn' ? 'bg-white text-apple-text shadow-apple-sm font-semibold' : 'text-apple-subtext hover:text-apple-text'
               }`}
             >
-              ಕನ್ನಡ (Kannada)
+              ಕನ್ನಡ
             </button>
             <button
               onClick={() => setLang('ta')}
-              className={`text-xs px-3 py-1.5 rounded-lg font-bold transition-all ${
-                lang === 'ta' ? 'bg-sih-navy text-white shadow-sm' : 'text-surface-600 hover:text-surface-900'
+              className={`text-xs px-3 py-1.5 rounded-lg font-medium transition-all duration-200 ${
+                lang === 'ta' ? 'bg-white text-apple-text shadow-apple-sm font-semibold' : 'text-apple-subtext hover:text-apple-text'
               }`}
             >
-              தமிழ் (Tamil)
+              தமிழ்
             </button>
           </div>
 
           <button
             onClick={handleCopy}
-            className="px-3.5 py-2 rounded-lg bg-surface-100 hover:bg-surface-200 text-surface-700 font-semibold text-xs border border-surface-300 transition-all flex items-center gap-1.5"
+            className="px-3.5 py-2 rounded-xl bg-apple-bg hover:bg-apple-gray text-apple-text font-medium text-xs border border-black/[0.08] transition-all flex items-center gap-1.5 shadow-apple-sm"
           >
-            {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
-            <span>{copied ? 'Copied' : 'Copy Text'}</span>
+            {copied ? <Check className="w-3.5 h-3.5 text-sih-green" /> : <Copy className="w-3.5 h-3.5 text-apple-subtext" />}
+            <span>{copied ? 'Copied' : 'Copy'}</span>
           </button>
         </div>
       </div>
 
-      <div className="bg-white rounded-2xl border-2 border-surface-300 p-8 shadow-sm max-w-4xl mx-auto font-sans">
-        <div className="text-center pb-6 border-b border-surface-200 mb-6">
-          <span className="text-xs font-extrabold text-sih-orange uppercase tracking-widest block mb-1">
-            PRESS INFORMATION BUREAU (PIB) / OFFICIAL RELEASE
+      {/* Newsroom Article Sheet */}
+      <div className="bg-white rounded-3xl border border-black/[0.08] p-8 shadow-apple-sm max-w-4xl mx-auto">
+        <div className="text-center pb-6 border-b border-black/[0.06] mb-6">
+          <span className="text-[10px] font-bold text-sih-orange uppercase tracking-widest block mb-1">
+            OFFICIAL GOVERNMENT PRESS RELEASE
           </span>
-          <h2 className="text-xl sm:text-2xl font-bold text-sih-navy leading-snug">
+          <h2 className="text-xl sm:text-2xl font-semibold text-apple-text leading-snug">
             {pr.headline}
           </h2>
-          <span className="text-xs font-semibold text-surface-500 block mt-2">
+          <span className="text-xs font-medium text-apple-subtext block mt-2">
             {pr.locationAndDate}
           </span>
         </div>
 
-        <div className="space-y-4 text-sm text-surface-800 leading-relaxed">
-          <p className="font-medium">{pr.openingParagraph}</p>
+        <div className="space-y-4 text-sm text-apple-text leading-relaxed">
+          <p className="font-medium text-apple-text">{pr.openingParagraph}</p>
           {pr.bodyParagraphs.map((p, idx) => (
             <p key={idx}>{p}</p>
           ))}
 
-          <div className="p-4 rounded-xl bg-sih-blue-light/50 border-l-4 border-sih-blue italic my-6 text-sih-navy font-serif">
+          <div className="p-5 rounded-2xl bg-apple-bg border-l-4 border-sih-navy italic my-6 text-apple-text">
             {pr.spokespersonQuote}
           </div>
         </div>
 
-        <div className="mt-8 pt-4 border-t border-surface-200 text-xs text-surface-500 font-medium flex items-center justify-between">
+        <div className="mt-8 pt-4 border-t border-black/[0.06] text-xs text-apple-subtext font-medium flex items-center justify-between">
           <span>{pr.mediaContact}</span>
-          <span className="bg-surface-100 px-2 py-1 rounded text-surface-600">
-            Automated Translation via IndicBERT Engine
+          <span className="bg-apple-bg px-2.5 py-1 rounded-full text-apple-subtext">
+            IndicBERT Neural Translation
           </span>
         </div>
       </div>

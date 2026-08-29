@@ -5,7 +5,7 @@ import { SlideDeckTab } from './tabs/SlideDeckTab';
 import { InfographicsTab } from './tabs/InfographicsTab';
 import { PressReleaseTab } from './tabs/PressReleaseTab';
 import { VoicePodcastTab } from './tabs/VoicePodcastTab';
-import { FileText, Presentation, BarChart3, Newspaper, Mic, Sparkles, CheckCircle2 } from 'lucide-react';
+import { FileText, Presentation, BarChart3, Newspaper, Radio, CheckCircle2 } from 'lucide-react';
 
 interface OutputDashboardProps {
   output: TransformedOutput;
@@ -16,35 +16,36 @@ export const OutputDashboard: React.FC<OutputDashboardProps> = ({ output, onOpen
   const [activeTab, setActiveTab] = useState<'memo' | 'slides' | 'infographics' | 'press' | 'audio'>('memo');
 
   const tabs = [
-    { id: 'memo', label: '1. Executive Memo', icon: FileText, desc: '1-Page Summary' },
-    { id: 'slides', label: '2. Slide Deck', icon: Presentation, desc: 'Meeting-Ready PPT' },
-    { id: 'infographics', label: '3. Infographics', icon: BarChart3, desc: 'Visual Cards' },
-    { id: 'press', label: '4. Press Release', icon: Newspaper, desc: '4 Indian Languages' },
-    { id: 'audio', label: '5. Voice Podcast', icon: Mic, desc: '60s Audio Brief' }
+    { id: 'memo', label: 'Executive Memo', icon: FileText, desc: '1-Page Summary' },
+    { id: 'slides', label: 'Slide Deck', icon: Presentation, desc: 'Keynote & PPTX' },
+    { id: 'infographics', label: 'Infographics', icon: BarChart3, desc: 'Data Cards' },
+    { id: 'press', label: 'Press Release', icon: Newspaper, desc: 'Multilingual' },
+    { id: 'audio', label: 'Audio Podcast', icon: Radio, desc: '60s Voice Brief' }
   ];
 
   return (
-    <div className="bg-white rounded-2xl border border-surface-200 p-6 shadow-sm my-6">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-surface-200">
+    <div className="apple-card rounded-3xl p-8 mb-8">
+      {/* Header Banner */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-black/[0.06]">
         <div>
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-5 h-5 text-sih-green" />
-            <h2 className="text-xl font-bold text-sih-navy tracking-tight">
-              Single-Pass Multi-Format Transformation Complete
+            <h2 className="text-xl font-semibold text-apple-text tracking-tight">
+              Synchronized 5-Format Transformation Complete
             </h2>
           </div>
-          <p className="text-xs text-surface-500 mt-0.5">
-            Ingested {output.sourcePageCount} pages in {(output.processingTimeMs / 1000).toFixed(1)}s • 5 Synchronized Outputs Ready
+          <p className="text-xs text-apple-subtext mt-1">
+            Processed {output.sourcePageCount} pages in {(output.processingTimeMs / 1000).toFixed(1)}s • 100% Grounded Citations
           </p>
         </div>
 
-        <div className="flex items-center gap-2 bg-sih-green-light px-3 py-1.5 rounded-xl border border-sih-green/30 text-emerald-800 text-xs font-bold">
-          <Sparkles className="w-4 h-4 text-emerald-600" />
-          <span>100% Grounded Citations (0 Hallucinations)</span>
-        </div>
+        <span className="text-xs font-semibold text-emerald-800 bg-sih-green-light px-3 py-1.5 rounded-full border border-sih-green/20">
+          Zero Hallucination Verified
+        </span>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 my-6 p-1.5 bg-surface-100 rounded-2xl border border-surface-200">
+      {/* Apple macOS Segmented Tab Bar */}
+      <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 my-6 p-1.5 bg-apple-gray/70 rounded-2xl border border-black/[0.04]">
         {tabs.map((t) => {
           const Icon = t.icon;
           const isActive = activeTab === t.id;
@@ -53,18 +54,18 @@ export const OutputDashboard: React.FC<OutputDashboardProps> = ({ output, onOpen
             <button
               key={t.id}
               onClick={() => setActiveTab(t.id as any)}
-              className={`p-3 rounded-xl font-bold transition-all text-left flex flex-col justify-between ${
+              className={`p-3 rounded-xl font-medium transition-all duration-200 text-left flex flex-col justify-between ${
                 isActive
-                  ? 'bg-sih-navy text-white shadow-md'
-                  : 'text-surface-700 hover:bg-surface-200 hover:text-surface-900'
+                  ? 'bg-white text-apple-text shadow-apple-sm'
+                  : 'text-apple-subtext hover:text-apple-text hover:bg-black/[0.02]'
               }`}
             >
-              <div className="flex items-center justify-between mb-1">
-                <Icon className={`w-4 h-4 ${isActive ? 'text-sih-orange' : 'text-surface-500'}`} />
-                {isActive && <span className="w-2 h-2 rounded-full bg-sih-orange" />}
+              <div className="flex items-center justify-between mb-1.5">
+                <Icon className={`w-4 h-4 ${isActive ? 'text-sih-orange' : 'text-apple-subtext'}`} />
+                {isActive && <span className="w-1.5 h-1.5 rounded-full bg-sih-orange" />}
               </div>
-              <span className="text-xs block leading-tight">{t.label}</span>
-              <span className={`text-[10px] block font-normal mt-0.5 ${isActive ? 'text-surface-300' : 'text-surface-400'}`}>
+              <span className="text-xs font-semibold block leading-tight">{t.label}</span>
+              <span className="text-[10px] block text-apple-subtext mt-0.5 font-normal">
                 {t.desc}
               </span>
             </button>
@@ -72,6 +73,7 @@ export const OutputDashboard: React.FC<OutputDashboardProps> = ({ output, onOpen
         })}
       </div>
 
+      {/* Tab Panes */}
       <div className="mt-6">
         {activeTab === 'memo' && (
           <ExecutiveMemoTab
