@@ -14,74 +14,72 @@ export const CitationInspectorModal: React.FC<CitationInspectorModalProps> = ({
   if (!citation) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-md flex items-center justify-center p-4">
-      <div className="bg-white rounded-3xl max-w-3xl w-full border border-black/[0.08] shadow-apple-float overflow-hidden flex flex-col max-h-[90vh] animate-in fade-in zoom-in-95 duration-200">
-        {/* Modal Header */}
-        <div className="bg-apple-bg px-6 py-4 border-b border-black/[0.06] flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="p-2 rounded-xl bg-sih-navy text-white shadow-apple-sm">
-              <ShieldCheck className="w-4 h-4 text-sih-orange" />
-            </div>
+    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+      <div className="bg-white rounded-xl max-w-3xl w-full border border-zinc-300 shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+        {/* Header */}
+        <div className="bg-zinc-900 text-white px-5 py-3.5 border-b border-zinc-800 flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            <ShieldCheck className="w-4 h-4 text-orange-500" />
             <div>
-              <h3 className="text-sm font-semibold text-apple-text">Source Document Citation Inspector</h3>
-              <p className="text-[11px] text-apple-subtext">
-                Verified Grounding • Page {citation.pageNumber} • {citation.lineNumber}
+              <h3 className="text-xs font-semibold text-white">Source Citation Inspector</h3>
+              <p className="font-mono text-[10px] text-zinc-400">
+                PAGE: {citation.pageNumber} // {citation.lineNumber}
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-full hover:bg-black/[0.05] text-apple-subtext hover:text-apple-text transition-colors"
+            className="p-1 rounded hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
         </div>
 
-        {/* Modal Content */}
-        <div className="p-6 overflow-y-auto space-y-6">
+        {/* Content */}
+        <div className="p-5 overflow-y-auto space-y-4">
           <div>
-            <span className="text-[10px] font-semibold text-apple-subtext uppercase tracking-wider block mb-1">
-              Synthesized Output Fact
+            <span className="font-mono text-[9px] font-semibold text-zinc-400 uppercase tracking-wider block mb-1">
+              GENERATED FACT
             </span>
-            <div className="p-4 rounded-2xl bg-sih-blue/5 border border-sih-blue/20 text-apple-text text-sm font-medium">
+            <div className="p-3.5 rounded bg-zinc-100 border border-zinc-200 text-zinc-900 text-xs font-medium">
               "{citation.sourceText}"
             </div>
           </div>
 
           <div>
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-[10px] font-semibold text-apple-subtext uppercase tracking-wider flex items-center gap-1.5">
-                <FileText className="w-3.5 h-3.5 text-sih-navy" /> Raw Source Document (Page {citation.pageNumber})
+            <div className="flex items-center justify-between mb-1.5">
+              <span className="font-mono text-[9px] font-semibold text-zinc-400 uppercase tracking-wider flex items-center gap-1">
+                <FileText className="w-3 h-3 text-zinc-500" /> RAW PDF CONTEXT (PAGE {citation.pageNumber})
               </span>
-              <span className="text-[10px] font-semibold text-emerald-800 bg-sih-green-light px-2.5 py-0.5 rounded-full flex items-center gap-1">
-                <CheckCircle2 className="w-3 h-3 text-sih-green" /> Bounding Box Matches [x0: {citation.boundingBox[0]}, y0: {citation.boundingBox[1]}]
+              <span className="font-mono text-[9px] font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
+                <CheckCircle2 className="w-3 h-3 text-emerald-600" /> COORD_MATCH [X0: {citation.boundingBox[0]}, Y0: {citation.boundingBox[1]}]
               </span>
             </div>
 
-            <div className="p-6 rounded-2xl bg-apple-bg border border-black/[0.06] text-sm text-apple-text leading-relaxed">
-              <p className="text-apple-subtext text-xs mb-2 italic">
-                ... [Preceding context on page {citation.pageNumber}] ...
+            <div className="p-4 rounded bg-zinc-50 border border-zinc-200 text-xs text-zinc-800 leading-relaxed font-serif">
+              <p className="text-zinc-400 text-[11px] mb-2 font-mono">
+                ... [Preceding raw document context on page {citation.pageNumber}] ...
               </p>
-              <div className="bg-amber-200/80 text-apple-text px-3 py-2 rounded-xl shadow-apple-sm border border-amber-300 my-2 font-medium">
+              <div className="bg-amber-100 text-zinc-950 px-2.5 py-1.5 rounded border border-amber-300 my-1 font-medium font-sans">
                 "{citation.contextSnippet}"
               </div>
-              <p className="text-apple-subtext text-xs mt-2 italic">
-                ... [Succeeding telemetry log] ...
+              <p className="text-zinc-400 text-[11px] mt-2 font-mono">
+                ... [Succeeding telemetry index] ...
               </p>
             </div>
           </div>
         </div>
 
-        {/* Modal Footer */}
-        <div className="bg-apple-bg px-6 py-4 border-t border-black/[0.06] flex items-center justify-between">
-          <span className="text-xs text-apple-subtext font-normal">
-            Zero Hallucination Guaranteed via Reverse Coordinate Indexing
+        {/* Footer */}
+        <div className="bg-zinc-100 px-5 py-3 border-t border-zinc-200 flex items-center justify-between">
+          <span className="font-mono text-[10px] text-zinc-500 font-normal">
+            STRICT RAG BOUNDARY: 0 HALLUCINATIONS ENFORCED
           </span>
           <button
             onClick={onClose}
-            className="px-5 py-2 rounded-xl bg-sih-navy text-white text-xs font-semibold hover:bg-sih-navy-light shadow-apple-sm transition-all"
+            className="px-4 py-1.5 rounded bg-zinc-900 text-white text-xs font-medium hover:bg-black transition-all"
           >
-            Done
+            Close
           </button>
         </div>
       </div>

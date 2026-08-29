@@ -16,36 +16,36 @@ export const OutputDashboard: React.FC<OutputDashboardProps> = ({ output, onOpen
   const [activeTab, setActiveTab] = useState<'memo' | 'slides' | 'infographics' | 'press' | 'audio'>('memo');
 
   const tabs = [
-    { id: 'memo', label: 'Executive Memo', icon: FileText, desc: '1-Page Summary' },
-    { id: 'slides', label: 'Slide Deck', icon: Presentation, desc: 'Keynote & PPTX' },
-    { id: 'infographics', label: 'Infographics', icon: BarChart3, desc: 'Data Cards' },
-    { id: 'press', label: 'Press Release', icon: Newspaper, desc: 'Multilingual' },
-    { id: 'audio', label: 'Audio Podcast', icon: Radio, desc: '60s Voice Brief' }
+    { id: 'memo', label: '01 Memo', icon: FileText, desc: 'Executive Brief' },
+    { id: 'slides', label: '02 Slides', icon: Presentation, desc: 'Meeting Deck' },
+    { id: 'infographics', label: '03 Metrics', icon: BarChart3, desc: 'Data Cards' },
+    { id: 'press', label: '04 Press', icon: Newspaper, desc: 'Multilingual' },
+    { id: 'audio', label: '05 Audio', icon: Radio, desc: '60s Voice Brief' }
   ];
 
   return (
-    <div className="apple-card rounded-3xl p-8 mb-8">
-      {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-black/[0.06]">
+    <div className="industrial-panel rounded-xl p-6 mb-8">
+      {/* Telemetry Header */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-4 border-b border-zinc-200 no-print">
         <div>
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-5 h-5 text-sih-green" />
-            <h2 className="text-xl font-semibold text-apple-text tracking-tight">
-              Synchronized 5-Format Transformation Complete
+            <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-zinc-900">
+              Single-Pass Multi-Format Transformation Complete
             </h2>
           </div>
-          <p className="text-xs text-apple-subtext mt-1">
-            Processed {output.sourcePageCount} pages in {(output.processingTimeMs / 1000).toFixed(1)}s • 100% Grounded Citations
+          <p className="font-mono text-[11px] text-zinc-500 mt-0.5">
+            PAGES: {output.sourcePageCount} // LATENCY: {(output.processingTimeMs / 1000).toFixed(2)}S // STATUS: VERIFIED
           </p>
         </div>
 
-        <span className="text-xs font-semibold text-emerald-800 bg-sih-green-light px-3 py-1.5 rounded-full border border-sih-green/20">
-          Zero Hallucination Verified
+        <span className="font-mono text-[10px] font-medium text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200">
+          REVERSE_CITATION_INDEX: 100% GROUNDED
         </span>
       </div>
 
-      {/* Apple macOS Segmented Tab Bar */}
-      <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 my-6 p-1.5 bg-apple-gray/70 rounded-2xl border border-black/[0.04]">
+      {/* Industrial Segmented Tabs */}
+      <div className="grid grid-cols-2 sm:grid-cols-5 gap-1.5 my-5 p-1 bg-zinc-100 rounded-lg border border-zinc-200 tabs-nav-bar no-print">
         {tabs.map((t) => {
           const Icon = t.icon;
           const isActive = activeTab === t.id;
@@ -54,18 +54,18 @@ export const OutputDashboard: React.FC<OutputDashboardProps> = ({ output, onOpen
             <button
               key={t.id}
               onClick={() => setActiveTab(t.id as any)}
-              className={`p-3 rounded-xl font-medium transition-all duration-200 text-left flex flex-col justify-between ${
+              className={`p-2.5 rounded font-medium transition-all text-left flex flex-col justify-between ${
                 isActive
-                  ? 'bg-white text-apple-text shadow-apple-sm'
-                  : 'text-apple-subtext hover:text-apple-text hover:bg-black/[0.02]'
+                  ? 'bg-white text-zinc-900 shadow-sm border border-zinc-200 font-semibold'
+                  : 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-200/50'
               }`}
             >
-              <div className="flex items-center justify-between mb-1.5">
-                <Icon className={`w-4 h-4 ${isActive ? 'text-sih-orange' : 'text-apple-subtext'}`} />
-                {isActive && <span className="w-1.5 h-1.5 rounded-full bg-sih-orange" />}
+              <div className="flex items-center justify-between mb-1">
+                <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-orange-600' : 'text-zinc-400'}`} />
+                {isActive && <span className="w-1.5 h-1.5 rounded-full bg-orange-600" />}
               </div>
               <span className="text-xs font-semibold block leading-tight">{t.label}</span>
-              <span className="text-[10px] block text-apple-subtext mt-0.5 font-normal">
+              <span className="font-mono text-[9px] block text-zinc-400 mt-0.5">
                 {t.desc}
               </span>
             </button>
@@ -73,8 +73,8 @@ export const OutputDashboard: React.FC<OutputDashboardProps> = ({ output, onOpen
         })}
       </div>
 
-      {/* Tab Panes */}
-      <div className="mt-6">
+      {/* Output Content Panes */}
+      <div>
         {activeTab === 'memo' && (
           <ExecutiveMemoTab
             memo={output.executiveMemo}

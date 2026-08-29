@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SAMPLE_DOCUMENTS } from '../data/sampleAdvisories';
 import type { SampleDocument } from '../types';
-import { UploadCloud, FileText, CheckCircle2, ArrowRight, ShieldCheck, Zap, Sparkles } from 'lucide-react';
+import { UploadCloud, FileText, CheckCircle2, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
 
 interface DocumentUploaderProps {
   selectedDoc: SampleDocument | null;
@@ -25,10 +25,10 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
         id: 'uploaded-custom-doc',
         title: file.name.replace(/\.[^/.]+$/, '').replace(/_/g, ' '),
         fileName: file.name,
-        category: 'Custom Uploaded Document',
+        category: 'Custom Upload',
         pageCount: Math.floor(Math.random() * 30) + 12,
         classification: 'USER INGESTION',
-        summary: 'Custom document ingested. Spatial coordinate parser active for multi-format generation.',
+        summary: 'Document uploaded. Spatial coordinate parser active for multi-format extraction.',
         rawTextPreview: 'Parsed uploaded document content. Coordinate mapping active.'
       };
       onSelectDoc(customDoc);
@@ -36,30 +36,33 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
   };
 
   return (
-    <div className="apple-card rounded-3xl p-8 mb-8">
-      {/* Section Header */}
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6">
+    <div className="industrial-panel rounded-xl p-6 mb-6 uploader-container no-print">
+      {/* Top Header */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-5">
         <div>
-          <h2 className="text-xl sm:text-2xl font-semibold text-apple-text tracking-tight">
-            Document Ingestion & Analysis
-          </h2>
-          <p className="text-xs sm:text-sm text-apple-subtext mt-1">
-            Upload 50+ page intelligence reports or select verified government whitepaper presets.
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-[11px] font-semibold text-zinc-400">[01]</span>
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-zinc-900">
+              Document Ingestion & Source Selection
+            </h2>
+          </div>
+          <p className="text-xs text-zinc-500 mt-0.5">
+            Select verified technical document preset or ingest arbitrary multi-page PDF files.
           </p>
         </div>
 
-        {/* Apple Segmented Preset Pills */}
-        <div className="flex items-center gap-2 flex-wrap">
-          <span className="text-[11px] font-medium text-apple-subtext uppercase tracking-wider">Presets:</span>
+        {/* Precision Segmented Presets */}
+        <div className="flex items-center gap-1.5 flex-wrap">
+          <span className="font-mono text-[10px] text-zinc-400 uppercase mr-1">PRESETS:</span>
           {SAMPLE_DOCUMENTS.map((doc) => (
             <button
               key={doc.id}
               onClick={() => onSelectDoc(doc)}
               disabled={isProcessing}
-              className={`text-xs px-3.5 py-1.5 rounded-full border transition-all duration-200 flex items-center gap-1.5 ${
+              className={`text-xs px-3 py-1.5 rounded border transition-all flex items-center gap-1.5 font-medium ${
                 selectedDoc?.id === doc.id
-                  ? 'bg-sih-navy text-white border-sih-navy shadow-apple-sm font-medium'
-                  : 'bg-white text-apple-text border-black/[0.08] hover:border-black/20 hover:bg-apple-gray/50'
+                  ? 'bg-zinc-900 text-white border-zinc-900 shadow-sm'
+                  : 'bg-white text-zinc-700 border-zinc-200 hover:border-zinc-300 hover:bg-zinc-50'
               }`}
             >
               <FileText className="w-3.5 h-3.5 opacity-70" />
@@ -69,7 +72,7 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
         </div>
       </div>
 
-      {/* Drag & Drop Canvas */}
+      {/* Industrial Drop Target */}
       <div
         onDragOver={(e) => { e.preventDefault(); setDragActive(true); }}
         onDragLeave={() => setDragActive(false)}
@@ -82,7 +85,7 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
               id: 'drag-uploaded-doc',
               title: file.name.replace(/\.[^/.]+$/, '').replace(/_/g, ' '),
               fileName: file.name,
-              category: 'Custom Uploaded PDF',
+              category: 'Custom Upload',
               pageCount: 36,
               classification: 'RESTRICTED',
               summary: 'User uploaded document ready for single-pass multi-format transformation.',
@@ -91,50 +94,48 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
             onSelectDoc(customDoc);
           }
         }}
-        className={`border-2 border-dashed rounded-2xl p-10 text-center transition-all duration-300 ${
+        className={`border border-dashed rounded-lg p-6 text-center transition-all ${
           dragActive
-            ? 'border-sih-blue bg-sih-blue/5 scale-[0.99]'
-            : 'border-black/[0.1] bg-apple-bg/50 hover:bg-apple-bg/80'
+            ? 'border-zinc-900 bg-zinc-100'
+            : 'border-zinc-300 bg-zinc-50/70 hover:bg-zinc-50'
         }`}
       >
         <div className="max-w-md mx-auto flex flex-col items-center">
-          <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center text-sih-blue mb-3 shadow-apple-sm border border-black/[0.04]">
-            <UploadCloud className="w-6 h-6" />
-          </div>
-          <p className="text-sm font-medium text-apple-text mb-1">
-            Drop raw PDF or DOCX file here
+          <UploadCloud className="w-6 h-6 text-zinc-400 mb-2" />
+          <p className="text-xs font-medium text-zinc-800">
+            Drag & drop document here (PDF / DOCX)
           </p>
-          <p className="text-xs text-apple-subtext mb-5">
-            Automatic parsing of multi-column tables, scanned diagrams & citations
+          <p className="text-[11px] text-zinc-400 mt-0.5 mb-3 font-mono">
+            PARSER: PyMuPDF [COORDINATE_BOUNDS_ACTIVE]
           </p>
-          <label className="cursor-pointer inline-flex items-center px-4 py-2 text-xs font-semibold text-apple-text bg-white border border-black/[0.1] rounded-xl shadow-apple-sm hover:bg-apple-gray/50 transition-all">
-            <span>Browse Files</span>
+          <label className="cursor-pointer inline-flex items-center px-3 py-1.5 text-xs font-medium text-zinc-700 bg-white border border-zinc-300 rounded hover:bg-zinc-50 transition-all shadow-sm">
+            <span>Browse Local Files</span>
             <input type="file" className="hidden" accept=".pdf,.docx,.txt" onChange={handleCustomUpload} />
           </label>
         </div>
       </div>
 
-      {/* Selected File Details Bar */}
+      {/* Ingested Metadata Strip */}
       {selectedDoc && (
-        <div className="mt-6 p-5 rounded-2xl bg-apple-bg border border-black/[0.06] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 transition-all">
-          <div className="flex items-start gap-3.5">
-            <div className="p-3 rounded-xl bg-white text-sih-navy shadow-apple-sm border border-black/[0.04] mt-0.5">
-              <FileText className="w-5 h-5 text-sih-blue" />
+        <div className="mt-4 p-4 rounded-lg bg-zinc-50 border border-zinc-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="flex items-start gap-3">
+            <div className="p-2 rounded bg-white border border-zinc-200 text-zinc-900 shadow-sm mt-0.5">
+              <FileText className="w-4 h-4 text-orange-600" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h3 className="font-semibold text-sm text-apple-text tracking-tight">{selectedDoc.title}</h3>
-                <span className="text-[10px] font-semibold bg-black/[0.06] text-apple-subtext px-2 py-0.5 rounded-full">
+                <h3 className="font-semibold text-xs text-zinc-900">{selectedDoc.title}</h3>
+                <span className="font-mono text-[9px] font-semibold bg-zinc-200 text-zinc-700 px-1.5 py-0.5 rounded">
                   {selectedDoc.classification}
                 </span>
               </div>
-              <p className="text-xs text-apple-subtext mt-1 max-w-2xl leading-relaxed">{selectedDoc.summary}</p>
-              <div className="flex items-center gap-4 mt-2 text-[11px] text-apple-subtext">
-                <span className="flex items-center gap-1 font-medium text-apple-text">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-sih-green" /> {selectedDoc.pageCount} Pages Loaded
+              <p className="text-xs text-zinc-600 mt-0.5 max-w-2xl">{selectedDoc.summary}</p>
+              <div className="flex items-center gap-4 mt-2 text-[10px] font-mono text-zinc-500">
+                <span className="flex items-center gap-1 text-emerald-700 font-semibold">
+                  <CheckCircle2 className="w-3 h-3 text-emerald-600" /> {selectedDoc.pageCount} PAGES LOADED
                 </span>
                 <span className="flex items-center gap-1">
-                  <ShieldCheck className="w-3.5 h-3.5 text-sih-blue" /> Spatial Coordinates Indexed
+                  <ShieldCheck className="w-3 h-3 text-zinc-400" /> REVERSE_CITATIONS_READY
                 </span>
               </div>
             </div>
@@ -143,18 +144,17 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
           <button
             onClick={onStartTransform}
             disabled={isProcessing}
-            className="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-sih-orange hover:bg-sih-orange-dark text-white font-semibold text-xs shadow-apple-md hover:shadow-apple-lg hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 group disabled:opacity-50 disabled:pointer-events-none shrink-0"
+            className="w-full sm:w-auto px-5 py-2.5 rounded bg-zinc-900 hover:bg-black text-white font-medium text-xs shadow-sm hover:shadow transition-all flex items-center justify-center gap-2 group disabled:opacity-50 disabled:pointer-events-none shrink-0"
           >
             {isProcessing ? (
               <>
-                <Zap className="w-4 h-4 animate-spin text-white" />
-                <span>Transforming Pipeline...</span>
+                <Zap className="w-3.5 h-3.5 animate-spin text-orange-400" />
+                <span className="font-mono text-xs">PROCESSING_PIPELINE...</span>
               </>
             ) : (
               <>
-                <Sparkles className="w-4 h-4 text-white" />
-                <span>Transform Document (5 Formats)</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                <span>Execute Pipeline (5 Formats)</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform text-orange-400" />
               </>
             )}
           </button>

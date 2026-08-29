@@ -1,63 +1,63 @@
 import React from 'react';
-import { Sparkles, ArrowUpRight, Download } from 'lucide-react';
+import { ArrowUpRight, Download } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-white border-t border-black/[0.06] mt-16 text-apple-text">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-white border-t border-zinc-200 mt-16 text-zinc-900 no-print">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
-            <div className="flex items-center space-x-2 mb-3">
-              <div className="w-8 h-8 rounded-xl bg-sih-navy flex items-center justify-center text-white font-bold">
-                <Sparkles className="w-4 h-4 text-sih-orange" />
+            <div className="flex items-center space-x-2 mb-2">
+              <div className="w-6 h-6 rounded bg-zinc-900 flex items-center justify-center text-white font-mono text-xs font-bold">
+                OT
               </div>
-              <span className="font-semibold text-base tracking-tight">OmniTransform AI</span>
+              <span className="font-semibold text-sm tracking-tight">OmniTransform AI</span>
             </div>
-            <p className="text-xs text-apple-subtext leading-relaxed max-w-sm">
-              Sovereign Gen AI Platform for Automated Content Transformation. Developed for Smart India Hackathon 2026 (PS ID: 26154) for the National Technical Research Organisation (NTRO).
+            <p className="font-mono text-[11px] text-zinc-500 leading-relaxed max-w-sm">
+              Sovereign Gen AI Platform for Automated Content Transformation. Smart India Hackathon 2026 (PS ID: 26154) // NTRO.
             </p>
           </div>
 
           <div>
-            <h4 className="text-xs font-semibold text-apple-text uppercase tracking-wider mb-3">
-              Submission Details
+            <h4 className="font-mono text-[10px] font-semibold text-zinc-400 uppercase tracking-wider mb-2">
+              SUBMISSION SPECIFICATIONS
             </h4>
-            <ul className="space-y-1 text-xs text-apple-subtext">
-              <li>• Problem Statement ID: <strong className="text-apple-text">26154</strong></li>
-              <li>• Organization: <strong className="text-apple-text">NTRO (Govt. of India)</strong></li>
-              <li>• Category: <strong className="text-apple-text">Software / AI</strong></li>
-              <li>• Team: <strong className="text-apple-text">OmniTransform</strong></li>
+            <ul className="space-y-1 font-mono text-[11px] text-zinc-600">
+              <li>PROBLEM ID: <strong>26154</strong></li>
+              <li>ORGANIZATION: <strong>NTRO (Govt. of India)</strong></li>
+              <li>THEME: <strong>Software / AI & Security</strong></li>
+              <li>TEAM: <strong>OmniTransform</strong></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-xs font-semibold text-apple-text uppercase tracking-wider mb-3">
-              Resources & Artifacts
+            <h4 className="font-mono text-[10px] font-semibold text-zinc-400 uppercase tracking-wider mb-2">
+              ARTIFACT REPOSITORIES
             </h4>
-            <div className="space-y-2">
+            <div className="space-y-1.5">
               <a
                 href="https://github.com/hrlpavan/omnitransform-ai-resources"
                 target="_blank"
                 rel="noreferrer"
-                className="text-xs text-apple-subtext hover:text-sih-blue flex items-center gap-1 transition-colors"
+                className="font-mono text-[11px] text-zinc-600 hover:text-zinc-900 flex items-center gap-1 transition-colors"
               >
                 <span>github.com/hrlpavan/omnitransform-ai-resources</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
+                <ArrowUpRight className="w-3 h-3" />
               </a>
               <a
                 href="https://github.com/hrlpavan/omnitransform-ai-resources/raw/main/SIH2026_Idea_Presentation_PS26154.pptx"
-                className="text-xs text-apple-subtext hover:text-sih-blue flex items-center gap-1 transition-colors"
+                className="font-mono text-[11px] text-zinc-600 hover:text-zinc-900 flex items-center gap-1 transition-colors"
               >
-                <Download className="w-3.5 h-3.5" />
-                <span>Download Official PPTX Pitch Deck</span>
+                <Download className="w-3 h-3 text-orange-600" />
+                <span>SIH2026_Idea_Presentation_PS26154.pptx</span>
               </a>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-black/[0.06] flex flex-col sm:flex-row items-center justify-between text-xs text-apple-subtext">
-          <span>@SIH Idea submission - OmniTransform AI Team</span>
-          <span>Apple-Grade UI/UX Design System • SF Pro Typography</span>
+        <div className="mt-6 pt-4 border-t border-zinc-100 flex flex-col sm:flex-row items-center justify-between font-mono text-[10px] text-zinc-400">
+          <span>OMNITRANSFORM_AI // SOVEREIGN ENGINE</span>
+          <span>INDUSTRIAL DESIGN SPECIFICATION // 0 EMOJIS</span>
         </div>
       </div>
     </footer>

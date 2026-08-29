@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, Loader2, Sparkles, Database, FileCode, Layers, ShieldCheck } from 'lucide-react';
+import { CheckCircle2, Loader2, Database, FileCode, Layers, ShieldCheck, Cpu } from 'lucide-react';
 
 interface PipelineVisualizerProps {
   currentStep: number;
@@ -13,30 +13,30 @@ export const PipelineVisualizer: React.FC<PipelineVisualizerProps> = ({
   isProcessing
 }) => {
   const steps = [
-    { num: 1, title: 'Spatial Parsing', sub: 'PyMuPDF Coordinates', icon: FileCode },
-    { num: 2, title: 'Chunking & RAG', sub: 'FAISS Vector DB', icon: Database },
-    { num: 3, title: 'LLM Synthesis', sub: 'Llama 3.3 Structuring', icon: Sparkles },
-    { num: 4, title: 'Compilers', sub: 'Slides, Audio, Graphics', icon: Layers },
-    { num: 5, title: 'Reverse Citations', sub: 'Fact Verification', icon: ShieldCheck }
+    { num: 1, title: 'Spatial Parser', sub: 'PyMuPDF Coordinates', icon: FileCode },
+    { num: 2, title: 'Vector Index', sub: 'FAISS Chunking', icon: Database },
+    { num: 3, title: 'LLM Orchestrator', sub: 'Llama 3.3 Schema', icon: Cpu },
+    { num: 4, title: 'Compilers', sub: 'Slides, Audio, Press', icon: Layers },
+    { num: 5, title: 'Citations', sub: 'Fact Verification', icon: ShieldCheck }
   ];
 
   if (!isProcessing && currentStep === 0) return null;
 
   return (
-    <div className="apple-card rounded-3xl p-6 mb-8 transition-all">
-      <div className="flex items-center justify-between mb-4">
+    <div className="industrial-panel rounded-xl p-5 mb-6 pipeline-container no-print transition-all">
+      <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-sih-orange animate-pulse" />
-          <h3 className="text-xs font-semibold text-apple-text uppercase tracking-wider">
-            Pipeline Execution Status
+          <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
+          <h3 className="font-mono text-[11px] font-semibold text-zinc-700 uppercase tracking-wider">
+            Pipeline Telemetry Stream
           </h3>
         </div>
-        <span className="text-xs font-semibold text-sih-blue bg-sih-blue/10 px-3 py-1 rounded-full">
-          {currentStepName || 'Active'}
+        <span className="font-mono text-[10px] text-zinc-600 bg-zinc-100 px-2 py-0.5 rounded border border-zinc-200">
+          {currentStepName || 'IDLE'}
         </span>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-5 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-5 gap-2.5">
         {steps.map((s) => {
           const Icon = s.icon;
           const isDone = currentStep > s.num;
@@ -45,30 +45,26 @@ export const PipelineVisualizer: React.FC<PipelineVisualizerProps> = ({
           return (
             <div
               key={s.num}
-              className={`p-4 rounded-2xl border transition-all duration-300 ${
+              className={`p-3 rounded border transition-all ${
                 isDone
-                  ? 'bg-sih-green-light/60 border-sih-green/30 text-apple-text'
+                  ? 'bg-emerald-50/60 border-emerald-300 text-zinc-900'
                   : isCurrent
-                  ? 'bg-sih-blue/5 border-sih-blue shadow-apple-sm text-apple-text'
-                  : 'bg-apple-bg border-black/[0.04] text-apple-subtext opacity-60'
+                  ? 'bg-zinc-100 border-zinc-400 text-zinc-900 shadow-sm'
+                  : 'bg-zinc-50 border-zinc-200 text-zinc-400 opacity-60'
               }`}
             >
-              <div className="flex items-center justify-between mb-2">
-                <div className={`p-2 rounded-xl ${
-                  isDone ? 'bg-sih-green text-white' : isCurrent ? 'bg-sih-blue text-white' : 'bg-black/[0.05] text-apple-subtext'
-                }`}>
-                  <Icon className="w-3.5 h-3.5" />
-                </div>
+              <div className="flex items-center justify-between mb-1.5">
+                <Icon className={`w-3.5 h-3.5 ${isDone ? 'text-emerald-700' : isCurrent ? 'text-zinc-900' : 'text-zinc-400'}`} />
                 {isDone ? (
-                  <CheckCircle2 className="w-4 h-4 text-sih-green" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                 ) : isCurrent ? (
-                  <Loader2 className="w-4 h-4 text-sih-blue animate-spin" />
+                  <Loader2 className="w-3.5 h-3.5 text-orange-500 animate-spin" />
                 ) : (
-                  <span className="text-[10px] font-semibold text-apple-subtext">Step {s.num}</span>
+                  <span className="font-mono text-[9px] text-zinc-400">0{s.num}</span>
                 )}
               </div>
-              <h4 className="font-semibold text-xs text-apple-text">{s.title}</h4>
-              <p className="text-[11px] text-apple-subtext mt-0.5">{s.sub}</p>
+              <h4 className="font-semibold text-xs text-zinc-900">{s.title}</h4>
+              <p className="font-mono text-[10px] text-zinc-500 mt-0.5">{s.sub}</p>
             </div>
           );
         })}

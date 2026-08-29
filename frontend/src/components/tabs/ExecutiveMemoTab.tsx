@@ -1,6 +1,6 @@
 import React from 'react';
 import type { ExecutiveMemo, Citation } from '../../types';
-import { Download, ArrowUpRight, Clock } from 'lucide-react';
+import { ArrowUpRight, Printer } from 'lucide-react';
 
 interface ExecutiveMemoTabProps {
   memo: ExecutiveMemo;
@@ -15,72 +15,82 @@ export const ExecutiveMemoTab: React.FC<ExecutiveMemoTabProps> = ({
 }) => {
   const getCitation = (id: string) => citations.find((c) => c.id === id);
 
+  const handleExportPDF = () => {
+    window.print();
+  };
+
   return (
-    <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-4 border-b border-black/[0.06]">
+    <div className="space-y-5">
+      {/* On-screen Toolbar (Hidden during Print) */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-3 border-b border-zinc-200 no-print action-toolbar">
         <div>
-          <span className="text-[11px] font-semibold text-sih-navy uppercase tracking-wider bg-sih-blue-light px-2.5 py-1 rounded-full">
-            Format 1: Executive 1-Page Summary Brief
+          <span className="font-mono text-[10px] font-semibold text-zinc-500 uppercase tracking-wider bg-zinc-100 px-2 py-0.5 rounded border border-zinc-200">
+            FORMAT_01 // EXECUTIVE_MEMO
           </span>
-          <h3 className="text-lg font-semibold text-apple-text mt-1">{memo.title}</h3>
+          <h3 className="text-sm font-semibold text-zinc-900 mt-1">{memo.title}</h3>
         </div>
-        <button
-          onClick={() => window.print()}
-          className="px-4 py-2 rounded-xl bg-apple-bg hover:bg-apple-gray text-apple-text font-medium text-xs border border-black/[0.08] transition-all flex items-center gap-1.5 shadow-apple-sm"
-        >
-          <Download className="w-3.5 h-3.5 text-apple-subtext" />
-          <span>Export PDF</span>
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={handleExportPDF}
+            className="px-3 py-1.5 rounded bg-zinc-900 hover:bg-black text-white font-medium text-xs transition-all flex items-center gap-1.5 shadow-sm"
+          >
+            <Printer className="w-3.5 h-3.5 text-orange-400" />
+            <span>Export Clean PDF (A4)</span>
+          </button>
+        </div>
       </div>
 
-      {/* Document Sheet */}
-      <div className="bg-white rounded-2xl border border-black/[0.08] p-8 shadow-apple-sm">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pb-6 border-b border-black/[0.06] text-xs">
+      {/* Pristine Document Sheet (Print Optimized) */}
+      <div className="bg-white rounded-lg border border-zinc-200 p-8 shadow-sm print-document-container">
+        {/* Document Metadata Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pb-5 border-b border-zinc-200 text-xs print-section">
           <div>
-            <span className="text-apple-subtext block font-medium uppercase text-[10px]">ISSUING AUTHORITY</span>
-            <span className="font-semibold text-apple-text">{memo.organization}</span>
+            <span className="font-mono text-[9px] text-zinc-400 uppercase block font-semibold">AUTHORITY</span>
+            <span className="font-semibold text-zinc-900">{memo.organization}</span>
           </div>
           <div>
-            <span className="text-apple-subtext block font-medium uppercase text-[10px]">DATE</span>
-            <span className="font-semibold text-apple-text">{memo.date}</span>
+            <span className="font-mono text-[9px] text-zinc-400 uppercase block font-semibold">DATE</span>
+            <span className="font-semibold text-zinc-900">{memo.date}</span>
           </div>
           <div>
-            <span className="text-apple-subtext block font-medium uppercase text-[10px]">CLASSIFICATION</span>
-            <span className="font-semibold text-rose-700">{memo.classification}</span>
+            <span className="font-mono text-[9px] text-zinc-400 uppercase block font-semibold">SECURITY CLASSIFICATION</span>
+            <span className="font-semibold text-rose-700 font-mono text-[11px]">{memo.classification}</span>
           </div>
           <div>
-            <span className="text-apple-subtext block font-medium uppercase text-[10px]">AUDIENCE</span>
-            <span className="font-semibold text-apple-text">Senior Leadership</span>
+            <span className="font-mono text-[9px] text-zinc-400 uppercase block font-semibold">DISTRIBUTION</span>
+            <span className="font-semibold text-zinc-900">Senior Leadership</span>
           </div>
         </div>
 
-        <div className="mt-6">
-          <h4 className="text-xs font-semibold text-apple-text uppercase tracking-wider mb-2">
-            1. Executive Summary
+        {/* Section 1: Executive Overview */}
+        <div className="mt-5 print-section">
+          <h4 className="font-mono text-[10px] font-semibold text-zinc-500 uppercase tracking-wider mb-2">
+            01. EXECUTIVE SUMMARY
           </h4>
-          <p className="text-apple-text text-sm leading-relaxed bg-apple-bg p-4 rounded-xl border border-black/[0.04]">
+          <p className="text-xs sm:text-sm text-zinc-800 leading-relaxed bg-zinc-50/80 p-4 rounded border border-zinc-200">
             {memo.executiveSummary}
           </p>
         </div>
 
-        <div className="mt-6">
-          <h4 className="text-xs font-semibold text-apple-text uppercase tracking-wider mb-3">
-            2. Strategic Intelligence Findings (Verified Citations)
+        {/* Section 2: Key Findings with Citations */}
+        <div className="mt-5 print-section">
+          <h4 className="font-mono text-[10px] font-semibold text-zinc-500 uppercase tracking-wider mb-2">
+            02. STRATEGIC INTELLIGENCE FINDINGS
           </h4>
-          <div className="space-y-3">
+          <div className="space-y-2.5">
             {memo.keyFindings.map((finding, idx) => {
               const cit = getCitation(finding.citationId);
 
               return (
                 <div
                   key={idx}
-                  className="p-4 rounded-xl border border-black/[0.06] bg-white hover:border-sih-blue/40 hover:shadow-apple-sm transition-all flex items-start justify-between gap-4"
+                  className="p-3.5 rounded border border-zinc-200 bg-white hover:border-zinc-400 transition-all flex items-start justify-between gap-3"
                 >
-                  <div className="flex items-start gap-3">
-                    <span className="w-5 h-5 rounded-full bg-sih-navy text-white text-[11px] font-semibold flex items-center justify-center shrink-0 mt-0.5">
-                      {idx + 1}
+                  <div className="flex items-start gap-2.5">
+                    <span className="font-mono text-[10px] font-bold text-zinc-500 mt-0.5">
+                      [{idx + 1 < 10 ? `0${idx + 1}` : idx + 1}]
                     </span>
-                    <p className="text-xs font-medium text-apple-text leading-relaxed">
+                    <p className="text-xs text-zinc-800 leading-relaxed font-medium">
                       {finding.point}
                     </p>
                   </div>
@@ -88,10 +98,10 @@ export const ExecutiveMemoTab: React.FC<ExecutiveMemoTabProps> = ({
                   {cit && (
                     <button
                       onClick={() => onOpenCitation(cit)}
-                      className="shrink-0 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-sih-orange/10 hover:bg-sih-orange text-sih-orange hover:text-white transition-all flex items-center gap-1 group"
+                      className="shrink-0 font-mono text-[10px] font-semibold px-2 py-0.5 rounded bg-zinc-100 hover:bg-zinc-900 text-zinc-700 hover:text-white border border-zinc-200 transition-all flex items-center gap-1 group print-citation-badge"
                     >
-                      <span>Page {cit.pageNumber}</span>
-                      <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                      <span>PAGE {cit.pageNumber}</span>
+                      <ArrowUpRight className="w-3 h-3 opacity-60 group-hover:opacity-100 no-print" />
                     </button>
                   )}
                 </div>
@@ -100,23 +110,28 @@ export const ExecutiveMemoTab: React.FC<ExecutiveMemoTabProps> = ({
           </div>
         </div>
 
-        <div className="mt-6">
-          <h4 className="text-xs font-semibold text-apple-text uppercase tracking-wider mb-3">
-            3. Recommended Action Matrix
+        {/* Section 3: Action Matrix */}
+        <div className="mt-5 print-section">
+          <h4 className="font-mono text-[10px] font-semibold text-zinc-500 uppercase tracking-wider mb-2">
+            03. MANDATORY ACTION MATRIX
           </h4>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5">
             {memo.actionItems.map((item, idx) => (
-              <div key={idx} className="p-4 rounded-xl bg-apple-bg border border-black/[0.04]">
-                <div className="flex items-center justify-between text-[11px] font-semibold text-apple-text mb-1.5">
-                  <span className="flex items-center gap-1 text-sih-orange">
-                    <Clock className="w-3 h-3" /> {item.priority}
-                  </span>
-                  <span className="text-apple-subtext">{item.owner}</span>
+              <div key={idx} className="p-3 rounded bg-zinc-50 border border-zinc-200">
+                <div className="flex items-center justify-between font-mono text-[10px] font-semibold text-zinc-900 mb-1">
+                  <span className="text-orange-600">{item.priority}</span>
+                  <span className="text-zinc-500">{item.owner}</span>
                 </div>
-                <p className="text-xs text-apple-text leading-normal">{item.action}</p>
+                <p className="text-xs text-zinc-700 leading-normal">{item.action}</p>
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Print Only Verification Footer */}
+        <div className="mt-6 pt-3 border-t border-zinc-200 font-mono text-[9px] text-zinc-400 flex items-center justify-between">
+          <span>NTRO CYBER INTELLIGENCE SPECIFICATION // SIH 2026 PS ID 26154</span>
+          <span>AUTHENTICATED DETERMINISTIC RAG EXTRACTION</span>
         </div>
       </div>
     </div>
