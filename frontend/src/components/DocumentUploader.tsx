@@ -49,11 +49,18 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
 
       {/* Step 1: Choose Sample or Upload */}
       <div className="space-y-4">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
           <span className="text-xs font-bold text-zinc-900 uppercase tracking-wider">
             Step 1: Choose a Sample Document or Upload Your Own
           </span>
-          <span className="text-xs text-zinc-500 font-medium">Click to select</span>
+          <a
+            href="/NTRO_Cyber_Threat_Advisory_Q3_2026_Sample.pdf"
+            download="NTRO_Cyber_Threat_Advisory_Q3_2026_Sample.pdf"
+            className="text-xs font-bold text-orange-600 hover:text-orange-700 bg-orange-50 hover:bg-orange-100 px-3 py-1 rounded-md border border-orange-200 transition-colors flex items-center gap-1.5"
+          >
+            <span>Download Sample PDF File to Test</span>
+            <span className="text-[10px] font-normal text-zinc-500">(PDF)</span>
+          </a>
         </div>
 
         {/* 2 Big Easy Sample Cards */}
