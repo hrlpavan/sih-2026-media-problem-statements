@@ -21,7 +21,6 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
     COLOR_ORANGE_HDR = RGBColor(230, 145, 56)   # Reference Orange/Gold Header (#E69138)
     COLOR_FOOTER_BLUE = RGBColor(0, 119, 200)   # Official SIH Footer Ribbon (#0077C8)
     COLOR_TEXT = RGBColor(20, 20, 20)           # Clean dark text
-    COLOR_MUTED = RGBColor(80, 80, 80)
     COLOR_CARD_BG = RGBColor(245, 248, 250)     # Soft subtle card fill
     COLOR_CARD_BORDER = RGBColor(210, 220, 230) # Soft border
 
@@ -29,6 +28,10 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
     FONT_BODY = "Arial"
     LOGO_PATH = "sih_official_logo.png"
     FLOWCHART_PATH = "omnitransform_pipeline_flowchart.png"
+    
+    # LIVE PROTOTYPE & DEMO LINKS
+    LIVE_DEMO_URL = "https://hrl-brand-seo.vercel.app"
+    GITHUB_REPO_URL = "https://github.com/hrlpavan/sih-2026-media-problem-statements"
 
     def add_header_footer(slide, slide_num, center_title, team_name="OmniTransform"):
         # Top Left Team Oval
@@ -88,11 +91,10 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
         p_num.alignment = PP_ALIGN.RIGHT
 
     # =========================================================================
-    # SLIDE 1: TITLE PAGE (Exact Match to Reference Sample Page 1)
+    # SLIDE 1: TITLE PAGE
     # =========================================================================
     slide1 = prs.slides.add_slide(blank_layout)
 
-    # Top Title
     tb1_top = slide1.shapes.add_textbox(Inches(0.8), Inches(0.6), Inches(11.7), Inches(0.8))
     p_t1 = tb1_top.text_frame.paragraphs[0]
     p_t1.text = "SMART INDIA HACKATHON 2026"
@@ -102,7 +104,6 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
     p_t1.font.color.rgb = COLOR_NAVY
     p_t1.alignment = PP_ALIGN.LEFT
 
-    # Left: Simple Bullet Details (Exactly matching sample style)
     tb1_fields = slide1.shapes.add_textbox(Inches(0.8), Inches(1.6), Inches(8.2), Inches(5.2))
     tf1 = tb1_fields.text_frame
     tf1.word_wrap = True
@@ -133,12 +134,11 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
         r2.font.color.rgb = COLOR_TEXT
         p.space_after = Pt(14)
 
-    # Right: Large Official SIH Logo
     if os.path.exists(LOGO_PATH):
         slide1.shapes.add_picture(LOGO_PATH, Inches(9.2), Inches(1.8), width=Inches(3.6))
 
     # =========================================================================
-    # SLIDE 2: PROPOSED SOLUTION (Exact 3-Column Layout from Sample Page 2)
+    # SLIDE 2: PROPOSED SOLUTION
     # =========================================================================
     slide2 = prs.slides.add_slide(blank_layout)
     add_header_footer(slide2, 2, "OMNITRANSFORM (ALL-IN-ONE) AI CONTENT PLATFORM")
@@ -148,9 +148,7 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
     c_top = Inches(1.3)
     c_h = Inches(5.5)
 
-    # Function to create a clean column with header banner
     def create_column_card(left_in, header_title, header_color, bullet_items):
-        # Header Banner
         hdr = slide2.shapes.add_shape(MSO_SHAPE.RECTANGLE, left_in, c_top, col_w, Inches(0.45))
         hdr.fill.solid()
         hdr.fill.fore_color.rgb = header_color
@@ -165,7 +163,6 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
         p.font.color.rgb = COLOR_WHITE
         p.alignment = PP_ALIGN.CENTER
 
-        # Content Box
         card = slide2.shapes.add_shape(MSO_SHAPE.RECTANGLE, left_in, c_top + Inches(0.45), col_w, c_h - Inches(0.45))
         card.fill.solid()
         card.fill.fore_color.rgb = COLOR_CARD_BG
@@ -193,7 +190,6 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
             r2.font.color.rgb = COLOR_TEXT
             p.space_after = Pt(7)
 
-    # Column 1: Proposed Solution Overview (Green Header)
     col1_items = [
         ("Simple Web Platform", "A clean and fast web application built for government officers, analysts, and students."),
         ("Upload Any Document", "Takes long PDFs, research whitepapers, and government reports up to 100+ pages."),
@@ -204,7 +200,6 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
     ]
     create_column_card(Inches(0.6), "Proposed Solution Overview", COLOR_GREEN_HDR, col1_items)
 
-    # Column 2: Key Feature & Technology (Teal Header)
     col2_items = [
         ("Smart PDF Parser", "Extracts clean text, headings, and complex tables using PyMuPDF and pdfplumber."),
         ("Fast AI Summarization", "Uses open-source Llama 3 and Mistral models to extract key decisions and highlights."),
@@ -215,7 +210,6 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
     ]
     create_column_card(Inches(0.6) + col_w + col_gap, "Key Feature & Technology", COLOR_TEAL_HDR, col2_items)
 
-    # Column 3: Innovation & Social Impact (Green Header)
     col3_items = [
         ("All-in-One Solution", "Replaces 5 separate tools into one simple dashboard (Summary + PPT + Audio + Image + Translate)."),
         ("Zero Hallucinations", "The AI is locked to only use facts from the uploaded document, preventing fake numbers."),
@@ -227,17 +221,15 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
     create_column_card(Inches(0.6) + (col_w + col_gap)*2, "Innovation & Social Impact", COLOR_GREEN_HDR, col3_items)
 
     # =========================================================================
-    # SLIDE 3: TECHNICAL APPROACH (Exact Layout from Sample Page 3)
+    # SLIDE 3: TECHNICAL APPROACH
     # =========================================================================
     slide3 = prs.slides.add_slide(blank_layout)
     add_header_footer(slide3, 3, "TECHNICAL APPROACH")
 
-    # Left: Architecture Flowchart
     if os.path.exists(FLOWCHART_PATH):
         slide3.shapes.add_picture(FLOWCHART_PATH, Inches(0.6), Inches(1.3), width=Inches(6.6))
 
-    # Right: Technologies & Process (Simple Basic English matching sample)
-    tb3_r = slide3.shapes.add_textbox(Inches(7.4), Inches(1.3), Inches(5.3), Inches(5.0))
+    tb3_r = slide3.shapes.add_textbox(Inches(7.4), Inches(1.3), Inches(5.3), Inches(4.8))
     tf3 = tb3_r.text_frame
     tf3.word_wrap = True
 
@@ -288,27 +280,34 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
         ps.font.color.rgb = COLOR_TEXT
         ps.space_after = Pt(2)
 
-    # Blue Demo Link Box (Exact from sample)
-    tb3_link = slide3.shapes.add_textbox(Inches(7.4), Inches(6.3), Inches(5.3), Inches(0.6))
-    p_link = tb3_link.text_frame.paragraphs[0]
-    p_link.text = "APP PROTOTYPE VIDEO / DEMO LINK"
-    p_link.font.size = Pt(16)
+    # Clickable Live Prototype Demo Box
+    tb3_link = slide3.shapes.add_textbox(Inches(7.4), Inches(6.15), Inches(5.3), Inches(0.8))
+    tf_l = tb3_link.text_frame
+    p_link = tf_l.paragraphs[0]
+    p_link.text = "APP PROTOTYPE LIVE DEMO LINK"
+    p_link.font.size = Pt(15)
     p_link.font.bold = True
     p_link.font.name = FONT_BODY
     p_link.font.color.rgb = COLOR_FOOTER_BLUE
+    
+    p_url = tf_l.add_paragraph()
+    p_url.text = LIVE_DEMO_URL
+    p_url.font.size = Pt(13)
+    p_url.font.bold = True
+    p_url.font.underline = True
+    p_url.font.name = FONT_BODY
+    p_url.font.color.rgb = COLOR_FOOTER_BLUE
 
     # =========================================================================
-    # SLIDE 4: FEASIBILITY AND VIABILITY (Exact Layout from Sample Page 4)
+    # SLIDE 4: FEASIBILITY AND VIABILITY
     # =========================================================================
     slide4 = prs.slides.add_slide(blank_layout)
     add_header_footer(slide4, 4, "FEASIBILITY AND VIABILITY")
 
-    # Left Container for Text
     tb4_l = slide4.shapes.add_textbox(Inches(0.6), Inches(1.3), Inches(7.5), Inches(5.5))
     tf4 = tb4_l.text_frame
     tf4.word_wrap = True
 
-    # 1. Feasibility
     p = tf4.paragraphs[0]
     p.text = "ANALYSIS OF THE FEASIBILITY OF THE IDEA"
     p.font.size = Pt(14)
@@ -334,7 +333,6 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
         r2.font.color.rgb = COLOR_TEXT
         pf.space_after = Pt(5)
 
-    # 2. Potential Challenges
     pc = tf4.add_paragraph()
     pc.text = "\nPOTENTIAL CHALLENGES"
     pc.font.size = Pt(14)
@@ -360,7 +358,6 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
         r2.font.color.rgb = COLOR_TEXT
         p_c.space_after = Pt(5)
 
-    # 3. Strategies to Overcome
     ps = tf4.add_paragraph()
     ps.text = "\nSTRATEGIES TO OVERCOME CHALLENGES"
     ps.font.size = Pt(14)
@@ -386,7 +383,6 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
         r2.font.color.rgb = COLOR_TEXT
         p_s.space_after = Pt(5)
 
-    # Right Container: Clean Graphic Box matching sample
     c4_r = slide4.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(8.4), Inches(1.3), Inches(4.3), Inches(5.4))
     c4_r.fill.solid()
     c4_r.fill.fore_color.rgb = COLOR_CARD_BG
@@ -428,13 +424,11 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
         p.space_after = Pt(10)
 
     # =========================================================================
-    # SLIDE 5: IMPACT AND BENEFITS (Exact Layout with User Story from Sample Page 5)
+    # SLIDE 5: IMPACT AND BENEFITS
     # =========================================================================
     slide5 = prs.slides.add_slide(blank_layout)
     add_header_footer(slide5, 5, "IMPACT AND BENEFITS")
 
-    # Left Container: Impact & Benefits Boxes
-    # 1. Top Left: Impact
     hdr_imp = slide5.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(0.6), Inches(1.3), Inches(6.0), Inches(0.4))
     hdr_imp.fill.solid()
     hdr_imp.fill.fore_color.rgb = COLOR_ORANGE_HDR
@@ -475,7 +469,6 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
         r2.font.color.rgb = COLOR_TEXT
         p.space_after = Pt(4)
 
-    # 2. Bottom Left: Benefits
     hdr_ben = slide5.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(0.6), Inches(4.3), Inches(6.0), Inches(0.4))
     hdr_ben.fill.solid()
     hdr_ben.fill.fore_color.rgb = COLOR_ORANGE_HDR
@@ -516,7 +509,6 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
         r2.font.color.rgb = COLOR_TEXT
         p.space_after = Pt(4)
 
-    # Right Container: For Instance: User Story (Exact matching sample)
     hdr_story = slide5.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(6.9), Inches(1.3), Inches(5.8), Inches(0.4))
     hdr_story.fill.solid()
     hdr_story.fill.fore_color.rgb = COLOR_ORANGE_HDR
@@ -564,43 +556,49 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
         p.space_after = Pt(4)
 
     # =========================================================================
-    # SLIDE 6: RESEARCH AND REFERENCES (Exact Diamond Bullets from Sample Page 6)
+    # SLIDE 6: RESEARCH AND REFERENCES (With Explicit Clickable URLs)
     # =========================================================================
     slide6 = prs.slides.add_slide(blank_layout)
     add_header_footer(slide6, 6, "RESEARCH AND REFERENCES")
 
-    tb6 = slide6.shapes.add_textbox(Inches(1.5), Inches(1.6), Inches(10.3), Inches(5.2))
+    tb6 = slide6.shapes.add_textbox(Inches(1.0), Inches(1.4), Inches(11.3), Inches(5.4))
     tf6 = tb6.text_frame
     tf6.word_wrap = True
 
-    links_list = [
-        "APP PROTOTYPE LIVE DEMO LINK",
-        "GITHUB PROJECT SOURCE CODE REPOSITORY",
-        "SMART INDIA HACKATHON 2026 OFFICIAL PROBLEM STATEMENT (PS 26154)",
-        "NATIONAL TECHNICAL RESEARCH ORGANISATION (NTRO) PORTAL",
-        "RESEARCH PAPER ON AI SUMMARIZATION & RAG (LEWIS ET AL.)",
-        "BHASHINI & AI4BHARAT MULTILINGUAL INDIAN LANGUAGE RESEARCH"
+    links_data = [
+        ("APP PROTOTYPE LIVE DEMO LINK", LIVE_DEMO_URL),
+        ("GITHUB PROJECT REPOSITORY LINK", GITHUB_REPO_URL),
+        ("SMART INDIA HACKATHON 2026 OFFICIAL PORTAL (PS ID 26154)", "https://www.sih.gov.in/sih2026PS"),
+        ("NATIONAL TECHNICAL RESEARCH ORGANISATION (NTRO) PORTAL", "https://ntro.gov.in"),
+        ("RESEARCH ON RAG & SOURCE CITATIONS (LEWIS ET AL.)", "https://arxiv.org/abs/2005.11401"),
+        ("BHASHINI & AI4BHARAT MULTILINGUAL RESEARCH", "https://bhashini.gov.in")
     ]
 
-    for idx, item in enumerate(links_list):
+    for idx, (title, url) in enumerate(links_data):
         p = tf6.add_paragraph() if idx > 0 else tf6.paragraphs[0]
         r1 = p.add_run()
         r1.text = "❖  "
         r1.font.bold = True
-        r1.font.size = Pt(20)
+        r1.font.size = Pt(15)
         r1.font.color.rgb = COLOR_TEXT
 
         r2 = p.add_run()
-        r2.text = item
+        r2.text = f"{title}:  "
         r2.font.bold = True
-        r2.font.underline = True
-        r2.font.size = Pt(20)
+        r2.font.size = Pt(14)
         r2.font.name = FONT_TITLE
-        r2.font.color.rgb = COLOR_FOOTER_BLUE
-        p.space_after = Pt(18)
+        r2.font.color.rgb = COLOR_NAVY
+
+        r3 = p.add_run()
+        r3.text = url
+        r3.font.underline = True
+        r3.font.size = Pt(13)
+        r3.font.name = FONT_BODY
+        r3.font.color.rgb = COLOR_FOOTER_BLUE
+        p.space_after = Pt(12)
 
     prs.save(output_path)
-    print(f"Exact SIH style deck created successfully at: {output_path}")
+    print(f"Deck with active demo links created successfully at: {output_path}")
 
 if __name__ == "__main__":
     out = sys.argv[1] if len(sys.argv) > 1 else "SIH2026_Idea_Presentation_PS26154.pptx"
