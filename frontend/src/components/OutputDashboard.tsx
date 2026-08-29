@@ -16,36 +16,36 @@ export const OutputDashboard: React.FC<OutputDashboardProps> = ({ output, onOpen
   const [activeTab, setActiveTab] = useState<'memo' | 'slides' | 'infographics' | 'press' | 'audio'>('memo');
 
   const tabs = [
-    { id: 'memo', label: '01 Memo', icon: FileText, desc: 'Executive Brief' },
-    { id: 'slides', label: '02 Slides', icon: Presentation, desc: 'Meeting Deck' },
-    { id: 'infographics', label: '03 Metrics', icon: BarChart3, desc: 'Data Cards' },
-    { id: 'press', label: '04 Press', icon: Newspaper, desc: 'Multilingual' },
-    { id: 'audio', label: '05 Audio', icon: Radio, desc: '60s Voice Brief' }
+    { id: 'memo', label: '1. Summary Memo', icon: FileText, desc: '1-Page Executive Brief' },
+    { id: 'slides', label: '2. Meeting Slides', icon: Presentation, desc: 'Ready-to-Present PPT' },
+    { id: 'infographics', label: '3. Infographics', icon: BarChart3, desc: 'Visual Key Numbers' },
+    { id: 'press', label: '4. Regional News', icon: Newspaper, desc: '4 Indian Languages' },
+    { id: 'audio', label: '5. Voice Podcast', icon: Radio, desc: '60s Audio Briefing' }
   ];
 
   return (
-    <div className="industrial-panel rounded-xl p-6 mb-8">
-      {/* Telemetry Header */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-4 border-b border-zinc-200 no-print">
+    <div className="bg-white rounded-2xl border border-zinc-200 p-6 sm:p-8 shadow-sm mb-8">
+      {/* Success Title */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-zinc-200 no-print">
         <div>
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-            <h2 className="text-sm font-semibold uppercase tracking-wider text-zinc-900">
-              Single-Pass Multi-Format Transformation Complete
+            <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+            <h2 className="text-lg sm:text-xl font-bold text-zinc-900">
+              Transformation Complete! Choose a Format to View:
             </h2>
           </div>
-          <p className="font-mono text-[11px] text-zinc-500 mt-0.5">
-            PAGES: {output.sourcePageCount} // LATENCY: {(output.processingTimeMs / 1000).toFixed(2)}S // STATUS: VERIFIED
+          <p className="text-xs text-zinc-500 mt-1">
+            Converted {output.sourcePageCount} pages in {(output.processingTimeMs / 1000).toFixed(1)} seconds • Every fact is verified with original page citations.
           </p>
         </div>
 
-        <span className="font-mono text-[10px] font-medium text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200">
-          REVERSE_CITATION_INDEX: 100% GROUNDED
+        <span className="text-xs font-bold text-emerald-800 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-200">
+          100% Verified Facts (Zero Fake Data)
         </span>
       </div>
 
-      {/* Industrial Segmented Tabs */}
-      <div className="grid grid-cols-2 sm:grid-cols-5 gap-1.5 my-5 p-1 bg-zinc-100 rounded-lg border border-zinc-200 tabs-nav-bar no-print">
+      {/* 5 Big Friendly Tabs */}
+      <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 my-6 p-1.5 bg-zinc-100 rounded-xl border border-zinc-200 tabs-nav-bar no-print">
         {tabs.map((t) => {
           const Icon = t.icon;
           const isActive = activeTab === t.id;
@@ -54,18 +54,18 @@ export const OutputDashboard: React.FC<OutputDashboardProps> = ({ output, onOpen
             <button
               key={t.id}
               onClick={() => setActiveTab(t.id as any)}
-              className={`p-2.5 rounded font-medium transition-all text-left flex flex-col justify-between ${
+              className={`p-3 rounded-lg font-medium transition-all text-left flex flex-col justify-between cursor-pointer ${
                 isActive
-                  ? 'bg-white text-zinc-900 shadow-sm border border-zinc-200 font-semibold'
-                  : 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-200/50'
+                  ? 'bg-white text-zinc-900 shadow-md border border-zinc-300 font-bold scale-[1.02]'
+                  : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60'
               }`}
             >
               <div className="flex items-center justify-between mb-1">
-                <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-orange-600' : 'text-zinc-400'}`} />
-                {isActive && <span className="w-1.5 h-1.5 rounded-full bg-orange-600" />}
+                <Icon className={`w-4 h-4 ${isActive ? 'text-orange-600' : 'text-zinc-500'}`} />
+                {isActive && <span className="w-2 h-2 rounded-full bg-orange-600" />}
               </div>
-              <span className="text-xs font-semibold block leading-tight">{t.label}</span>
-              <span className="font-mono text-[9px] block text-zinc-400 mt-0.5">
+              <span className="text-xs font-bold block leading-tight">{t.label}</span>
+              <span className="text-[11px] block text-zinc-500 mt-0.5 font-normal">
                 {t.desc}
               </span>
             </button>
@@ -73,8 +73,8 @@ export const OutputDashboard: React.FC<OutputDashboardProps> = ({ output, onOpen
         })}
       </div>
 
-      {/* Output Content Panes */}
-      <div>
+      {/* Tab Panes */}
+      <div className="mt-6">
         {activeTab === 'memo' && (
           <ExecutiveMemoTab
             memo={output.executiveMemo}

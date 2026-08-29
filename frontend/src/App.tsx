@@ -64,14 +64,14 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-surface-50">
+    <div className="min-h-screen flex flex-col bg-zinc-50 font-sans">
       <Navbar
         currentPersona={currentPersona}
         onPersonaChange={handlePersonaChange}
         isProcessing={isProcessing}
       />
 
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <DocumentUploader
           selectedDoc={selectedDoc}
           onSelectDoc={setSelectedDoc}

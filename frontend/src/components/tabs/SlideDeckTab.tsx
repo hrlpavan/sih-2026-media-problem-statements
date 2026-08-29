@@ -21,13 +21,14 @@ export const SlideDeckTab: React.FC<SlideDeckTabProps> = ({ slides }) => {
   };
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-6">
+      {/* Header with Present & Download */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-3 border-b border-zinc-200 no-print">
         <div>
-          <span className="font-mono text-[10px] font-semibold text-zinc-500 uppercase tracking-wider bg-zinc-100 px-2 py-0.5 rounded border border-zinc-200">
-            FORMAT_02 // SLIDE_DECK
+          <span className="text-xs font-bold text-orange-700 bg-orange-50 px-2.5 py-1 rounded-md border border-orange-200">
+            Format 2: Meeting Presentation Deck
           </span>
-          <h3 className="text-sm font-semibold text-zinc-900 mt-1">
+          <h3 className="text-base font-bold text-zinc-900 mt-1">
             Slide {currentSlideIdx + 1} of {slides.length}: {slide.title}
           </h3>
         </div>
@@ -35,53 +36,53 @@ export const SlideDeckTab: React.FC<SlideDeckTabProps> = ({ slides }) => {
         <div className="flex items-center gap-2">
           <button
             onClick={() => setIsFullscreen(!isFullscreen)}
-            className="px-3 py-1.5 rounded bg-white hover:bg-zinc-100 text-zinc-700 font-medium text-xs border border-zinc-200 transition-all flex items-center gap-1.5 shadow-sm"
+            className="px-3.5 py-2 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-bold text-xs border border-zinc-300 transition-all flex items-center gap-1.5 cursor-pointer"
           >
-            <Maximize2 className="w-3.5 h-3.5 text-zinc-500" />
-            <span>{isFullscreen ? 'Exit' : 'Present'}</span>
+            <Maximize2 className="w-3.5 h-3.5 text-zinc-600" />
+            <span>{isFullscreen ? 'Exit Fullscreen' : 'Present Mode'}</span>
           </button>
           <a
             href="https://github.com/hrlpavan/omnitransform-ai-resources/raw/main/SIH2026_Idea_Presentation_PS26154.pptx"
-            className="px-3 py-1.5 rounded bg-zinc-900 hover:bg-black text-white font-medium text-xs shadow-sm transition-all flex items-center gap-1.5"
+            className="px-3.5 py-2 rounded-lg bg-zinc-900 hover:bg-black text-white font-bold text-xs transition-all flex items-center gap-1.5 shadow-sm"
           >
             <Download className="w-3.5 h-3.5 text-orange-400" />
-            <span>Download .PPTX</span>
+            <span>Download PowerPoint (.PPTX)</span>
           </a>
         </div>
       </div>
 
-      {/* 16:9 Presentation Canvas */}
-      <div className={`relative bg-white rounded-lg border border-zinc-200 shadow-sm overflow-hidden transition-all ${
+      {/* 16:9 Widescreen Slide */}
+      <div className={`relative bg-white rounded-2xl border-2 border-zinc-300 shadow-md overflow-hidden transition-all ${
         isFullscreen ? 'fixed inset-4 z-50 flex flex-col justify-between p-12 bg-white' : 'aspect-[16/9] p-8 flex flex-col justify-between'
       }`}>
         <div className="flex items-center justify-between border-b border-zinc-200 pb-3">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-orange-600" />
-            <span className="font-mono text-[11px] font-semibold text-zinc-900 uppercase">
-              OMNITRANSFORM_AI // INTELLIGENCE_DECK
+            <span className="w-2.5 h-2.5 rounded-full bg-orange-600" />
+            <span className="font-bold text-xs text-zinc-900 uppercase">
+              OmniTransform AI Briefing
             </span>
           </div>
-          <span className="font-mono text-[11px] text-zinc-400">
-            SLIDE [{currentSlideIdx + 1 < 10 ? `0${currentSlideIdx + 1}` : currentSlideIdx + 1}/0{slides.length}]
+          <span className="text-xs font-bold text-zinc-500">
+            Slide {slide.slideNumber} / {slides.length}
           </span>
         </div>
 
         <div className="my-auto py-4">
-          <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 mb-1 tracking-tight">
+          <h2 className="text-xl sm:text-3xl font-bold text-zinc-900 mb-2 tracking-tight">
             {slide.title}
           </h2>
           {slide.subtitle && (
-            <p className="font-mono text-xs text-orange-600 mb-5">
+            <p className="text-xs sm:text-sm font-semibold text-orange-600 mb-6">
               {slide.subtitle}
             </p>
           )}
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center mt-4">
-            <div className="md:col-span-2 space-y-2.5">
+            <div className="md:col-span-2 space-y-3">
               {slide.bullets.map((b, idx) => (
-                <div key={idx} className="flex items-start gap-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-900 mt-2 shrink-0" />
-                  <p className="text-xs sm:text-sm text-zinc-800 leading-relaxed font-medium">
+                <div key={idx} className="flex items-start gap-3">
+                  <span className="w-2 h-2 rounded-full bg-zinc-900 mt-2 shrink-0" />
+                  <p className="text-xs sm:text-base text-zinc-800 font-medium leading-relaxed">
                     {b}
                   </p>
                 </div>
@@ -89,11 +90,11 @@ export const SlideDeckTab: React.FC<SlideDeckTabProps> = ({ slides }) => {
             </div>
 
             {slide.keyMetric && (
-              <div className="p-5 rounded bg-zinc-50 border border-zinc-200 text-center flex flex-col items-center justify-center">
-                <span className="text-3xl font-extrabold text-zinc-900 tracking-tight font-mono">
+              <div className="p-6 rounded-xl bg-orange-50/60 border border-orange-200 text-center flex flex-col items-center justify-center">
+                <span className="text-3xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight">
                   {slide.keyMetric.value}
                 </span>
-                <span className="font-mono text-[10px] font-semibold text-zinc-500 uppercase tracking-wider mt-1">
+                <span className="text-xs font-bold text-orange-700 uppercase tracking-wider mt-1">
                   {slide.keyMetric.label}
                 </span>
               </div>
@@ -101,30 +102,30 @@ export const SlideDeckTab: React.FC<SlideDeckTabProps> = ({ slides }) => {
           </div>
         </div>
 
-        <div className="border-t border-zinc-200 pt-3 flex items-center justify-between font-mono text-[10px] text-zinc-400">
-          <span>NTRO CYBER INTELLIGENCE DIVISION</span>
-          <span>TIER-1 SPECIFICATION // SIH-2026</span>
+        <div className="border-t border-zinc-200 pt-3 flex items-center justify-between text-xs text-zinc-500">
+          <span>NTRO Cyber Intelligence Division</span>
+          <span>Verified Accurate • Confidential</span>
         </div>
       </div>
 
-      {/* Navigation Toolbar */}
+      {/* Slide Navigation Buttons */}
       <div className="flex items-center justify-between no-print">
         <button
           onClick={prevSlide}
           disabled={currentSlideIdx === 0}
-          className="px-3 py-1.5 rounded bg-white border border-zinc-200 hover:bg-zinc-50 text-zinc-700 font-medium text-xs shadow-sm disabled:opacity-40 disabled:pointer-events-none transition-all flex items-center gap-1"
+          className="px-4 py-2 rounded-lg bg-white border border-zinc-300 hover:bg-zinc-50 text-zinc-800 font-bold text-xs shadow-sm disabled:opacity-40 disabled:pointer-events-none transition-all flex items-center gap-1 cursor-pointer"
         >
-          <ChevronLeft className="w-3.5 h-3.5" />
-          <span>Previous</span>
+          <ChevronLeft className="w-4 h-4" />
+          <span>Previous Slide</span>
         </button>
 
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-2">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrentSlideIdx(i)}
-              className={`h-1.5 rounded-full transition-all ${
-                currentSlideIdx === i ? 'w-6 bg-zinc-900' : 'w-1.5 bg-zinc-300 hover:bg-zinc-400'
+              className={`h-2 rounded-full transition-all cursor-pointer ${
+                currentSlideIdx === i ? 'w-8 bg-zinc-900' : 'w-2 bg-zinc-300 hover:bg-zinc-400'
               }`}
             />
           ))}
@@ -133,10 +134,10 @@ export const SlideDeckTab: React.FC<SlideDeckTabProps> = ({ slides }) => {
         <button
           onClick={nextSlide}
           disabled={currentSlideIdx === slides.length - 1}
-          className="px-3 py-1.5 rounded bg-white border border-zinc-200 hover:bg-zinc-50 text-zinc-700 font-medium text-xs shadow-sm disabled:opacity-40 disabled:pointer-events-none transition-all flex items-center gap-1"
+          className="px-4 py-2 rounded-lg bg-white border border-zinc-300 hover:bg-zinc-50 text-zinc-800 font-bold text-xs shadow-sm disabled:opacity-40 disabled:pointer-events-none transition-all flex items-center gap-1 cursor-pointer"
         >
-          <span>Next</span>
-          <ChevronRight className="w-3.5 h-3.5" />
+          <span>Next Slide</span>
+          <ChevronRight className="w-4 h-4" />
         </button>
       </div>
     </div>

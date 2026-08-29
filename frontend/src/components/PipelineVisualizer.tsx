@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, Loader2, Database, FileCode, Layers, ShieldCheck, Cpu } from 'lucide-react';
+import { CheckCircle2, Loader2 } from 'lucide-react';
 
 interface PipelineVisualizerProps {
   currentStep: number;
@@ -9,62 +9,64 @@ interface PipelineVisualizerProps {
 
 export const PipelineVisualizer: React.FC<PipelineVisualizerProps> = ({
   currentStep,
-  currentStepName,
   isProcessing
 }) => {
-  const steps = [
-    { num: 1, title: 'Spatial Parser', sub: 'PyMuPDF Coordinates', icon: FileCode },
-    { num: 2, title: 'Vector Index', sub: 'FAISS Chunking', icon: Database },
-    { num: 3, title: 'LLM Orchestrator', sub: 'Llama 3.3 Schema', icon: Cpu },
-    { num: 4, title: 'Compilers', sub: 'Slides, Audio, Press', icon: Layers },
-    { num: 5, title: 'Citations', sub: 'Fact Verification', icon: ShieldCheck }
-  ];
-
   if (!isProcessing && currentStep === 0) return null;
 
+  const steps = [
+    'Reading PDF Pages',
+    'Finding Key Points',
+    'Writing 1-Page Summary',
+    'Designing Slides & Charts',
+    'Synthesizing Voice Audio'
+  ];
+
+  const progressPercent = Math.min(100, Math.round((currentStep / 5) * 100));
+
   return (
-    <div className="industrial-panel rounded-xl p-5 mb-6 pipeline-container no-print transition-all">
+    <div className="bg-white rounded-2xl border border-zinc-200 p-6 shadow-sm mb-6 pipeline-container no-print">
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-          <h3 className="font-mono text-[11px] font-semibold text-zinc-700 uppercase tracking-wider">
-            Pipeline Telemetry Stream
+          <Loader2 className="w-4 h-4 text-orange-600 animate-spin" />
+          <h3 className="text-sm font-bold text-zinc-900">
+            Processing Document ({progressPercent}%)
           </h3>
         </div>
-        <span className="font-mono text-[10px] text-zinc-600 bg-zinc-100 px-2 py-0.5 rounded border border-zinc-200">
-          {currentStepName || 'IDLE'}
+        <span className="text-xs font-semibold text-orange-700 bg-orange-50 px-2.5 py-1 rounded-full border border-orange-200">
+          Generating 5 Synchronized Formats
         </span>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-5 gap-2.5">
-        {steps.map((s) => {
-          const Icon = s.icon;
-          const isDone = currentStep > s.num;
-          const isCurrent = currentStep === s.num;
+      {/* Progress Track */}
+      <div className="w-full bg-zinc-100 h-2.5 rounded-full overflow-hidden mb-4">
+        <div
+          className="bg-orange-600 h-full rounded-full transition-all duration-500 ease-out"
+          style={{ width: `${progressPercent}%` }}
+        />
+      </div>
+
+      {/* 5 Simple Steps */}
+      <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-xs">
+        {steps.map((title, idx) => {
+          const stepNum = idx + 1;
+          const isDone = currentStep > stepNum;
+          const isCurrent = currentStep === stepNum;
 
           return (
             <div
-              key={s.num}
-              className={`p-3 rounded border transition-all ${
+              key={idx}
+              className={`p-2 rounded-lg border font-medium ${
                 isDone
-                  ? 'bg-emerald-50/60 border-emerald-300 text-zinc-900'
+                  ? 'bg-emerald-50 border-emerald-300 text-emerald-800'
                   : isCurrent
-                  ? 'bg-zinc-100 border-zinc-400 text-zinc-900 shadow-sm'
-                  : 'bg-zinc-50 border-zinc-200 text-zinc-400 opacity-60'
+                  ? 'bg-orange-50 border-orange-400 text-orange-900 font-bold'
+                  : 'bg-zinc-50 border-zinc-200 text-zinc-400'
               }`}
             >
-              <div className="flex items-center justify-between mb-1.5">
-                <Icon className={`w-3.5 h-3.5 ${isDone ? 'text-emerald-700' : isCurrent ? 'text-zinc-900' : 'text-zinc-400'}`} />
-                {isDone ? (
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                ) : isCurrent ? (
-                  <Loader2 className="w-3.5 h-3.5 text-orange-500 animate-spin" />
-                ) : (
-                  <span className="font-mono text-[9px] text-zinc-400">0{s.num}</span>
-                )}
+              <div className="flex items-center justify-center gap-1">
+                {isDone && <CheckCircle2 className="w-3 h-3 text-emerald-600" />}
+                <span>{title}</span>
               </div>
-              <h4 className="font-semibold text-xs text-zinc-900">{s.title}</h4>
-              <p className="font-mono text-[10px] text-zinc-500 mt-0.5">{s.sub}</p>
             </div>
           );
         })}

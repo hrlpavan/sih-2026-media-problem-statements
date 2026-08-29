@@ -8,67 +8,70 @@ interface InfographicsTabProps {
 
 export const InfographicsTab: React.FC<InfographicsTabProps> = ({ cards }) => {
   return (
-    <div className="space-y-5">
+    <div className="space-y-6">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-3 border-b border-zinc-200 no-print">
         <div>
-          <span className="font-mono text-[10px] font-semibold text-zinc-500 uppercase tracking-wider bg-zinc-100 px-2 py-0.5 rounded border border-zinc-200">
-            FORMAT_03 // METRIC_TELEMETRY
+          <span className="text-xs font-bold text-orange-700 bg-orange-50 px-2.5 py-1 rounded-md border border-orange-200">
+            Format 3: Visual Infographics
           </span>
-          <h3 className="text-sm font-semibold text-zinc-900 mt-1">
-            Visual Metric Cards & Statistical Data
+          <h3 className="text-base font-bold text-zinc-900 mt-1">
+            Visual Key Metric Data Cards
           </h3>
         </div>
         <button
-          onClick={() => alert('Exporting SVG/PNG metric cards...')}
-          className="px-3 py-1.5 rounded bg-white hover:bg-zinc-100 text-zinc-700 font-medium text-xs border border-zinc-200 transition-all flex items-center gap-1.5 shadow-sm"
+          onClick={() => alert('Downloading all metric cards as images...')}
+          className="px-4 py-2 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-bold text-xs border border-zinc-300 transition-all flex items-center gap-1.5 cursor-pointer shadow-sm"
         >
-          <Download className="w-3.5 h-3.5 text-zinc-500" />
-          <span>Export Cards (PNG)</span>
+          <Download className="w-3.5 h-3.5 text-zinc-600" />
+          <span>Download All Cards (PNG)</span>
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {cards.map((card) => (
           <div
             key={card.id}
-            className="bg-white rounded-lg border border-zinc-200 p-5 shadow-sm hover:border-zinc-300 transition-all flex flex-col justify-between"
+            className="bg-white rounded-2xl border-2 border-zinc-200 p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
           >
             <div>
-              <span className="font-mono text-[9px] font-semibold text-zinc-400 uppercase tracking-wider block mb-1">
+              <span className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider block mb-1">
                 {card.category}
               </span>
-              <h4 className="font-semibold text-xs text-zinc-900">{card.title}</h4>
+              <h4 className="font-bold text-sm text-zinc-900">{card.title}</h4>
 
-              <div className="my-4 p-4 rounded bg-zinc-50 border border-zinc-200 text-center">
+              {/* Big Stat Box */}
+              <div className="my-5 p-5 rounded-xl bg-zinc-50 border border-zinc-200 text-center">
                 <span
-                  className="text-3xl font-extrabold block font-mono tracking-tight text-zinc-900"
+                  className="text-4xl font-extrabold block tracking-tight"
+                  style={{ color: card.color }}
                 >
                   {card.statValue}
                 </span>
-                <span className="font-mono text-[10px] text-zinc-500 block mt-0.5 font-medium">
+                <span className="text-xs font-bold text-zinc-600 block mt-1">
                   {card.statLabel}
                 </span>
               </div>
 
-              <div className="space-y-1.5 mb-4">
+              {/* Bullet Points */}
+              <div className="space-y-2 mb-6">
                 {card.details.map((d, idx) => (
                   <div key={idx} className="flex items-start gap-2 text-xs text-zinc-700">
-                    <span className="font-mono text-[10px] text-orange-600">-</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-orange-600 mt-1.5 shrink-0" />
                     <span>{d}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="pt-3 border-t border-zinc-100 flex items-center justify-between">
-              <span className="font-mono text-[10px] text-emerald-700 flex items-center gap-1 font-semibold">
-                <Check className="w-3 h-3" /> READY
+            <div className="pt-4 border-t border-zinc-100 flex items-center justify-between">
+              <span className="text-xs font-bold text-emerald-700 flex items-center gap-1">
+                <Check className="w-3.5 h-3.5" /> High-Resolution Ready
               </span>
               <button
-                onClick={() => alert(`Downloaded ${card.title} asset`)}
-                className="font-mono text-[10px] font-semibold text-zinc-600 hover:text-zinc-900 transition-colors flex items-center gap-1"
+                onClick={() => alert(`Downloaded ${card.title} as image`)}
+                className="text-xs font-bold text-orange-600 hover:text-orange-700 flex items-center gap-1 cursor-pointer"
               >
-                <Download className="w-3 h-3" /> EXPORT
+                <Download className="w-3.5 h-3.5" /> Download
               </button>
             </div>
           </div>

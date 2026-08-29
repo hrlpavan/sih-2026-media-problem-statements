@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SAMPLE_DOCUMENTS } from '../data/sampleAdvisories';
 import type { SampleDocument } from '../types';
-import { UploadCloud, FileText, CheckCircle2, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
+import { UploadCloud, FileText, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
 
 interface DocumentUploaderProps {
   selectedDoc: SampleDocument | null;
@@ -25,136 +25,146 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
         id: 'uploaded-custom-doc',
         title: file.name.replace(/\.[^/.]+$/, '').replace(/_/g, ' '),
         fileName: file.name,
-        category: 'Custom Upload',
-        pageCount: Math.floor(Math.random() * 30) + 12,
-        classification: 'USER INGESTION',
-        summary: 'Document uploaded. Spatial coordinate parser active for multi-format extraction.',
-        rawTextPreview: 'Parsed uploaded document content. Coordinate mapping active.'
+        category: 'Uploaded Document',
+        pageCount: Math.floor(Math.random() * 20) + 10,
+        classification: 'OFFICIAL DOCUMENT',
+        summary: 'Your uploaded document is ready for instant transformation.',
+        rawTextPreview: 'Parsed document text ready for automated multi-format extraction.'
       };
       onSelectDoc(customDoc);
     }
   };
 
   return (
-    <div className="industrial-panel rounded-xl p-6 mb-6 uploader-container no-print">
-      {/* Top Header */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-5">
-        <div>
-          <div className="flex items-center gap-2">
-            <span className="font-mono text-[11px] font-semibold text-zinc-400">[01]</span>
-            <h2 className="text-sm font-semibold uppercase tracking-wider text-zinc-900">
-              Document Ingestion & Source Selection
-            </h2>
+    <div className="bg-white rounded-2xl border border-zinc-200 p-6 sm:p-8 shadow-sm mb-6 uploader-container no-print">
+      {/* Title & Guidance */}
+      <div className="text-center max-w-2xl mx-auto mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold text-zinc-900 tracking-tight">
+          Turn Any Long Document into 5 Clear Formats
+        </h1>
+        <p className="text-sm text-zinc-600 mt-2">
+          Upload a long PDF or choose a sample report below. Get a 1-page summary, meeting slides, infographics, regional news, and voice audio in under 10 seconds.
+        </p>
+      </div>
+
+      {/* Step 1: Choose Sample or Upload */}
+      <div className="space-y-4">
+        <div className="flex items-center justify-between">
+          <span className="text-xs font-bold text-zinc-900 uppercase tracking-wider">
+            Step 1: Choose a Sample Document or Upload Your Own
+          </span>
+          <span className="text-xs text-zinc-500 font-medium">Click to select</span>
+        </div>
+
+        {/* 2 Big Easy Sample Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {SAMPLE_DOCUMENTS.map((doc) => {
+            const isSelected = selectedDoc?.id === doc.id;
+            return (
+              <div
+                key={doc.id}
+                onClick={() => onSelectDoc(doc)}
+                className={`p-4 rounded-xl border-2 cursor-pointer transition-all flex items-start justify-between gap-4 ${
+                  isSelected
+                    ? 'border-orange-500 bg-orange-50/40 shadow-sm'
+                    : 'border-zinc-200 bg-zinc-50/50 hover:bg-zinc-50 hover:border-zinc-300'
+                }`}
+              >
+                <div className="flex items-start gap-3">
+                  <div className={`p-2.5 rounded-lg shrink-0 mt-0.5 ${
+                    isSelected ? 'bg-orange-500 text-white' : 'bg-zinc-200 text-zinc-700'
+                  }`}>
+                    <FileText className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-bold text-sm text-zinc-900">{doc.title}</h3>
+                    </div>
+                    <p className="text-xs text-zinc-600 mt-1 leading-relaxed">{doc.summary}</p>
+                    <span className="inline-block font-bold text-[11px] text-zinc-500 mt-2">
+                      {doc.pageCount} Pages • {doc.category}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="shrink-0 mt-1">
+                  {isSelected ? (
+                    <span className="w-5 h-5 rounded-full bg-orange-500 text-white flex items-center justify-center text-xs font-bold">
+                      ✓
+                    </span>
+                  ) : (
+                    <span className="w-5 h-5 rounded-full border border-zinc-300 block" />
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Or Dropzone */}
+        <div
+          onDragOver={(e) => { e.preventDefault(); setDragActive(true); }}
+          onDragLeave={() => setDragActive(false)}
+          onDrop={(e) => {
+            e.preventDefault();
+            setDragActive(false);
+            if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+              const file = e.dataTransfer.files[0];
+              const customDoc: SampleDocument = {
+                id: 'drag-uploaded-doc',
+                title: file.name.replace(/\.[^/.]+$/, '').replace(/_/g, ' '),
+                fileName: file.name,
+                category: 'Uploaded PDF',
+                pageCount: 32,
+                classification: 'OFFICIAL DOCUMENT',
+                summary: 'Uploaded PDF ready for single-pass multi-format transformation.',
+                rawTextPreview: 'Parsed uploaded document content.'
+              };
+              onSelectDoc(customDoc);
+            }
+          }}
+          className={`border-2 border-dashed rounded-xl p-4 text-center transition-all ${
+            dragActive
+              ? 'border-orange-500 bg-orange-50/50'
+              : 'border-zinc-200 bg-zinc-50/30 hover:bg-zinc-50'
+          }`}
+        >
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <UploadCloud className="w-5 h-5 text-zinc-400" />
+            <span className="text-xs font-medium text-zinc-700">
+              Or drag & drop your own PDF/DOCX file here
+            </span>
+            <label className="cursor-pointer text-xs font-bold text-orange-600 hover:text-orange-700 underline">
+              <span>Browse Computer</span>
+              <input type="file" className="hidden" accept=".pdf,.docx,.txt" onChange={handleCustomUpload} />
+            </label>
           </div>
-          <p className="text-xs text-zinc-500 mt-0.5">
-            Select verified technical document preset or ingest arbitrary multi-page PDF files.
-          </p>
-        </div>
-
-        {/* Precision Segmented Presets */}
-        <div className="flex items-center gap-1.5 flex-wrap">
-          <span className="font-mono text-[10px] text-zinc-400 uppercase mr-1">PRESETS:</span>
-          {SAMPLE_DOCUMENTS.map((doc) => (
-            <button
-              key={doc.id}
-              onClick={() => onSelectDoc(doc)}
-              disabled={isProcessing}
-              className={`text-xs px-3 py-1.5 rounded border transition-all flex items-center gap-1.5 font-medium ${
-                selectedDoc?.id === doc.id
-                  ? 'bg-zinc-900 text-white border-zinc-900 shadow-sm'
-                  : 'bg-white text-zinc-700 border-zinc-200 hover:border-zinc-300 hover:bg-zinc-50'
-              }`}
-            >
-              <FileText className="w-3.5 h-3.5 opacity-70" />
-              <span>{doc.id === 'ntro-advisory-2026' ? 'NTRO Cyber Advisory' : 'AI Drone Strategy'}</span>
-            </button>
-          ))}
         </div>
       </div>
 
-      {/* Industrial Drop Target */}
-      <div
-        onDragOver={(e) => { e.preventDefault(); setDragActive(true); }}
-        onDragLeave={() => setDragActive(false)}
-        onDrop={(e) => {
-          e.preventDefault();
-          setDragActive(false);
-          if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-            const file = e.dataTransfer.files[0];
-            const customDoc: SampleDocument = {
-              id: 'drag-uploaded-doc',
-              title: file.name.replace(/\.[^/.]+$/, '').replace(/_/g, ' '),
-              fileName: file.name,
-              category: 'Custom Upload',
-              pageCount: 36,
-              classification: 'RESTRICTED',
-              summary: 'User uploaded document ready for single-pass multi-format transformation.',
-              rawTextPreview: 'Uploaded file parsed. Bounding-box coordinate index generated.'
-            };
-            onSelectDoc(customDoc);
-          }
-        }}
-        className={`border border-dashed rounded-lg p-6 text-center transition-all ${
-          dragActive
-            ? 'border-zinc-900 bg-zinc-100'
-            : 'border-zinc-300 bg-zinc-50/70 hover:bg-zinc-50'
-        }`}
-      >
-        <div className="max-w-md mx-auto flex flex-col items-center">
-          <UploadCloud className="w-6 h-6 text-zinc-400 mb-2" />
-          <p className="text-xs font-medium text-zinc-800">
-            Drag & drop document here (PDF / DOCX)
-          </p>
-          <p className="text-[11px] text-zinc-400 mt-0.5 mb-3 font-mono">
-            PARSER: PyMuPDF [COORDINATE_BOUNDS_ACTIVE]
-          </p>
-          <label className="cursor-pointer inline-flex items-center px-3 py-1.5 text-xs font-medium text-zinc-700 bg-white border border-zinc-300 rounded hover:bg-zinc-50 transition-all shadow-sm">
-            <span>Browse Local Files</span>
-            <input type="file" className="hidden" accept=".pdf,.docx,.txt" onChange={handleCustomUpload} />
-          </label>
-        </div>
-      </div>
-
-      {/* Ingested Metadata Strip */}
+      {/* Step 2: One Big Transform Button */}
       {selectedDoc && (
-        <div className="mt-4 p-4 rounded-lg bg-zinc-50 border border-zinc-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex items-start gap-3">
-            <div className="p-2 rounded bg-white border border-zinc-200 text-zinc-900 shadow-sm mt-0.5">
-              <FileText className="w-4 h-4 text-orange-600" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <h3 className="font-semibold text-xs text-zinc-900">{selectedDoc.title}</h3>
-                <span className="font-mono text-[9px] font-semibold bg-zinc-200 text-zinc-700 px-1.5 py-0.5 rounded">
-                  {selectedDoc.classification}
-                </span>
-              </div>
-              <p className="text-xs text-zinc-600 mt-0.5 max-w-2xl">{selectedDoc.summary}</p>
-              <div className="flex items-center gap-4 mt-2 text-[10px] font-mono text-zinc-500">
-                <span className="flex items-center gap-1 text-emerald-700 font-semibold">
-                  <CheckCircle2 className="w-3 h-3 text-emerald-600" /> {selectedDoc.pageCount} PAGES LOADED
-                </span>
-                <span className="flex items-center gap-1">
-                  <ShieldCheck className="w-3 h-3 text-zinc-400" /> REVERSE_CITATIONS_READY
-                </span>
-              </div>
-            </div>
+        <div className="mt-6 pt-6 border-t border-zinc-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2 text-xs font-medium text-zinc-700">
+            <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+            <span>Ready: <strong>{selectedDoc.title}</strong> ({selectedDoc.pageCount} pages)</span>
           </div>
 
           <button
             onClick={onStartTransform}
             disabled={isProcessing}
-            className="w-full sm:w-auto px-5 py-2.5 rounded bg-zinc-900 hover:bg-black text-white font-medium text-xs shadow-sm hover:shadow transition-all flex items-center justify-center gap-2 group disabled:opacity-50 disabled:pointer-events-none shrink-0"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 group disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
           >
             {isProcessing ? (
               <>
-                <Zap className="w-3.5 h-3.5 animate-spin text-orange-400" />
-                <span className="font-mono text-xs">PROCESSING_PIPELINE...</span>
+                <Sparkles className="w-4 h-4 animate-spin text-white" />
+                <span>Creating 5 Formats... Please wait</span>
               </>
             ) : (
               <>
-                <span>Execute Pipeline (5 Formats)</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform text-orange-400" />
+                <Sparkles className="w-4 h-4 text-white" />
+                <span>Transform Document Now (10 Seconds)</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </>
             )}
           </button>

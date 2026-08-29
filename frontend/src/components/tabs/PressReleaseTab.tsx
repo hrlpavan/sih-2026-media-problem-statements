@@ -25,93 +25,93 @@ export const PressReleaseTab: React.FC<PressReleaseTabProps> = ({ pressReleases 
   };
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-6">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-3 border-b border-zinc-200 no-print">
         <div>
-          <span className="font-mono text-[10px] font-semibold text-zinc-500 uppercase tracking-wider bg-zinc-100 px-2 py-0.5 rounded border border-zinc-200">
-            FORMAT_04 // MULTILINGUAL_PRESS
+          <span className="text-xs font-bold text-orange-700 bg-orange-50 px-2.5 py-1 rounded-md border border-orange-200">
+            Format 4: Multilingual Press Release
           </span>
-          <h3 className="text-sm font-semibold text-zinc-900 mt-1">
-            Official Media Statement Engine
+          <h3 className="text-base font-bold text-zinc-900 mt-1">
+            Official Media Statement in Indian Languages
           </h3>
         </div>
 
         <div className="flex items-center gap-2">
-          {/* Segmented Language Selector */}
-          <div className="flex items-center bg-zinc-100 p-0.5 rounded border border-zinc-200">
+          {/* Easy Language Tabs */}
+          <div className="flex items-center bg-zinc-100 p-1 rounded-lg border border-zinc-200">
             <button
               onClick={() => setLang('en')}
-              className={`text-xs px-2.5 py-1 rounded font-medium transition-all ${
-                lang === 'en' ? 'bg-white text-zinc-900 shadow-sm font-semibold' : 'text-zinc-500 hover:text-zinc-900'
+              className={`text-xs px-3 py-1.5 rounded-md font-bold transition-all cursor-pointer ${
+                lang === 'en' ? 'bg-white text-zinc-900 shadow-sm' : 'text-zinc-600 hover:text-zinc-900'
               }`}
             >
-              EN
+              English
             </button>
             <button
               onClick={() => setLang('hi')}
-              className={`text-xs px-2.5 py-1 rounded font-medium transition-all ${
-                lang === 'hi' ? 'bg-white text-zinc-900 shadow-sm font-semibold' : 'text-zinc-500 hover:text-zinc-900'
+              className={`text-xs px-3 py-1.5 rounded-md font-bold transition-all cursor-pointer ${
+                lang === 'hi' ? 'bg-white text-zinc-900 shadow-sm' : 'text-zinc-600 hover:text-zinc-900'
               }`}
             >
-              हिंदी
+              हिंदी (Hindi)
             </button>
             <button
               onClick={() => setLang('kn')}
-              className={`text-xs px-2.5 py-1 rounded font-medium transition-all ${
-                lang === 'kn' ? 'bg-white text-zinc-900 shadow-sm font-semibold' : 'text-zinc-500 hover:text-zinc-900'
+              className={`text-xs px-3 py-1.5 rounded-md font-bold transition-all cursor-pointer ${
+                lang === 'kn' ? 'bg-white text-zinc-900 shadow-sm' : 'text-zinc-600 hover:text-zinc-900'
               }`}
             >
-              ಕನ್ನಡ
+              ಕನ್ನಡ (Kannada)
             </button>
             <button
               onClick={() => setLang('ta')}
-              className={`text-xs px-2.5 py-1 rounded font-medium transition-all ${
-                lang === 'ta' ? 'bg-white text-zinc-900 shadow-sm font-semibold' : 'text-zinc-500 hover:text-zinc-900'
+              className={`text-xs px-3 py-1.5 rounded-md font-bold transition-all cursor-pointer ${
+                lang === 'ta' ? 'bg-white text-zinc-900 shadow-sm' : 'text-zinc-600 hover:text-zinc-900'
               }`}
             >
-              தமிழ்
+              தமிழ் (Tamil)
             </button>
           </div>
 
           <button
             onClick={handleCopy}
-            className="px-3 py-1.5 rounded bg-white hover:bg-zinc-100 text-zinc-700 font-medium text-xs border border-zinc-200 transition-all flex items-center gap-1 shadow-sm"
+            className="px-3.5 py-2 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-bold text-xs border border-zinc-300 transition-all flex items-center gap-1.5 cursor-pointer shadow-sm"
           >
-            {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5 text-zinc-500" />}
-            <span>{copied ? 'Copied' : 'Copy'}</span>
+            {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5 text-zinc-600" />}
+            <span>{copied ? 'Copied' : 'Copy Text'}</span>
           </button>
         </div>
       </div>
 
-      {/* Press Document Sheet */}
-      <div className="bg-white rounded-lg border border-zinc-200 p-8 shadow-sm max-w-4xl mx-auto">
-        <div className="text-center pb-5 border-b border-zinc-200 mb-5">
-          <span className="font-mono text-[9px] font-semibold text-orange-600 uppercase tracking-widest block mb-1">
-            OFFICIAL MEDIA STATEMENT // PIB SPECIFICATION
+      {/* Press Release Sheet */}
+      <div className="bg-white rounded-2xl border-2 border-zinc-200 p-8 shadow-sm max-w-3xl mx-auto">
+        <div className="text-center pb-5 border-b border-zinc-200 mb-6">
+          <span className="text-xs font-bold text-orange-600 uppercase tracking-widest block mb-1">
+            OFFICIAL PRESS RELEASE
           </span>
-          <h2 className="text-base sm:text-lg font-semibold text-zinc-900 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-zinc-900 leading-snug">
             {pr.headline}
           </h2>
-          <span className="font-mono text-[10px] text-zinc-500 block mt-1.5">
+          <span className="text-xs font-medium text-zinc-500 block mt-2">
             {pr.locationAndDate}
           </span>
         </div>
 
-        <div className="space-y-3.5 text-xs sm:text-sm text-zinc-800 leading-relaxed">
-          <p className="font-medium text-zinc-900">{pr.openingParagraph}</p>
+        <div className="space-y-4 text-sm text-zinc-800 leading-relaxed">
+          <p className="font-bold">{pr.openingParagraph}</p>
           {pr.bodyParagraphs.map((p, idx) => (
             <p key={idx}>{p}</p>
           ))}
 
-          <div className="p-4 rounded bg-zinc-50 border-l-2 border-zinc-900 italic my-5 text-zinc-800 font-serif">
+          <div className="p-4 rounded-xl bg-orange-50/50 border-l-4 border-orange-500 italic my-6 text-zinc-900">
             {pr.spokespersonQuote}
           </div>
         </div>
 
-        <div className="mt-6 pt-3 border-t border-zinc-200 font-mono text-[10px] text-zinc-500 flex items-center justify-between">
+        <div className="mt-8 pt-4 border-t border-zinc-200 text-xs text-zinc-500 font-medium flex items-center justify-between">
           <span>{pr.mediaContact}</span>
-          <span className="bg-zinc-100 px-2 py-0.5 rounded text-zinc-600">
-            INDICBERT_NEURAL_TRANSLATION
+          <span className="bg-zinc-100 px-2.5 py-1 rounded text-zinc-700">
+            Automated Indic Translation
           </span>
         </div>
       </div>

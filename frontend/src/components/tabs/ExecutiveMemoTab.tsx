@@ -15,82 +15,76 @@ export const ExecutiveMemoTab: React.FC<ExecutiveMemoTabProps> = ({
 }) => {
   const getCitation = (id: string) => citations.find((c) => c.id === id);
 
-  const handleExportPDF = () => {
-    window.print();
-  };
-
   return (
-    <div className="space-y-5">
-      {/* On-screen Toolbar (Hidden during Print) */}
+    <div className="space-y-6">
+      {/* On-screen Header with Big Print Button */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-3 border-b border-zinc-200 no-print action-toolbar">
         <div>
-          <span className="font-mono text-[10px] font-semibold text-zinc-500 uppercase tracking-wider bg-zinc-100 px-2 py-0.5 rounded border border-zinc-200">
-            FORMAT_01 // EXECUTIVE_MEMO
+          <span className="text-xs font-bold text-orange-700 bg-orange-50 px-2.5 py-1 rounded-md border border-orange-200">
+            Format 1: Executive 1-Page Summary
           </span>
-          <h3 className="text-sm font-semibold text-zinc-900 mt-1">{memo.title}</h3>
+          <h3 className="text-base font-bold text-zinc-900 mt-1">{memo.title}</h3>
         </div>
-        <div className="flex items-center gap-2">
-          <button
-            onClick={handleExportPDF}
-            className="px-3 py-1.5 rounded bg-zinc-900 hover:bg-black text-white font-medium text-xs transition-all flex items-center gap-1.5 shadow-sm"
-          >
-            <Printer className="w-3.5 h-3.5 text-orange-400" />
-            <span>Export Clean PDF (A4)</span>
-          </button>
-        </div>
+        <button
+          onClick={() => window.print()}
+          className="px-4 py-2 rounded-lg bg-zinc-900 hover:bg-black text-white font-bold text-xs transition-all flex items-center gap-2 shadow-sm cursor-pointer"
+        >
+          <Printer className="w-4 h-4 text-orange-400" />
+          <span>Save as Clean 1-Page PDF</span>
+        </button>
       </div>
 
-      {/* Pristine Document Sheet (Print Optimized) */}
-      <div className="bg-white rounded-lg border border-zinc-200 p-8 shadow-sm print-document-container">
-        {/* Document Metadata Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pb-5 border-b border-zinc-200 text-xs print-section">
+      {/* Pristine Memo Sheet */}
+      <div className="bg-white rounded-xl border border-zinc-200 p-8 shadow-sm print-document-container">
+        {/* Metadata Header */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pb-6 border-b border-zinc-200 text-xs print-section">
           <div>
-            <span className="font-mono text-[9px] text-zinc-400 uppercase block font-semibold">AUTHORITY</span>
-            <span className="font-semibold text-zinc-900">{memo.organization}</span>
+            <span className="text-zinc-500 font-bold uppercase text-[10px] block">ORGANIZATION</span>
+            <span className="font-bold text-zinc-900">{memo.organization}</span>
           </div>
           <div>
-            <span className="font-mono text-[9px] text-zinc-400 uppercase block font-semibold">DATE</span>
-            <span className="font-semibold text-zinc-900">{memo.date}</span>
+            <span className="text-zinc-500 font-bold uppercase text-[10px] block">DATE</span>
+            <span className="font-bold text-zinc-900">{memo.date}</span>
           </div>
           <div>
-            <span className="font-mono text-[9px] text-zinc-400 uppercase block font-semibold">SECURITY CLASSIFICATION</span>
-            <span className="font-semibold text-rose-700 font-mono text-[11px]">{memo.classification}</span>
+            <span className="text-zinc-500 font-bold uppercase text-[10px] block">CLASSIFICATION</span>
+            <span className="font-bold text-rose-700">{memo.classification}</span>
           </div>
           <div>
-            <span className="font-mono text-[9px] text-zinc-400 uppercase block font-semibold">DISTRIBUTION</span>
-            <span className="font-semibold text-zinc-900">Senior Leadership</span>
+            <span className="text-zinc-500 font-bold uppercase text-[10px] block">RECIPIENT</span>
+            <span className="font-bold text-zinc-900">Leadership & Team</span>
           </div>
         </div>
 
-        {/* Section 1: Executive Overview */}
-        <div className="mt-5 print-section">
-          <h4 className="font-mono text-[10px] font-semibold text-zinc-500 uppercase tracking-wider mb-2">
-            01. EXECUTIVE SUMMARY
+        {/* Section 1: Summary */}
+        <div className="mt-6 print-section">
+          <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider mb-2">
+            1. Executive Overview
           </h4>
-          <p className="text-xs sm:text-sm text-zinc-800 leading-relaxed bg-zinc-50/80 p-4 rounded border border-zinc-200">
+          <p className="text-sm text-zinc-800 leading-relaxed bg-zinc-50 p-4 rounded-lg border border-zinc-200">
             {memo.executiveSummary}
           </p>
         </div>
 
-        {/* Section 2: Key Findings with Citations */}
-        <div className="mt-5 print-section">
-          <h4 className="font-mono text-[10px] font-semibold text-zinc-500 uppercase tracking-wider mb-2">
-            02. STRATEGIC INTELLIGENCE FINDINGS
+        {/* Section 2: Key Facts with Citations */}
+        <div className="mt-6 print-section">
+          <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider mb-3">
+            2. Key Findings & Facts (Click any button to view original PDF page)
           </h4>
-          <div className="space-y-2.5">
+          <div className="space-y-3">
             {memo.keyFindings.map((finding, idx) => {
               const cit = getCitation(finding.citationId);
 
               return (
                 <div
                   key={idx}
-                  className="p-3.5 rounded border border-zinc-200 bg-white hover:border-zinc-400 transition-all flex items-start justify-between gap-3"
+                  className="p-3.5 rounded-lg border border-zinc-200 bg-white hover:border-zinc-400 transition-all flex items-start justify-between gap-3"
                 >
-                  <div className="flex items-start gap-2.5">
-                    <span className="font-mono text-[10px] font-bold text-zinc-500 mt-0.5">
-                      [{idx + 1 < 10 ? `0${idx + 1}` : idx + 1}]
+                  <div className="flex items-start gap-3">
+                    <span className="w-5 h-5 rounded-full bg-zinc-900 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                      {idx + 1}
                     </span>
-                    <p className="text-xs text-zinc-800 leading-relaxed font-medium">
+                    <p className="text-xs sm:text-sm text-zinc-800 font-medium leading-relaxed">
                       {finding.point}
                     </p>
                   </div>
@@ -98,10 +92,11 @@ export const ExecutiveMemoTab: React.FC<ExecutiveMemoTabProps> = ({
                   {cit && (
                     <button
                       onClick={() => onOpenCitation(cit)}
-                      className="shrink-0 font-mono text-[10px] font-semibold px-2 py-0.5 rounded bg-zinc-100 hover:bg-zinc-900 text-zinc-700 hover:text-white border border-zinc-200 transition-all flex items-center gap-1 group print-citation-badge"
+                      className="shrink-0 text-xs font-bold px-3 py-1 rounded bg-orange-100 hover:bg-orange-600 text-orange-800 hover:text-white border border-orange-300 transition-all flex items-center gap-1 group cursor-pointer print-citation-badge"
+                      title="Click to view original source page in PDF"
                     >
-                      <span>PAGE {cit.pageNumber}</span>
-                      <ArrowUpRight className="w-3 h-3 opacity-60 group-hover:opacity-100 no-print" />
+                      <span>Page {cit.pageNumber}</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 no-print" />
                     </button>
                   )}
                 </div>
@@ -110,28 +105,22 @@ export const ExecutiveMemoTab: React.FC<ExecutiveMemoTabProps> = ({
           </div>
         </div>
 
-        {/* Section 3: Action Matrix */}
-        <div className="mt-5 print-section">
-          <h4 className="font-mono text-[10px] font-semibold text-zinc-500 uppercase tracking-wider mb-2">
-            03. MANDATORY ACTION MATRIX
+        {/* Section 3: Recommended Actions */}
+        <div className="mt-6 print-section">
+          <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider mb-3">
+            3. Recommended Action Plan
           </h4>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {memo.actionItems.map((item, idx) => (
-              <div key={idx} className="p-3 rounded bg-zinc-50 border border-zinc-200">
-                <div className="flex items-center justify-between font-mono text-[10px] font-semibold text-zinc-900 mb-1">
-                  <span className="text-orange-600">{item.priority}</span>
-                  <span className="text-zinc-500">{item.owner}</span>
+              <div key={idx} className="p-3.5 rounded-lg bg-zinc-50 border border-zinc-200">
+                <div className="flex items-center justify-between text-xs font-bold text-zinc-900 mb-1">
+                  <span className="text-orange-700">{item.priority}</span>
+                  <span className="text-zinc-500 font-normal">{item.owner}</span>
                 </div>
                 <p className="text-xs text-zinc-700 leading-normal">{item.action}</p>
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Print Only Verification Footer */}
-        <div className="mt-6 pt-3 border-t border-zinc-200 font-mono text-[9px] text-zinc-400 flex items-center justify-between">
-          <span>NTRO CYBER INTELLIGENCE SPECIFICATION // SIH 2026 PS ID 26154</span>
-          <span>AUTHENTICATED DETERMINISTIC RAG EXTRACTION</span>
         </div>
       </div>
     </div>
