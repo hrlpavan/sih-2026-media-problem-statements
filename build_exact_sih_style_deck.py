@@ -29,9 +29,8 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
     LOGO_PATH = "sih_official_logo.png"
     FLOWCHART_PATH = "omnitransform_pipeline_flowchart.png"
     
-    # LIVE PROTOTYPE & DEMO REPOSITORY
-    LIVE_DEMO_URL = "https://github.com/hrlpavan/sih-2026-media-problem-statements"
-    GITHUB_REPO_URL = "https://github.com/hrlpavan/sih-2026-media-problem-statements"
+    # DEDICATED MASTER REPOSITORY & RESOURCES URL
+    DEDICATED_REPO_URL = "https://github.com/hrlpavan/omnitransform-ai-resources"
 
     def add_header_footer(slide, slide_num, center_title, team_name="OmniTransform"):
         # Top Left Team Oval
@@ -95,7 +94,7 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
     # =========================================================================
     slide1 = prs.slides.add_slide(blank_layout)
 
-    tb1_top = slide1.shapes.add_textbox(Inches(0.8), Inches(0.6), Inches(11.7), Inches(0.8))
+    tb1_top = slide1.shapes.add_textbox(Inches(0.8), Inches(0.5), Inches(11.7), Inches(0.7))
     p_t1 = tb1_top.text_frame.paragraphs[0]
     p_t1.text = "SMART INDIA HACKATHON 2026"
     p_t1.font.size = Pt(32)
@@ -104,7 +103,7 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
     p_t1.font.color.rgb = COLOR_NAVY
     p_t1.alignment = PP_ALIGN.LEFT
 
-    tb1_fields = slide1.shapes.add_textbox(Inches(0.8), Inches(1.6), Inches(8.2), Inches(5.2))
+    tb1_fields = slide1.shapes.add_textbox(Inches(0.8), Inches(1.4), Inches(8.4), Inches(5.4))
     tf1 = tb1_fields.text_frame
     tf1.word_wrap = True
 
@@ -114,7 +113,8 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
         ("• Theme - ", "Miscellaneous / AI"),
         ("• PS Category - ", "Software"),
         ("• Team ID - ", "104580"),
-        ("• Team Name - ", "OmniTransform")
+        ("• Team Name - ", "OmniTransform"),
+        ("• Project Resources - ", DEDICATED_REPO_URL)
     ]
 
     for idx, (lbl, val) in enumerate(fields):
@@ -122,17 +122,18 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
         r1 = p.add_run()
         r1.text = lbl
         r1.font.bold = True
-        r1.font.size = Pt(18)
+        r1.font.size = Pt(16 if idx == 6 else 17.5)
         r1.font.name = FONT_TITLE
-        r1.font.color.rgb = COLOR_TEXT
+        r1.font.color.rgb = COLOR_NAVY if idx == 6 else COLOR_TEXT
 
         r2 = p.add_run()
         r2.text = val
-        r2.font.bold = (idx in [0, 1, 5])
-        r2.font.size = Pt(18)
+        r2.font.bold = (idx in [0, 1, 5, 6])
+        r2.font.size = Pt(14 if idx == 6 else 17.5)
+        r2.font.underline = (idx == 6)
         r2.font.name = FONT_BODY
-        r2.font.color.rgb = COLOR_TEXT
-        p.space_after = Pt(14)
+        r2.font.color.rgb = COLOR_FOOTER_BLUE if idx == 6 else COLOR_TEXT
+        p.space_after = Pt(10)
 
     if os.path.exists(LOGO_PATH):
         slide1.shapes.add_picture(LOGO_PATH, Inches(9.2), Inches(1.8), width=Inches(3.6))
@@ -229,7 +230,7 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
     if os.path.exists(FLOWCHART_PATH):
         slide3.shapes.add_picture(FLOWCHART_PATH, Inches(0.6), Inches(1.3), width=Inches(6.6))
 
-    tb3_r = slide3.shapes.add_textbox(Inches(7.4), Inches(1.3), Inches(5.3), Inches(4.8))
+    tb3_r = slide3.shapes.add_textbox(Inches(7.4), Inches(1.3), Inches(5.3), Inches(4.7))
     tf3 = tb3_r.text_frame
     tf3.word_wrap = True
 
@@ -280,19 +281,19 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
         ps.font.color.rgb = COLOR_TEXT
         ps.space_after = Pt(2)
 
-    # Clickable Live Prototype Demo Box
-    tb3_link = slide3.shapes.add_textbox(Inches(7.4), Inches(6.15), Inches(5.3), Inches(0.8))
+    # Clickable Live Prototype Demo Box with Dedicated Repo URL
+    tb3_link = slide3.shapes.add_textbox(Inches(7.4), Inches(6.1), Inches(5.3), Inches(0.85))
     tf_l = tb3_link.text_frame
     p_link = tf_l.paragraphs[0]
-    p_link.text = "APP PROTOTYPE LIVE DEMO LINK"
-    p_link.font.size = Pt(15)
+    p_link.text = "APP PROTOTYPE & RESOURCE REPOSITORY LINK"
+    p_link.font.size = Pt(13.5)
     p_link.font.bold = True
     p_link.font.name = FONT_BODY
     p_link.font.color.rgb = COLOR_FOOTER_BLUE
     
     p_url = tf_l.add_paragraph()
-    p_url.text = LIVE_DEMO_URL
-    p_url.font.size = Pt(13)
+    p_url.text = DEDICATED_REPO_URL
+    p_url.font.size = Pt(12)
     p_url.font.bold = True
     p_url.font.underline = True
     p_url.font.name = FONT_BODY
@@ -556,22 +557,22 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
         p.space_after = Pt(4)
 
     # =========================================================================
-    # SLIDE 6: RESEARCH AND REFERENCES (With Explicit Clickable URLs)
+    # SLIDE 6: RESEARCH AND REFERENCES (With Dedicated Repo and Resource Specs)
     # =========================================================================
     slide6 = prs.slides.add_slide(blank_layout)
     add_header_footer(slide6, 6, "RESEARCH AND REFERENCES")
 
-    tb6 = slide6.shapes.add_textbox(Inches(1.0), Inches(1.4), Inches(11.3), Inches(5.4))
+    tb6 = slide6.shapes.add_textbox(Inches(0.8), Inches(1.35), Inches(11.7), Inches(5.5))
     tf6 = tb6.text_frame
     tf6.word_wrap = True
 
     links_data = [
-        ("APP PROTOTYPE LIVE DEMO LINK", LIVE_DEMO_URL),
-        ("GITHUB PROJECT REPOSITORY LINK", GITHUB_REPO_URL),
+        ("MASTER RESOURCE REPOSITORY & CODE", DEDICATED_REPO_URL),
+        ("OPEN-SOURCE DATASETS & MODELS GUIDE", f"{DEDICATED_REPO_URL}/blob/main/OPEN_SOURCE_RESOURCES_AND_DATASETS.md"),
+        ("TECHNICAL DEVELOPMENT SPECIFICATION", f"{DEDICATED_REPO_URL}/blob/main/PROJECT_DEVELOPMENT_SPECIFICATION.md"),
         ("SMART INDIA HACKATHON 2026 OFFICIAL PORTAL (PS ID 26154)", "https://www.sih.gov.in/sih2026PS"),
         ("NATIONAL TECHNICAL RESEARCH ORGANISATION (NTRO) PORTAL", "https://ntro.gov.in"),
-        ("RESEARCH ON RAG & SOURCE CITATIONS (LEWIS ET AL.)", "https://arxiv.org/abs/2005.11401"),
-        ("BHASHINI & AI4BHARAT MULTILINGUAL RESEARCH", "https://bhashini.gov.in")
+        ("RESEARCH ON RAG & CITATIONS (LEWIS ET AL. 2020)", "https://arxiv.org/abs/2005.11401")
     ]
 
     for idx, (title, url) in enumerate(links_data):
@@ -579,26 +580,26 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
         r1 = p.add_run()
         r1.text = "❖  "
         r1.font.bold = True
-        r1.font.size = Pt(15)
+        r1.font.size = Pt(14)
         r1.font.color.rgb = COLOR_TEXT
 
         r2 = p.add_run()
         r2.text = f"{title}:  "
         r2.font.bold = True
-        r2.font.size = Pt(14)
+        r2.font.size = Pt(13)
         r2.font.name = FONT_TITLE
         r2.font.color.rgb = COLOR_NAVY
 
         r3 = p.add_run()
         r3.text = url
         r3.font.underline = True
-        r3.font.size = Pt(13)
+        r3.font.size = Pt(12)
         r3.font.name = FONT_BODY
         r3.font.color.rgb = COLOR_FOOTER_BLUE
-        p.space_after = Pt(12)
+        p.space_after = Pt(10)
 
     prs.save(output_path)
-    print(f"Deck with active demo links created successfully at: {output_path}")
+    print(f"Deck with dedicated repo {DEDICATED_REPO_URL} created successfully at: {output_path}")
 
 if __name__ == "__main__":
     out = sys.argv[1] if len(sys.argv) > 1 else "SIH2026_Idea_Presentation_PS26154.pptx"
