@@ -13,7 +13,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
     <header className="sticky top-0 z-40 bg-white border-b border-classic-border shadow-classic-sm no-print">
       {/* Top Institutional Header Banner (Ministry of Education | AICTE | Innovation Cell | SIH 2026) */}
       <div className="bg-white border-b border-zinc-100 py-1.5 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
+        <div className="max-w-6xl mx-auto flex items-center justify-between flex-wrap gap-2">
           <div className="flex items-center">
             <img
               src="/sih_official_header_banner.jpg"
@@ -21,12 +21,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
               className="h-9 sm:h-11 object-contain"
             />
           </div>
-          <div className="hidden sm:flex items-center space-x-3 text-xs font-semibold text-classic-slate-muted">
-            <span className="font-mono bg-classic-bg px-2.5 py-1 rounded border border-classic-border text-classic-navy">
+          <div className="flex items-center space-x-2 text-xs font-semibold text-classic-slate-muted">
+            <span className="font-mono bg-classic-bg px-2.5 py-0.5 rounded border border-classic-border text-classic-navy">
               PS ID: 26154
             </span>
-            <span className="text-zinc-300">|</span>
-            <span className="text-classic-navy">NTRO</span>
+            <span className="font-mono bg-classic-ochre-light text-classic-ochre font-bold px-2.5 py-0.5 rounded border border-classic-ochre/30">
+              TEAM: HRL (104580)
+            </span>
+            <span className="text-zinc-300 hidden sm:inline">|</span>
+            <span className="text-classic-navy font-bold hidden sm:inline">NTRO</span>
           </div>
         </div>
       </div>
@@ -45,7 +48,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
                   OmniTransform AI
                 </span>
                 <span className="bg-classic-ochre-light text-classic-ochre text-[11px] font-bold px-2 py-0.5 rounded border border-classic-ochre/20">
-                  Gen AI Platform
+                  Team HRL
                 </span>
               </div>
               <p className="text-[11px] text-classic-slate-muted font-normal leading-none mt-0.5">

@@ -51,8 +51,8 @@ export const ExecutiveMemoTab: React.FC<ExecutiveMemoTabProps> = ({
             <span className="font-bold text-rose-700">{memo.classification}</span>
           </div>
           <div>
-            <span className="text-classic-slate-muted font-bold uppercase text-[10px] block">RECIPIENT</span>
-            <span className="font-bold text-classic-navy">Senior Leadership</span>
+            <span className="text-classic-slate-muted font-bold uppercase text-[10px] block">PREPARED BY TEAM</span>
+            <span className="font-bold text-classic-navy">Team HRL (ID: 104580)</span>
           </div>
         </div>
 

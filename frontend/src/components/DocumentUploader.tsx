@@ -37,8 +37,17 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
 
   return (
     <div className="bg-white rounded-2xl border border-classic-border p-6 sm:p-8 shadow-classic-sm mb-6 uploader-container no-print">
-      {/* Title & Classic Editorial Intro */}
+      {/* Title & Team Badge */}
       <div className="text-center max-w-2xl mx-auto mb-8">
+        <div className="inline-flex items-center gap-2 bg-classic-bg px-3.5 py-1.5 rounded-full border border-classic-border mb-3 shadow-classic-sm">
+          <span className="w-2 h-2 rounded-full bg-classic-ochre animate-pulse" />
+          <span className="text-xs font-bold text-classic-navy font-serif">Smart India Hackathon 2026</span>
+          <span className="text-zinc-300">•</span>
+          <span className="text-xs font-bold text-classic-ochre">Team HRL (ID: 104580)</span>
+          <span className="text-zinc-300">•</span>
+          <span className="text-xs text-classic-slate-muted font-mono">PS-26154</span>
+        </div>
+
         <h1 className="text-2xl sm:text-3xl font-serif font-bold text-classic-navy tracking-tight">
           Automated Multi-Format Content Transformation
         </h1>

@@ -102,8 +102,8 @@ export const SlideDeckTab: React.FC<SlideDeckTabProps> = ({ slides }) => {
         </div>
 
         <div className="border-t border-classic-border pt-3 flex items-center justify-between text-xs text-classic-slate-muted font-sans">
-          <span>NTRO Cyber Intelligence Division</span>
-          <span>Verified Accurate • Confidential</span>
+          <span>NTRO Cyber Intelligence Division • PS ID: 26154</span>
+          <span>Team: <strong className="text-classic-navy">HRL</strong> (ID: 104580)</span>
         </div>
       </div>
 
