@@ -103,7 +103,7 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
   };
 
   const playTrack = (voiceId: string, model: 'eleven_v3' | 'eleven_flash_v2_5') => {
-    const audioSrc = `/OmniTransform_AI_Briefing_${voiceId}.m4a`;
+    const audioSrc = `${import.meta.env.BASE_URL}OmniTransform_AI_Briefing_${voiceId}.m4a`;
     const audio = new Audio(audioSrc);
     audio.playbackRate = model === 'eleven_flash_v2_5' ? 1.15 : 1.0;
     

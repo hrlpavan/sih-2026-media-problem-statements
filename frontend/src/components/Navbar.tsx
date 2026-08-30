@@ -19,7 +19,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
           <div className="flex items-center space-x-3 shrink-0">
             <a href="#" className="flex items-center">
               <img
-                src="/hrl_logo_transparent.png"
+                src="./hrl_logo_transparent.png"
                 alt="HRL International"
                 className="h-4.5 sm:h-5 object-contain"
               />

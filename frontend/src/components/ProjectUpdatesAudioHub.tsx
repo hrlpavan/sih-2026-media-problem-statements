@@ -107,8 +107,8 @@ export const ProjectUpdatesAudioHub: React.FC = () => {
     }
 
     const audioSrc = selectedVoice === 'rachel'
-      ? '/OmniTransform_AI_Changelog_rachel.m4a'
-      : '/OmniTransform_AI_Changelog_Updates.m4a';
+      ? `${import.meta.env.BASE_URL}OmniTransform_AI_Changelog_rachel.m4a`
+      : `${import.meta.env.BASE_URL}OmniTransform_AI_Changelog_Updates.m4a`;
 
     const audio = new Audio(audioSrc);
     audio.playbackRate = selectedModel === 'eleven_flash_v2_5' ? 1.15 : 1.0;
@@ -239,7 +239,7 @@ export const ProjectUpdatesAudioHub: React.FC = () => {
 
           {/* Download Master Changelog MP3 */}
           <a
-            href="/OmniTransform_AI_Changelog_Updates.mp3"
+            href={`${import.meta.env.BASE_URL}OmniTransform_AI_Changelog_Updates.mp3`}
             download="OmniTransform_AI_Changelog_Updates.mp3"
             className="p-2.5 rounded-full bg-[#F2F2F7] hover:bg-[#E5E5EA] text-[#1D1D1F] border border-black/5 transition-all flex items-center justify-center cursor-pointer"
             title="Download Full Changelog Audio (MP3)"
