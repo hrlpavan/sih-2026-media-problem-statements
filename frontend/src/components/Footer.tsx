@@ -2,10 +2,10 @@ import React from 'react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-white border-t border-zinc-200 mt-20 pt-10 pb-14 text-[#6E6E73] text-[11px] sm:text-xs leading-relaxed no-print w-full">
-      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 space-y-8">
+    <footer className="bg-[#F5F5F7] border-t border-black/[0.08] mt-20 pt-8 pb-12 text-[#86868B] text-[12px] leading-[1.33] no-print w-full select-none">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
         {/* 4-Item Legal & Official Accreditation Notes */}
-        <div className="space-y-1.5 font-normal text-[#86868B] text-[11px] sm:text-xs">
+        <div className="space-y-1.5 font-normal text-[#86868B]">
           <p>
             1. HRL International Private Limited is an incorporated corporate entity registered in Mangaluru, Karnataka, India.
           </p>
@@ -41,18 +41,18 @@ export const Footer: React.FC = () => {
           </p>
         </div>
 
-        {/* Crisp Divider Line */}
-        <div className="border-t border-zinc-200" />
+        {/* Crisp Apple Divider Line */}
+        <div className="border-t border-black/[0.08]" />
 
         {/* Bottom Copyright & Footer Links */}
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-6 pt-1">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-4 pt-1">
           {/* Copyright Text */}
-          <div className="max-w-xl text-[#86868B] text-[11px] leading-relaxed">
+          <div className="text-[#86868B] text-[11.5px] leading-relaxed">
             Copyright © 2026 Pavan Kumar Sadashiv. HRL International™ and HRL International Private Limited™ are asserted trademarks of Pavan Kumar Sadashiv. All rights reserved.
           </div>
 
           {/* Symmetrical Links Stack */}
-          <div className="flex flex-col items-start lg:items-end gap-2 text-[11px]">
+          <div className="flex flex-col items-start lg:items-end gap-1.5 text-[11.5px]">
             {/* Row 1 */}
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[#515154]">
               <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="text-[#0071E3] hover:underline">

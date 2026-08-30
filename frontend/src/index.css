@@ -5,12 +5,13 @@
 @layer base {
   html {
     -webkit-tap-highlight-color: transparent;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
   body {
-    @apply bg-zinc-50 text-[#1D1D1F] font-sans antialiased selection:bg-hrl-crimson selection:text-white;
+    @apply bg-[#F5F5F7] text-[#1D1D1F] font-sans antialiased selection:bg-[#0071E3] selection:text-white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: -0.012em;
+    letter-spacing: -0.015em;
   }
 }
 
@@ -23,18 +24,18 @@
   scrollbar-width: none;
 }
 
-/* Fluid responsive container constraints */
-.universal-fluid-container {
-  width: 100%;
-  max-width: min(92vw, 1200px);
-  margin-left: auto;
-  margin-right: auto;
+/* Apple Smooth Button & Card Interactions */
+.apple-press-effect {
+  transition: transform 0.15s cubic-bezier(0.2, 0, 0, 1), opacity 0.15s ease;
+}
+.apple-press-effect:active {
+  transform: scale(0.98);
 }
 
 /* Audio Waveform Bars */
 @keyframes freqWave {
   0%, 100% { height: 6px; }
-  50% { height: 32px; }
+  50% { height: 30px; }
 }
 
 .wave-bar-1 { animation: freqWave 1.0s ease-in-out infinite; }
@@ -43,7 +44,7 @@
 .wave-bar-4 { animation: freqWave 1.3s ease-in-out 0.1s infinite; }
 .wave-bar-5 { animation: freqWave 1.1s ease-in-out 0.25s infinite; }
 
-/* Clean PDF Print Stylesheet (Single Page Executive Format) */
+/* Clean PDF Print Stylesheet */
 @media print {
   @page {
     size: A4 portrait;

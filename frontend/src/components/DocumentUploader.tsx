@@ -45,13 +45,13 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
         </div>
 
         {/* Ultra-Bold High-Contrast Headline */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-hrl-dark leading-[1.1] mb-4">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] text-[#1D1D1F] leading-[1.06] mb-4">
           Content engineering.<br />
           <span className="text-hrl-dark">Supercharged by AI.</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-lg text-hrl-body font-normal leading-relaxed max-w-2xl mx-auto mb-3">
+        <p className="text-base sm:text-[19px] text-[#86868B] font-normal leading-[1.42] max-w-2xl mx-auto mb-3 tracking-[-0.02em]">
           High-velocity intelligence transformation, multi-format distribution, and sovereign enterprise software foundations.
         </p>
 
@@ -81,7 +81,7 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
           </button>
 
           <a
-            href="/NTRO_Cyber_Threat_Advisory_Q3_2026_Sample.pdf"
+            href="./NTRO_Cyber_Threat_Advisory_Q3_2026_Sample.pdf"
             download="NTRO_Cyber_Threat_Advisory_Q3_2026_Sample.pdf"
             className="border border-hrl-blue text-hrl-blue hover:bg-hrl-blue-light px-6 py-3 rounded-full text-sm font-semibold transition-all duration-200 flex items-center gap-2 cursor-pointer"
           >
@@ -92,7 +92,7 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
       </div>
 
       {/* Sleek Symmetrical 4-Column Metric Strip (Apple/HRL HIG Symmetrical Design) */}
-      <div className="bg-white rounded-[24px] border border-black/5 shadow-[0_4px_24px_rgba(0,0,0,0.04),0_1px_2px_rgba(0,0,0,0.02)] p-6 sm:p-7 max-w-4xl mx-auto my-8 stats-banner-card no-print">
+      <div className="bg-white rounded-[24px] border border-black/[0.06] shadow-[0_4px_24px_rgba(0,0,0,0.04)] p-6 sm:p-7 max-w-4xl mx-auto my-8 stats-banner-card no-print">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-zinc-100 items-center">
           <div className="pt-2 md:pt-0 px-2 flex flex-col items-center justify-center">
             <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1D1D1F] tracking-tight leading-none whitespace-nowrap">
