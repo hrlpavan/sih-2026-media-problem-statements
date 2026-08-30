@@ -12,7 +12,7 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange, isProcessing, onOpenVentureModal }) => {
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-hrl-border shadow-hrl-subtle no-print transition-all w-full">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14">
         <div className="flex items-center justify-between h-16 gap-3 overflow-x-auto no-scrollbar py-1">
           {/* Brand Logo & Platform Title */}
           <div className="flex items-center space-x-3 shrink-0">
@@ -20,11 +20,11 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
               <img
                 src="./hrl_logo_transparent.png"
                 alt="HRL International"
-                className="h-4.5 sm:h-5 object-contain"
+                className="h-5 sm:h-6 object-contain"
               />
             </a>
             <div className="hidden sm:block pl-3 border-l border-hrl-border">
-              <span className="font-bold text-xs sm:text-[13px] tracking-tight text-zinc-900 block leading-tight">OmniTransform AI</span>
+              <span className="font-bold text-xs sm:text-sm tracking-tight text-zinc-900 block leading-tight">OmniTransform AI</span>
               <span className="text-[8px] sm:text-[9px] text-zinc-400 font-medium tracking-wider uppercase block leading-none mt-0.5">Content Transformation Platform</span>
             </div>
           </div>
@@ -68,7 +68,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
           </div>
 
           {/* Action Pills - Exact order from reference image, constant h-9, whitespace-nowrap */}
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
             <a
               href="#project-updates-hub"
               className="flex items-center gap-1.5 px-3.5 h-9 rounded-full bg-[#F2F2F7] hover:bg-[#E5E5EA] text-[#1D1D1F] text-xs font-semibold transition-all border border-black/5 cursor-pointer shadow-xs whitespace-nowrap shrink-0"

@@ -2,8 +2,8 @@ import React from 'react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-white border-t border-zinc-200 mt-20 pt-8 pb-12 text-[#6E6E73] text-[11px] sm:text-xs leading-relaxed no-print w-full">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+    <footer className="bg-white border-t border-zinc-200 mt-20 pt-10 pb-14 text-[#6E6E73] text-[11px] sm:text-xs leading-relaxed no-print w-full">
+      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 space-y-8">
         {/* 4-Item Legal & Official Accreditation Notes */}
         <div className="space-y-1.5 font-normal text-[#86868B] text-[11px] sm:text-xs">
           <p>

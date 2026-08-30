@@ -81,7 +81,7 @@ export const App: React.FC = () => {
         onOpenVentureModal={() => setShowVentureModal(true)}
       />
 
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+      <main className="flex-1 w-full max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 py-8 space-y-10">
         {/* Sovereign Workforce Awareness Banner */}
         <WorkforceAwarenessBanner onOpenReport={() => setShowWorkforceModal(true)} />
 
