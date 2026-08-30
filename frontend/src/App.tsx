@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import type { AudiencePersona, SampleDocument, TransformedOutput, Citation } from './types';
 import { SAMPLE_DOCUMENTS, MOCK_TRANSFORMATIONS } from './data/sampleAdvisories';
 import { transformDocument } from './services/transformationEngine';
+import { GovtHeaderRibbon } from './components/GovtHeaderRibbon';
 import { Navbar } from './components/Navbar';
 import { WorkforceAwarenessBanner } from './components/WorkforceAwarenessBanner';
 import { DocumentUploader } from './components/DocumentUploader';
@@ -72,6 +73,7 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-zinc-50 font-sans">
+      <GovtHeaderRibbon />
       <Navbar
         currentPersona={currentPersona}
         onPersonaChange={handlePersonaChange}
