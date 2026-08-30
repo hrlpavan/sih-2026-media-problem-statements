@@ -91,42 +91,42 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
         </div>
       </div>
 
-      {/* Symmetrical 4-Column Stats Banner (The Symmetrical Placing Principle: 2x2 on Mobile, 4-Col on Desktop) */}
-      <div className="bg-white rounded-3xl border border-hrl-border shadow-hrl-card p-6 sm:p-8 max-w-4xl mx-auto my-8 stats-banner-card no-print">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-hrl-border">
-          <div className="pt-2 md:pt-0">
-            <span className="text-3xl sm:text-4xl font-extrabold text-hrl-dark tracking-tight block">
-              5 Formats
+      {/* Sleek Symmetrical 4-Column Metric Strip (Apple/HRL HIG Symmetrical Design) */}
+      <div className="bg-white rounded-[24px] border border-black/5 shadow-[0_4px_24px_rgba(0,0,0,0.04),0_1px_2px_rgba(0,0,0,0.02)] p-6 sm:p-7 max-w-4xl mx-auto my-8 stats-banner-card no-print">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-zinc-100 items-center">
+          <div className="pt-2 md:pt-0 px-2 flex flex-col items-center justify-center">
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1D1D1F] tracking-tight leading-none whitespace-nowrap">
+              5-in-1
             </span>
-            <span className="text-xs text-hrl-muted font-medium block mt-1">
-              Synchronized Output
+            <span className="text-[11px] sm:text-xs text-[#86868B] font-medium mt-2 leading-tight">
+              Multi-Format Assets
             </span>
           </div>
 
-          <div className="pt-4 md:pt-0">
-            <span className="text-3xl sm:text-4xl font-extrabold text-hrl-dark tracking-tight block">
+          <div className="pt-4 md:pt-0 px-2 flex flex-col items-center justify-center">
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1D1D1F] tracking-tight leading-none whitespace-nowrap">
               &lt; 10s
             </span>
-            <span className="text-xs text-hrl-muted font-medium block mt-1">
-              End-to-End Latency
+            <span className="text-[11px] sm:text-xs text-[#86868B] font-medium mt-2 leading-tight">
+              Pipeline Latency
             </span>
           </div>
 
-          <div className="pt-4 md:pt-0">
-            <span className="text-3xl sm:text-4xl font-extrabold text-hrl-crimson tracking-tight block">
+          <div className="pt-4 md:pt-0 px-2 flex flex-col items-center justify-center">
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-hrl-crimson tracking-tight leading-none whitespace-nowrap">
               100%
             </span>
-            <span className="text-xs text-hrl-muted font-medium block mt-1">
+            <span className="text-[11px] sm:text-xs text-[#86868B] font-medium mt-2 leading-tight">
               Grounded Citations
             </span>
           </div>
 
-          <div className="pt-4 md:pt-0">
-            <span className="text-3xl sm:text-4xl font-extrabold text-hrl-dark tracking-tight block">
-              4 Languages
+          <div className="pt-4 md:pt-0 px-2 flex flex-col items-center justify-center">
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1D1D1F] tracking-tight leading-none whitespace-nowrap">
+              4 Indic
             </span>
-            <span className="text-xs text-hrl-muted font-medium block mt-1">
-              Indic Neural Translation
+            <span className="text-[11px] sm:text-xs text-[#86868B] font-medium mt-2 leading-tight">
+              Neural Languages
             </span>
           </div>
         </div>
