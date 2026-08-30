@@ -68,7 +68,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
           </div>
 
           {/* Action Pills - Exact order from reference image, constant h-9, whitespace-nowrap */}
-          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0 pr-1">
             <a
               href="#project-updates-hub"
               className="flex items-center gap-1.5 px-3.5 h-9 rounded-full bg-[#F2F2F7] hover:bg-[#E5E5EA] text-[#1D1D1F] text-xs font-semibold transition-all border border-black/5 cursor-pointer shadow-xs whitespace-nowrap shrink-0"
@@ -95,10 +95,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
 
             <a
               href="https://github.com/hrlpavan/omnitransform-ai-resources/raw/main/SIH2026_Idea_Presentation_PS26154.pptx"
-              className="bg-hrl-blue hover:bg-hrl-blue-dark text-white px-4 h-9 rounded-full text-xs font-semibold shadow-xs hover:shadow transition-all duration-200 flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
+              className="bg-hrl-blue hover:bg-hrl-blue-dark text-white pl-4 pr-5 h-9 rounded-full text-xs font-semibold shadow-xs hover:shadow transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap shrink-0"
             >
-              <Download className="w-3.5 h-3.5" />
-              <span>Pitch Deck</span>
+              <Download className="w-3.5 h-3.5 shrink-0" />
+              <span className="tracking-normal">Pitch Deck</span>
             </a>
           </div>
         </div>
