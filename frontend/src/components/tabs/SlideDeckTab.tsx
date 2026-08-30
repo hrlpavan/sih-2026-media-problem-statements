@@ -55,10 +55,10 @@ export const SlideDeckTab: React.FC<SlideDeckTabProps> = ({ slides }) => {
         isFullscreen ? 'fixed inset-4 z-50 flex flex-col justify-between p-12 bg-white' : 'aspect-[16/9] p-8 flex flex-col justify-between'
       }`}>
         <div className="flex items-center justify-between border-b border-classic-border pb-3">
-          <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-classic-ochre" />
+          <div className="flex items-center gap-2.5">
+            <img src="/hrl_logo_transparent.png" alt="HRL" className="h-5 object-contain" />
             <span className="font-serif font-bold text-xs text-classic-navy uppercase tracking-wider">
-              OmniTransform AI Briefing
+              OmniTransform AI • Team HRL
             </span>
           </div>
           <span className="font-mono text-xs font-bold text-classic-slate-muted">

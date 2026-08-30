@@ -25,8 +25,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
             <span className="font-mono bg-classic-bg px-2.5 py-0.5 rounded border border-classic-border text-classic-navy">
               PS ID: 26154
             </span>
-            <span className="font-mono bg-classic-ochre-light text-classic-ochre font-bold px-2.5 py-0.5 rounded border border-classic-ochre/30">
-              TEAM: HRL (104580)
+            <span className="font-mono bg-classic-ochre-light text-classic-ochre font-bold px-2.5 py-0.5 rounded border border-classic-ochre/30 flex items-center gap-1.5">
+              <img src="/hrl_logo_transparent.png" alt="HRL" className="h-3.5 object-contain" />
+              <span>TEAM ID: 104580</span>
             </span>
             <span className="text-zinc-300 hidden sm:inline">|</span>
             <span className="text-classic-navy font-bold hidden sm:inline">NTRO</span>
@@ -36,11 +37,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
 
       {/* Main App Navigation Bar */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14">
-          {/* Brand & Subtitle */}
-          <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 rounded-lg bg-classic-navy flex items-center justify-center text-white font-serif font-bold text-sm shadow-sm">
-              OT
+        <div className="flex items-center justify-between h-16">
+          {/* Official HRL Brand Logo & Title */}
+          <div className="flex items-center space-x-3.5">
+            <div className="p-1 rounded-lg bg-zinc-50 border border-classic-border flex items-center justify-center shadow-sm">
+              <img
+                src="/hrl_logo_transparent.png"
+                alt="HRL Logo"
+                className="h-7 sm:h-8 object-contain"
+              />
             </div>
             <div>
               <div className="flex items-center space-x-2">
@@ -48,7 +53,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
                   OmniTransform AI
                 </span>
                 <span className="bg-classic-ochre-light text-classic-ochre text-[11px] font-bold px-2 py-0.5 rounded border border-classic-ochre/20">
-                  Team HRL
+                  By Team HRL
                 </span>
               </div>
               <p className="text-[11px] text-classic-slate-muted font-normal leading-none mt-0.5">
@@ -63,7 +68,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
             <button
               onClick={() => onPersonaChange('executive')}
               disabled={isProcessing}
-              className={`text-xs px-3 py-1 rounded-md font-medium transition-all ${
+              className={`text-xs px-3 py-1 rounded-md font-medium transition-all cursor-pointer ${
                 currentPersona === 'executive'
                   ? 'bg-classic-navy text-white shadow-sm font-bold'
                   : 'text-classic-slate-muted hover:text-classic-navy'
@@ -74,7 +79,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
             <button
               onClick={() => onPersonaChange('analyst')}
               disabled={isProcessing}
-              className={`text-xs px-3 py-1 rounded-md font-medium transition-all ${
+              className={`text-xs px-3 py-1 rounded-md font-medium transition-all cursor-pointer ${
                 currentPersona === 'analyst'
                   ? 'bg-classic-navy text-white shadow-sm font-bold'
                   : 'text-classic-slate-muted hover:text-classic-navy'
@@ -85,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
             <button
               onClick={() => onPersonaChange('citizen')}
               disabled={isProcessing}
-              className={`text-xs px-3 py-1 rounded-md font-medium transition-all ${
+              className={`text-xs px-3 py-1 rounded-md font-medium transition-all cursor-pointer ${
                 currentPersona === 'citizen'
                   ? 'bg-classic-navy text-white shadow-sm font-bold'
                   : 'text-classic-slate-muted hover:text-classic-navy'

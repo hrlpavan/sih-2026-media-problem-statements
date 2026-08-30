@@ -36,7 +36,20 @@ export const ExecutiveMemoTab: React.FC<ExecutiveMemoTabProps> = ({
 
       {/* Pristine Document Sheet */}
       <div className="bg-white rounded-xl border border-classic-border p-8 shadow-classic-sm print-document-container font-serif">
-        {/* Document Header Metadata */}
+        {/* Document Header Metadata with HRL Logo */}
+        <div className="flex items-center justify-between pb-4 mb-4 border-b border-classic-border">
+          <div className="flex items-center gap-3">
+            <img src="/hrl_logo_transparent.png" alt="HRL Logo" className="h-8 object-contain" />
+            <div>
+              <span className="font-serif font-bold text-sm text-classic-navy block">OMNITRANSFORM INTELLIGENCE BRIEF</span>
+              <span className="font-mono text-[10px] text-classic-slate-muted block">SIH 2026 // NTRO PS-26154 // TEAM HRL</span>
+            </div>
+          </div>
+          <span className="text-rose-700 font-bold text-xs font-mono bg-rose-50 px-2.5 py-1 rounded border border-rose-200">
+            {memo.classification}
+          </span>
+        </div>
+
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pb-6 border-b border-classic-border text-xs print-section font-sans">
           <div>
             <span className="text-classic-slate-muted font-bold uppercase text-[10px] block">ISSUING AUTHORITY</span>
@@ -47,12 +60,12 @@ export const ExecutiveMemoTab: React.FC<ExecutiveMemoTabProps> = ({
             <span className="font-bold text-classic-navy">{memo.date}</span>
           </div>
           <div>
-            <span className="text-classic-slate-muted font-bold uppercase text-[10px] block">SECURITY LEVEL</span>
-            <span className="font-bold text-rose-700">{memo.classification}</span>
+            <span className="text-classic-slate-muted font-bold uppercase text-[10px] block">PREPARED BY</span>
+            <span className="font-bold text-classic-navy">Team HRL (ID: 104580)</span>
           </div>
           <div>
-            <span className="text-classic-slate-muted font-bold uppercase text-[10px] block">PREPARED BY TEAM</span>
-            <span className="font-bold text-classic-navy">Team HRL (ID: 104580)</span>
+            <span className="text-classic-slate-muted font-bold uppercase text-[10px] block">DISTRIBUTION</span>
+            <span className="font-bold text-classic-navy">Senior Leadership</span>
           </div>
         </div>
 

@@ -12,19 +12,20 @@ export const Footer: React.FC = () => {
             alt="Official SIH 2026 Institutional Partners"
             className="h-9 sm:h-10 object-contain"
           />
-          <span className="text-xs font-serif font-semibold text-classic-navy">
-            Smart India Hackathon 2026 • Official Platform Solution
-          </span>
+          <div className="flex items-center gap-3">
+            <img src="/hrl_logo_transparent.png" alt="HRL" className="h-6 object-contain" />
+            <span className="text-xs font-serif font-semibold text-classic-navy">
+              Smart India Hackathon 2026 • Official Platform Solution
+            </span>
+          </div>
         </div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
-            <div className="flex items-center space-x-2 mb-2">
-              <div className="w-7 h-7 rounded-lg bg-classic-navy flex items-center justify-center text-white font-serif font-bold text-xs">
-                OT
-              </div>
+            <div className="flex items-center space-x-2.5 mb-2">
+              <img src="/hrl_logo_transparent.png" alt="HRL" className="h-6 object-contain" />
               <span className="font-serif font-bold text-sm text-classic-navy">OmniTransform AI</span>
             </div>
             <p className="text-xs text-classic-slate-muted leading-relaxed">
@@ -40,7 +41,7 @@ export const Footer: React.FC = () => {
               <li>Problem ID: <strong className="text-classic-navy">26154</strong></li>
               <li>Organization: <strong className="text-classic-navy">NTRO (Govt. of India)</strong></li>
               <li>Category: <strong className="text-classic-navy">Software / AI & Cyber Defense</strong></li>
-              <li>Team Name: <strong className="text-classic-navy">HRL</strong></li>
+              <li>Team Name: <strong className="text-classic-navy">HRL (ID: 104580)</strong></li>
             </ul>
           </div>
 
