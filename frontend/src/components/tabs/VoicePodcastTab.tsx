@@ -22,11 +22,12 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentSeconds, setCurrentSeconds] = useState(0);
   const [selectedVoice, setSelectedVoice] = useState<'adam' | 'rachel' | 'antoni'>('adam');
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
 
   useEffect(() => {
     let timer: any;
-    if (isPlaying) {
+    if (isPlaying && !audioRef.current) {
       timer = setInterval(() => {
         setCurrentSeconds((prev) => {
           if (prev >= 60) {
@@ -41,35 +42,42 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
   }, [isPlaying]);
 
   const handlePlay = () => {
-    if ('speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(podcast.script);
-      utterance.rate = 1.0;
-      utterance.pitch = selectedVoice === 'rachel' ? 1.15 : selectedVoice === 'antoni' ? 0.9 : 1.0;
-      
-      const voices = window.speechSynthesis.getVoices();
-      if (voices.length > 0) {
-        if (selectedVoice === 'rachel') {
-          const femaleVoice = voices.find(v => v.name.includes('Samantha') || v.name.includes('Victoria') || v.name.includes('Female'));
-          if (femaleVoice) utterance.voice = femaleVoice;
-        } else {
-          const maleVoice = voices.find(v => v.name.includes('Alex') || v.name.includes('Daniel') || v.name.includes('Male'));
-          if (maleVoice) utterance.voice = maleVoice;
-        }
-      }
-
-      utterance.onend = () => {
+    if (!audioRef.current) {
+      const audio = new Audio('/OmniTransform_AI_ElevenLabs_Briefing.m4a');
+      audio.onended = () => {
         setIsPlaying(false);
         setCurrentSeconds(0);
       };
-
-      utteranceRef.current = utterance;
-      window.speechSynthesis.speak(utterance);
+      audio.ontimeupdate = () => {
+        setCurrentSeconds(Math.floor(audio.currentTime));
+      };
+      audioRef.current = audio;
     }
-    setIsPlaying(true);
+    
+    audioRef.current.play().then(() => {
+      setIsPlaying(true);
+    }).catch(() => {
+      // Fallback to Web Speech API
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(podcast.script);
+        utterance.rate = 1.0;
+        utterance.pitch = selectedVoice === 'rachel' ? 1.15 : selectedVoice === 'antoni' ? 0.9 : 1.0;
+        utterance.onend = () => {
+          setIsPlaying(false);
+          setCurrentSeconds(0);
+        };
+        utteranceRef.current = utterance;
+        window.speechSynthesis.speak(utterance);
+      }
+      setIsPlaying(true);
+    });
   };
 
   const handleStop = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
     if ('speechSynthesis' in window) {
       window.speechSynthesis.cancel();
     }
@@ -85,7 +93,14 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
   };
 
   const resetPlay = () => {
-    handleStop();
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.pause();
+    }
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    setIsPlaying(false);
     setCurrentSeconds(0);
   };
 
@@ -112,7 +127,7 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
           </h3>
         </div>
 
-        {/* Apple Segmented Voice Selector & Download */}
+        {/* Apple Segmented Voice Selector & Download MP3 Button */}
         <div className="flex items-center gap-2.5 flex-wrap">
           <div className="flex items-center bg-[#F2F2F7] p-1 rounded-full border border-black/5 shadow-sm">
             <span className="text-[11px] text-[#86868B] font-medium px-2.5 hidden sm:inline">Voice:</span>
@@ -148,13 +163,14 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
             </button>
           </div>
 
-          <button
-            onClick={() => alert('Downloading ElevenLabs 60s synthesized broadcast (MP3)...')}
-            className="px-4 py-1.5 rounded-full bg-[#F2F2F7] hover:bg-[#E5E5EA] text-[#1D1D1F] font-semibold text-xs border border-black/5 transition-all duration-200 flex items-center gap-1.5 cursor-pointer shadow-sm"
+          <a
+            href="/OmniTransform_AI_ElevenLabs_Briefing.mp3"
+            download="OmniTransform_AI_ElevenLabs_Briefing.mp3"
+            className="px-4 py-1.5 rounded-full bg-zinc-900 hover:bg-black text-white font-semibold text-xs transition-all duration-200 flex items-center gap-1.5 cursor-pointer shadow-sm hover:shadow"
           >
-            <Download className="w-3.5 h-3.5 text-[#86868B]" />
+            <Download className="w-3.5 h-3.5 text-hrl-crimson" />
             <span>Download MP3</span>
-          </button>
+          </a>
         </div>
       </div>
 
@@ -163,6 +179,7 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
         <div className="max-w-2xl mx-auto">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3.5">
+              {/* Official ElevenLabs Logo Badge Container */}
               <div className="w-12 h-12 rounded-2xl bg-white text-zinc-950 flex items-center justify-center shadow-lg">
                 <ElevenLabsIcon className="w-6 h-6 text-black" />
               </div>
@@ -179,7 +196,7 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
             </div>
           </div>
 
-          {/* Dynamic Frequency Bars */}
+          {/* Dynamic Frequency Waveform */}
           <div className="h-16 flex items-center justify-center gap-1.5 my-6 bg-black/60 rounded-2xl px-6 border border-white/5">
             {[4, 12, 24, 18, 8, 28, 20, 14, 30, 22, 16, 24, 12, 6, 26, 18, 10, 22, 14, 8, 16, 28, 20, 12, 24, 16, 8, 20, 14].map((h, i) => (
               <div
