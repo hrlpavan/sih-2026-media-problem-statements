@@ -20,9 +20,7 @@ export const ExecutiveMemoTab: React.FC<ExecutiveMemoTabProps> = ({
       {/* On-screen Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-3 border-b border-zinc-200 no-print action-toolbar">
         <div>
-          <span className="text-xs font-bold text-hrl-crimson bg-hrl-crimson-tint px-2.5 py-1 rounded border border-hrl-crimson/20">
-            FORMAT 1: EXECUTIVE BRIEFING MEMORANDUM
-          </span>
+          <span className="text-[11px] font-bold tracking-wider text-hrl-crimson uppercase">FORMAT 1 · EXECUTIVE BRIEFING MEMORANDUM</span>
           <h3 className="font-bold text-base text-zinc-900 mt-1">{memo.title}</h3>
         </div>
         <button
@@ -45,9 +43,10 @@ export const ExecutiveMemoTab: React.FC<ExecutiveMemoTabProps> = ({
               <span className="font-mono text-[10px] text-zinc-500 block">SIH 2026 // NTRO PS-26154 // HRL</span>
             </div>
           </div>
-          <span className="text-rose-700 font-bold text-xs font-mono bg-rose-50 px-2.5 py-1 rounded border border-rose-200">
-            {memo.classification}
-          </span>
+          <div className="flex items-center gap-1.5 text-xs font-bold font-mono text-rose-700 tracking-wider">
+            <span className="w-1.5 h-1.5 rounded-full bg-rose-600" />
+            <span>{memo.classification}</span>
+          </div>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pb-6 border-b border-zinc-200 text-xs print-section">

@@ -39,9 +39,10 @@ export const OutputDashboard: React.FC<OutputDashboardProps> = ({ output, onOpen
           </p>
         </div>
 
-        <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50/80 px-3 py-1 rounded-full border border-emerald-200/60">
-          100% Grounded in Source
-        </span>
+        <div className="flex items-center gap-1.5 text-xs font-semibold text-emerald-700">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+          <span>100% Grounded Source Citations</span>
+        </div>
       </div>
 
       {/* Apple Squircle Segmented Tabs Bar (macOS / iOS HIG Design) */}

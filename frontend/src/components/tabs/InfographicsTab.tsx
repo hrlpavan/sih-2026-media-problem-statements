@@ -11,9 +11,7 @@ export const InfographicsTab: React.FC<InfographicsTabProps> = ({ cards }) => {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-3 border-b border-zinc-200 no-print">
         <div>
-          <span className="text-xs font-bold text-hrl-crimson bg-hrl-crimson-tint px-2.5 py-1 rounded border border-hrl-crimson/20">
-            FORMAT 3: VISUAL INFOGRAPHICS
-          </span>
+          <span className="text-[11px] font-bold tracking-wider text-hrl-crimson uppercase">FORMAT 3 · VISUAL INFOGRAPHICS</span>
           <h3 className="font-bold text-base text-zinc-900 mt-1">
             Visual Key Metric Data Cards
           </h3>
