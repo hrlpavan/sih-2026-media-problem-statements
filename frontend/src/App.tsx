@@ -3,12 +3,14 @@ import type { AudiencePersona, SampleDocument, TransformedOutput, Citation } fro
 import { SAMPLE_DOCUMENTS, MOCK_TRANSFORMATIONS } from './data/sampleAdvisories';
 import { transformDocument } from './services/transformationEngine';
 import { Navbar } from './components/Navbar';
+import { WorkforceAwarenessBanner } from './components/WorkforceAwarenessBanner';
 import { DocumentUploader } from './components/DocumentUploader';
 import { PipelineVisualizer } from './components/PipelineVisualizer';
 import { OutputDashboard } from './components/OutputDashboard';
 import { ProjectUpdatesAudioHub } from './components/ProjectUpdatesAudioHub';
 import { CitationInspectorModal } from './components/CitationInspectorModal';
 import { VentureStrategyModal } from './components/VentureStrategyModal';
+import { WorkforceModal } from './components/WorkforceModal';
 import { Footer } from './components/Footer';
 import confetti from 'canvas-confetti';
 
@@ -23,6 +25,7 @@ export const App: React.FC = () => {
   );
   const [activeCitation, setActiveCitation] = useState<Citation | null>(null);
   const [showVentureModal, setShowVentureModal] = useState<boolean>(false);
+  const [showWorkforceModal, setShowWorkforceModal] = useState<boolean>(false);
 
   const handleStartTransform = async () => {
     if (!selectedDoc) return;
@@ -76,6 +79,9 @@ export const App: React.FC = () => {
       />
 
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+        {/* Sovereign Workforce Awareness Banner */}
+        <WorkforceAwarenessBanner onOpenReport={() => setShowWorkforceModal(true)} />
+
         <DocumentUploader
           selectedDoc={selectedDoc}
           onSelectDoc={setSelectedDoc}
@@ -107,6 +113,11 @@ export const App: React.FC = () => {
       <VentureStrategyModal
         isOpen={showVentureModal}
         onClose={() => setShowVentureModal(false)}
+      />
+
+      <WorkforceModal
+        isOpen={showWorkforceModal}
+        onClose={() => setShowWorkforceModal(false)}
       />
 
       <Footer />
