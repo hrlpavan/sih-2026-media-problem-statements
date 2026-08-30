@@ -122,14 +122,23 @@ export const ExecutiveMemoTab: React.FC<ExecutiveMemoTabProps> = ({
           <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider mb-3">
             3. Recommended Action Matrix
           </h4>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div className="space-y-2.5">
             {memo.actionItems.map((item, idx) => (
-              <div key={idx} className="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200">
-                <div className="flex items-center justify-between text-xs font-bold text-zinc-900 mb-1">
-                  <span className="text-hrl-crimson">{item.priority}</span>
-                  <span className="text-zinc-500 font-normal">{item.owner}</span>
+              <div
+                key={idx}
+                className="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:border-zinc-300 transition-all"
+              >
+                <div className="flex items-center gap-3 flex-1">
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-rose-50 text-hrl-crimson border border-rose-200/60 shrink-0 whitespace-nowrap">
+                    {item.priority}
+                  </span>
+                  <p className="text-xs sm:text-sm text-zinc-800 font-medium leading-normal">
+                    {item.action}
+                  </p>
                 </div>
-                <p className="text-xs text-zinc-700 leading-normal">{item.action}</p>
+                <div className="text-[11px] sm:text-xs font-semibold text-zinc-500 bg-white px-3 py-1 rounded-lg border border-zinc-200 shrink-0 whitespace-nowrap self-start sm:self-auto">
+                  {item.owner}
+                </div>
               </div>
             ))}
           </div>
