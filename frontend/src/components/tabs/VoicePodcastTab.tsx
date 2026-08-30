@@ -258,7 +258,7 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
                   : 'text-[#86868B] hover:text-[#1D1D1F]'
               }`}
             >
-              eleven_v3 (Expressive)
+              Eleven v3 (Flagship)
             </button>
             <button
               onClick={() => switchModel('eleven_flash_v2_5')}
@@ -268,7 +268,7 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
                   : 'text-[#86868B] hover:text-[#1D1D1F]'
               }`}
             >
-              eleven_flash_v2_5 (Low-Latency)
+              Eleven Flash v2.5 (Low Latency)
             </button>
           </div>
         </div>
@@ -374,7 +374,7 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
               <strong className="text-[#1D1D1F]">{currentVoice.name}</strong>: {currentVoice.description}
             </div>
             <div className="font-mono text-[11px] bg-[#F2F2F7] px-2 py-0.5 rounded text-[#86868B]">
-              model: "{selectedModel}"
+              model: "{selectedModel === 'eleven_v3' ? 'Eleven v3' : 'Eleven Flash v2.5'}"
             </div>
           </div>
         </div>
@@ -392,7 +392,7 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
               <div>
                 <h4 className="font-bold text-base text-white tracking-tight">{podcast.title}</h4>
                 <p className="text-xs text-zinc-400 font-mono mt-0.5">
-                  MODEL: {selectedModel.toUpperCase()} // VOICE: {currentVoice.name.toUpperCase()} (ID: {currentVoice.voiceId.slice(0, 8)}...)
+                  MODEL: {selectedModel === 'eleven_v3' ? 'ELEVEN V3' : 'ELEVEN FLASH V2.5'} · VOICE: {currentVoice.name.toUpperCase()} (ID: {currentVoice.voiceId.slice(0, 8)}...)
                 </p>
               </div>
             </div>

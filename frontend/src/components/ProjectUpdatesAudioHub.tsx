@@ -210,7 +210,7 @@ export const ProjectUpdatesAudioHub: React.FC = () => {
                   : 'text-zinc-600 hover:text-zinc-900'
               }`}
             >
-              eleven_v3
+              Eleven v3
             </button>
             <button
               onClick={() => setSelectedModel('eleven_flash_v2_5')}
@@ -220,7 +220,7 @@ export const ProjectUpdatesAudioHub: React.FC = () => {
                   : 'text-zinc-600 hover:text-zinc-900'
               }`}
             >
-              eleven_flash_v2_5
+              Eleven Flash v2.5
             </button>
           </div>
 
@@ -234,7 +234,7 @@ export const ProjectUpdatesAudioHub: React.FC = () => {
             }`}
           >
             {isPlayingChangelog ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
-            <span>{isPlayingChangelog ? 'Pause Changelog' : 'Play Full Audio Changelog'}</span>
+            <span className="whitespace-nowrap">{isPlayingChangelog ? 'Pause Changelog' : 'Play Full Changelog'}</span>
           </button>
 
           {/* Download Master Changelog MP3 */}
@@ -270,7 +270,7 @@ export const ProjectUpdatesAudioHub: React.FC = () => {
           </div>
         </div>
         <span className="text-[11px] font-mono text-zinc-500 hidden sm:inline">
-          MODEL: {selectedModel.toUpperCase()} // 70+ INDIC LANGUAGES
+          MODEL: {selectedModel === 'eleven_v3' ? 'ELEVEN V3' : 'ELEVEN FLASH V2.5'} · 70+ INDIC LANGUAGES
         </span>
       </div>
 
@@ -321,7 +321,7 @@ export const ProjectUpdatesAudioHub: React.FC = () => {
               <div className="mt-5 pt-4 border-t border-black/5 flex items-center justify-between">
                 <div className="flex items-center gap-1.5 text-[11px] text-zinc-500 font-mono">
                   <ElevenLabsIcon className="w-3 h-3 text-zinc-800" />
-                  <span>{selectedVoice.toUpperCase()} ({selectedModel === 'eleven_v3' ? 'v3' : 'Flash'})</span>
+                  <span>{selectedVoice.toUpperCase()} ({selectedModel === 'eleven_v3' ? 'v3 Flagship' : 'Flash v2.5'})</span>
                 </div>
 
                 <button

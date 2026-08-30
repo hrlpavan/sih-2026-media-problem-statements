@@ -21,12 +21,12 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
               <img
                 src="/hrl_logo_transparent.png"
                 alt="HRL International"
-                className="h-6 sm:h-7 object-contain"
+                className="h-4.5 sm:h-5 object-contain"
               />
             </a>
             <div className="hidden sm:block pl-3 border-l border-hrl-border">
-              <span className="font-bold text-xs tracking-tight text-hrl-dark block">OmniTransform AI</span>
-              <span className="text-[10px] text-hrl-muted block leading-none">Content Transformation Platform</span>
+              <span className="font-bold text-xs sm:text-[13px] tracking-tight text-zinc-900 block leading-tight">OmniTransform AI</span>
+              <span className="text-[9px] text-zinc-400 font-medium tracking-wider uppercase block leading-none mt-0.5">Content Transformation Platform</span>
             </div>
           </div>
 
