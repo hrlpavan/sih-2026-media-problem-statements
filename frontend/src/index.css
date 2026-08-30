@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-white text-zinc-900 font-sans antialiased selection:bg-hrl-red selection:text-white;
+    @apply bg-white text-hrl-dark font-sans antialiased selection:bg-hrl-crimson selection:text-white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: -0.015em;
@@ -23,7 +23,7 @@
 .wave-bar-4 { animation: freqWave 1.3s ease-in-out 0.1s infinite; }
 .wave-bar-5 { animation: freqWave 1.1s ease-in-out 0.25s infinite; }
 
-/* Print Stylesheet for 1-Page Clean PDF */
+/* Clean PDF Print Stylesheet (Single Page Executive Format) */
 @media print {
   @page {
     size: A4 portrait;
@@ -32,7 +32,7 @@
 
   body {
     background: #FFFFFF !important;
-    color: #000000 !important;
+    color: #1D1D1F !important;
     font-size: 10.5pt !important;
     line-height: 1.45 !important;
   }
@@ -41,7 +41,7 @@
   footer,
   nav,
   .no-print,
-  .top-announcement-bar,
+  .top-motto-bar,
   .hero-brand-section,
   .stats-banner-card,
   .uploader-section,
@@ -67,9 +67,9 @@
   }
 
   .print-citation-badge {
-    border: 1px solid #000000 !important;
+    border: 1px solid #1D1D1F !important;
     background: transparent !important;
-    color: #000000 !important;
+    color: #1D1D1F !important;
     font-weight: bold !important;
     font-size: 8.5pt !important;
     padding: 1pt 3pt !important;

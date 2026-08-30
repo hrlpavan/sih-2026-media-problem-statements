@@ -10,50 +10,55 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange, isProcessing }) => {
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-zinc-100 no-print transition-all">
-      {/* Top Announcement Bar (Exact HRL Website Style) */}
-      <div className="bg-zinc-50 border-b border-zinc-100 py-1.5 px-4 text-center top-announcement-bar">
-        <div className="max-w-6xl mx-auto flex items-center justify-between text-xs text-zinc-600 font-normal">
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-hrl-border shadow-hrl-subtle no-print transition-all">
+      {/* Official Corporate Motto & Institutional Partners Bar */}
+      <div className="bg-hrl-surface border-b border-hrl-border py-1.5 px-4 text-center top-motto-bar">
+        <div className="max-w-6xl mx-auto flex items-center justify-between text-xs text-hrl-body flex-wrap gap-2">
           <div className="flex items-center gap-2">
-            <span className="font-semibold text-zinc-900">HRL International</span>
-            <span className="text-zinc-400">·</span>
-            <span>Smart India Hackathon 2026 Submission</span>
+            <span className="font-semibold text-hrl-dark">HRL International Private Limited™</span>
+            <span className="text-zinc-300">·</span>
+            <span className="italic text-hrl-crimson font-medium hidden md:inline">
+              "We Can Do Everything Related To Software Sector Without Any Excuses!"
+            </span>
           </div>
-          <div className="hidden sm:flex items-center gap-3">
-            <span className="font-mono text-zinc-500">PS ID: 26154 · NTRO</span>
-            <span className="text-zinc-400">·</span>
-            <span className="font-semibold text-hrl-red">Team HRL (ID: 104580)</span>
+          <div className="flex items-center gap-2.5 font-mono text-[11px]">
+            <span className="bg-white px-2 py-0.5 rounded border border-hrl-border font-semibold text-hrl-dark">
+              SIH 2026 // PS-26154
+            </span>
+            <span className="text-zinc-300">·</span>
+            <span className="font-semibold text-hrl-crimson">TEAM HRL (ID: 104580)</span>
           </div>
         </div>
       </div>
 
-      {/* Main Navigation Bar */}
+      {/* Main Navigation */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* HRL Brand Logo */}
-          <div className="flex items-center space-x-3">
+          {/* Brand Logo & Platform Title */}
+          <div className="flex items-center space-x-3.5">
             <a href="#" className="flex items-center">
               <img
                 src="/hrl_logo_transparent.png"
-                alt="HRL"
+                alt="HRL International"
                 className="h-8 sm:h-9 object-contain"
               />
             </a>
-            <div className="hidden md:block pl-3 border-l border-zinc-200">
-              <span className="font-bold text-xs tracking-tight text-zinc-900 block">OmniTransform AI</span>
-              <span className="text-[10px] text-zinc-500 block leading-none">Content Transformation Platform</span>
+            <div className="hidden sm:block pl-3 border-l border-hrl-border">
+              <span className="font-bold text-xs tracking-tight text-hrl-dark block">OmniTransform AI</span>
+              <span className="text-[10px] text-hrl-muted block leading-none">Content Transformation Platform</span>
             </div>
           </div>
 
-          {/* Navigation Persona Selector */}
-          <div className="flex items-center space-x-1 bg-zinc-100 p-1 rounded-full border border-zinc-200/80">
+          {/* Symmetrical Segmented Persona Selector */}
+          <div className="flex items-center space-x-1 bg-hrl-surface p-1 rounded-full border border-hrl-border">
+            <span className="text-[11px] text-hrl-muted font-medium px-2.5 hidden sm:inline">Audience:</span>
             <button
               onClick={() => onPersonaChange('executive')}
               disabled={isProcessing}
-              className={`text-xs px-3.5 py-1.5 rounded-full font-medium transition-all cursor-pointer ${
+              className={`text-xs px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 cursor-pointer ${
                 currentPersona === 'executive'
-                  ? 'bg-zinc-900 text-white shadow-sm font-semibold'
-                  : 'text-zinc-600 hover:text-zinc-900'
+                  ? 'bg-hrl-dark text-white shadow-sm font-semibold'
+                  : 'text-hrl-body hover:text-hrl-dark'
               }`}
             >
               Executive
@@ -61,10 +66,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
             <button
               onClick={() => onPersonaChange('analyst')}
               disabled={isProcessing}
-              className={`text-xs px-3.5 py-1.5 rounded-full font-medium transition-all cursor-pointer ${
+              className={`text-xs px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 cursor-pointer ${
                 currentPersona === 'analyst'
-                  ? 'bg-zinc-900 text-white shadow-sm font-semibold'
-                  : 'text-zinc-600 hover:text-zinc-900'
+                  ? 'bg-hrl-dark text-white shadow-sm font-semibold'
+                  : 'text-hrl-body hover:text-hrl-dark'
               }`}
             >
               Technical
@@ -72,21 +77,21 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
             <button
               onClick={() => onPersonaChange('citizen')}
               disabled={isProcessing}
-              className={`text-xs px-3.5 py-1.5 rounded-full font-medium transition-all cursor-pointer ${
+              className={`text-xs px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 cursor-pointer ${
                 currentPersona === 'citizen'
-                  ? 'bg-zinc-900 text-white shadow-sm font-semibold'
-                  : 'text-zinc-600 hover:text-zinc-900'
+                  ? 'bg-hrl-dark text-white shadow-sm font-semibold'
+                  : 'text-hrl-body hover:text-hrl-dark'
               }`}
             >
               Public
             </button>
           </div>
 
-          {/* Right Action: Download PPTX (Exact HRL Blue Pill Button) */}
+          {/* Right Action: Pitch Deck Download Button */}
           <div className="flex items-center gap-2">
             <a
               href="https://github.com/hrlpavan/omnitransform-ai-resources/raw/main/SIH2026_Idea_Presentation_PS26154.pptx"
-              className="bg-hrl-blue hover:bg-hrl-blue-dark text-white px-4 sm:px-5 py-2 rounded-full text-xs font-semibold shadow-sm hover:shadow transition-all flex items-center gap-1.5 cursor-pointer"
+              className="bg-hrl-blue hover:bg-hrl-blue-dark text-white px-4 sm:px-5 py-2 rounded-full text-xs font-semibold shadow-sm hover:shadow transition-all duration-200 flex items-center gap-1.5 cursor-pointer"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Pitch Deck</span>
