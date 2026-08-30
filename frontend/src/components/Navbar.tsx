@@ -13,15 +13,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-hrl-border shadow-hrl-subtle no-print transition-all w-full">
       {/* Main Navigation Container */}
-      <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14 sm:h-16 gap-2 sm:gap-3 overflow-x-auto no-scrollbar py-1">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-14 sm:h-16 gap-2 sm:gap-3 py-1">
           {/* Brand Logo & Platform Title */}
           <div className="flex items-center space-x-2.5 sm:space-x-3 shrink-0">
             <a href="#" className="flex items-center">
               <img
                 src="./hrl_logo_transparent.png"
                 alt="HRL International"
-                className="h-4 xs:h-4.5 sm:h-5 object-contain"
+                className="h-4.5 sm:h-5 object-contain"
               />
             </a>
             <div className="hidden sm:block pl-2.5 sm:pl-3 border-l border-hrl-border">
@@ -30,9 +30,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
             </div>
           </div>
 
-          {/* Symmetrical Segmented Persona Selector - Constant Height & Mobile Touch Friendly */}
+          {/* Symmetrical Segmented Persona Selector - Responsive & Compact */}
           <div className="flex items-center bg-[#F2F2F7] p-0.5 sm:p-1 rounded-full border border-black/5 h-8 sm:h-9 shrink-0">
-            <span className="text-[10px] sm:text-[11px] text-[#86868B] font-semibold px-2 hidden md:inline whitespace-nowrap">Audience:</span>
+            <span className="text-[10px] sm:text-[11px] text-[#86868B] font-semibold px-2 hidden lg:inline whitespace-nowrap">Audience:</span>
             <button
               onClick={() => onPersonaChange('executive')}
               disabled={isProcessing}
@@ -68,11 +68,11 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
             </button>
           </div>
 
-          {/* Right Actions - Fully fluid across screens */}
+          {/* Right Actions - Gracefully responsive so nothing ever gets cut off */}
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <a
               href="#project-updates-hub"
-              className="hidden lg:flex items-center gap-1.5 px-3 sm:px-3.5 h-8 sm:h-9 rounded-full bg-[#F2F2F7] hover:bg-[#E5E5EA] text-[#1D1D1F] text-xs font-semibold transition-all border border-black/5 cursor-pointer shadow-xs whitespace-nowrap"
+              className="hidden 2xl:flex items-center gap-1.5 px-3 h-8 sm:h-9 rounded-full bg-[#F2F2F7] hover:bg-[#E5E5EA] text-[#1D1D1F] text-xs font-semibold transition-all border border-black/5 cursor-pointer shadow-xs whitespace-nowrap"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-hrl-crimson animate-ping" />
               <span>Audio Updates</span>
@@ -80,7 +80,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
 
             <a
               href="#voice-faq-hub"
-              className="hidden xl:flex items-center gap-1.5 px-3 sm:px-3.5 h-8 sm:h-9 rounded-full bg-[#F2F2F7] hover:bg-[#E5E5EA] text-[#1D1D1F] text-xs font-semibold transition-all border border-black/5 cursor-pointer shadow-xs whitespace-nowrap"
+              className="hidden xl:flex items-center gap-1.5 px-3 h-8 sm:h-9 rounded-full bg-[#F2F2F7] hover:bg-[#E5E5EA] text-[#1D1D1F] text-xs font-semibold transition-all border border-black/5 cursor-pointer shadow-xs whitespace-nowrap"
             >
               <HelpCircle className="w-3.5 h-3.5 text-zinc-700" />
               <span>Voice FAQ</span>
@@ -88,16 +88,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
 
             <button
               onClick={onOpenVentureModal}
-              className="flex items-center gap-1.5 px-2.5 sm:px-3.5 h-8 sm:h-9 rounded-full bg-[#F2F2F7] hover:bg-[#E5E5EA] text-[#1D1D1F] text-[11px] sm:text-xs font-semibold transition-all border border-black/5 cursor-pointer shadow-xs whitespace-nowrap"
+              className="hidden sm:flex items-center gap-1.5 px-2.5 sm:px-3 h-8 sm:h-9 rounded-full bg-[#F2F2F7] hover:bg-[#E5E5EA] text-[#1D1D1F] text-[11px] sm:text-xs font-semibold transition-all border border-black/5 cursor-pointer shadow-xs whitespace-nowrap"
             >
               <TrendingUp className="w-3.5 h-3.5 text-hrl-crimson" />
-              <span className="hidden xs:inline">Venture & GTM</span>
-              <span className="xs:hidden">VC/GTM</span>
+              <span>Venture & GTM</span>
             </button>
 
             <a
               href="https://github.com/hrlpavan/omnitransform-ai-resources/raw/main/SIH2026_Idea_Presentation_PS26154.pptx"
-              className="bg-hrl-blue hover:bg-hrl-blue-dark text-white px-3 sm:px-4 md:px-5 h-8 sm:h-9 rounded-full text-[11px] sm:text-xs font-semibold shadow-xs hover:shadow transition-all duration-200 flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+              className="bg-hrl-blue hover:bg-hrl-blue-dark text-white px-3 sm:px-4 h-8 sm:h-9 rounded-full text-[11px] sm:text-xs font-semibold shadow-xs hover:shadow transition-all duration-200 flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Pitch Deck</span>
