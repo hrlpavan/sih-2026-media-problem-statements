@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
               <span className="font-bold text-sm text-white">OmniTransform AI</span>
             </div>
             <p className="text-xs text-zinc-400 leading-relaxed mb-3">
-              Sovereign Gen AI Platform for Automated Content Transformation. Engineered by Team HRL for the National Technical Research Organisation (NTRO).
+              Sovereign Gen AI Platform for Automated Content Transformation. Engineered by HRL for the National Technical Research Organisation (NTRO).
             </p>
             <p className="text-[11px] text-hrl-crimson italic font-medium">
               "We Can Do Everything Related To Software Sector Without Any Excuses!"

@@ -58,7 +58,7 @@ export const SlideDeckTab: React.FC<SlideDeckTabProps> = ({ slides }) => {
           <div className="flex items-center gap-2.5">
             <img src="/hrl_logo_transparent.png" alt="HRL" className="h-5 object-contain" />
             <span className="font-bold text-xs text-zinc-900 uppercase tracking-wider">
-              OmniTransform AI · Team HRL
+              OmniTransform AI · HRL
             </span>
           </div>
           <span className="font-mono text-xs font-bold text-zinc-500">

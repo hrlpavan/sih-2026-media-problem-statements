@@ -57,7 +57,7 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
 
         {/* Author / Engineering Credentials */}
         <p className="text-xs text-hrl-muted max-w-xl mx-auto leading-relaxed mb-6">
-          Engineered by Team HRL (Team ID: 104580) for the National Technical Research Organisation (NTRO) to transform complex 50+ page advisories into 5 synchronized communication formats.
+          Engineered by HRL (Team ID: 104580) for the National Technical Research Organisation (NTRO) to transform complex 50+ page advisories into 5 synchronized communication formats.
         </p>
 
         {/* Signature HRL Pill CTAs */}

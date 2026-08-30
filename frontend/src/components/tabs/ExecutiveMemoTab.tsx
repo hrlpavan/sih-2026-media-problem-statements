@@ -42,7 +42,7 @@ export const ExecutiveMemoTab: React.FC<ExecutiveMemoTabProps> = ({
             <img src="/hrl_logo_transparent.png" alt="HRL Logo" className="h-6 object-contain" />
             <div>
               <span className="font-bold text-sm text-zinc-900 block">OMNITRANSFORM INTELLIGENCE BRIEF</span>
-              <span className="font-mono text-[10px] text-zinc-500 block">SIH 2026 // NTRO PS-26154 // TEAM HRL</span>
+              <span className="font-mono text-[10px] text-zinc-500 block">SIH 2026 // NTRO PS-26154 // HRL</span>
             </div>
           </div>
           <span className="text-rose-700 font-bold text-xs font-mono bg-rose-50 px-2.5 py-1 rounded border border-rose-200">
@@ -61,7 +61,7 @@ export const ExecutiveMemoTab: React.FC<ExecutiveMemoTabProps> = ({
           </div>
           <div>
             <span className="text-zinc-500 font-bold uppercase text-[10px] block">PREPARED BY</span>
-            <span className="font-bold text-zinc-900">Team HRL (ID: 104580)</span>
+            <span className="font-bold text-zinc-900">HRL (ID: 104580)</span>
           </div>
           <div>
             <span className="text-zinc-500 font-bold uppercase text-[10px] block">DISTRIBUTION</span>
