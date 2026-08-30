@@ -74,7 +74,7 @@ export const Footer: React.FC = () => {
 
         <div className="mt-8 pt-6 border-t border-hrl-dark-border flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500">
           <span>© 2026 HRL International Private Limited™ · All rights reserved</span>
-          <span>Apple-Caliber Minimalist UI · Zero Emojis Standard</span>
+          <span>Sovereign Local Architecture · Enterprise Gen AI Engine</span>
         </div>
       </div>
     </footer>

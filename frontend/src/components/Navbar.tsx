@@ -11,22 +11,18 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange, isProcessing }) => {
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-hrl-border shadow-hrl-subtle no-print transition-all">
-      {/* Official Corporate Motto & Institutional Partners Bar */}
+      {/* Official Corporate Motto Bar */}
       <div className="bg-hrl-surface border-b border-hrl-border py-1.5 px-4 text-center top-motto-bar">
         <div className="max-w-6xl mx-auto flex items-center justify-between text-xs text-hrl-body flex-wrap gap-2">
           <div className="flex items-center gap-2">
             <span className="font-semibold text-hrl-dark">HRL International Private Limited™</span>
             <span className="text-zinc-300">·</span>
-            <span className="italic text-hrl-crimson font-medium hidden md:inline">
+            <span className="italic text-hrl-crimson font-medium">
               "We Can Do Everything Related To Software Sector Without Any Excuses!"
             </span>
           </div>
-          <div className="flex items-center gap-2.5 font-mono text-[11px]">
-            <span className="bg-white px-2 py-0.5 rounded border border-hrl-border font-semibold text-hrl-dark">
-              SIH 2026 // PS-26154
-            </span>
-            <span className="text-zinc-300">·</span>
-            <span className="font-semibold text-hrl-crimson">TEAM HRL (ID: 104580)</span>
+          <div className="text-xs text-hrl-muted font-medium hidden sm:block">
+            Mangaluru, Karnataka, India
           </div>
         </div>
       </div>
