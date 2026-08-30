@@ -11,22 +11,6 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange, isProcessing }) => {
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-hrl-border shadow-hrl-subtle no-print transition-all">
-      {/* Official Corporate Motto Bar */}
-      <div className="bg-hrl-surface border-b border-hrl-border py-1.5 px-4 text-center top-motto-bar">
-        <div className="max-w-6xl mx-auto flex items-center justify-between text-xs text-hrl-body flex-wrap gap-2">
-          <div className="flex items-center gap-2">
-            <span className="font-semibold text-hrl-dark">HRL International Private Limited™</span>
-            <span className="text-zinc-300">·</span>
-            <span className="italic text-hrl-crimson font-medium">
-              "We Can Do Everything Related To Software Sector Without Any Excuses!"
-            </span>
-          </div>
-          <div className="text-xs text-hrl-muted font-medium hidden sm:block">
-            Mangaluru, Karnataka, India
-          </div>
-        </div>
-      </div>
-
       {/* Main Navigation */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
