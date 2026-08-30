@@ -108,64 +108,72 @@ export const VoiceFAQSection: React.FC = () => {
   return (
     <section id="voice-faq-hub" className="mt-12 space-y-6">
       {/* Top Header Card */}
-      <div className="bg-white rounded-[24px] border border-black/5 p-6 sm:p-8 shadow-sm flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-        <div>
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F2F2F7] text-[11px] font-bold text-[#1D1D1F] border border-black/5 shadow-sm">
-              <ElevenLabsIcon className="w-3.5 h-3.5 text-black" />
-              <span>ELEVENLABS STRATEGIC FAQ & USP AUDIO HUB</span>
-            </span>
-            <span className="text-xs text-zinc-500 font-mono">· 5 STRATEGIC QUESTIONS</span>
+      <div className="bg-white rounded-[24px] border border-black/5 p-6 sm:p-8 shadow-sm space-y-6">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+          <div>
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F2F2F7] text-[11px] font-bold text-[#1D1D1F] border border-black/5 shadow-xs">
+                <ElevenLabsIcon className="w-3.5 h-3.5 text-black" />
+                <span>ELEVENLABS STRATEGIC FAQ & USP AUDIO HUB</span>
+              </span>
+              <span className="text-xs text-zinc-500 font-mono">· 5 STRATEGIC QUESTIONS</span>
+            </div>
+            <h2 className="text-xl sm:text-2xl font-bold text-[#1D1D1F] tracking-tight mt-2">
+              Why Implement & Core USP: Voice AI Interactive FAQ
+            </h2>
+            <p className="text-xs sm:text-sm text-zinc-600 max-w-2xl mt-1 leading-relaxed">
+              Listen to interactive neural audio responses explaining why OmniTransform AI is critical for sovereign defense and how our unique selling propositions deliver zero-hallucination transformation.
+            </p>
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-[#1D1D1F] tracking-tight mt-2">
-            Why Implement & Core USP: Voice AI Interactive FAQ
-          </h2>
-          <p className="text-xs sm:text-sm text-zinc-600 max-w-2xl mt-1 leading-relaxed">
-            Listen to interactive neural audio responses explaining why OmniTransform AI is critical for sovereign defense and how our unique selling propositions deliver zero-hallucination transformation.
-          </p>
         </div>
 
-        {/* Model & Voice Selectors */}
-        <div className="flex items-center gap-2 flex-wrap">
-          {/* Model Switcher */}
-          <div className="flex items-center bg-[#F2F2F7] p-1 rounded-full border border-black/5">
-            <button
-              onClick={() => setSelectedModel('eleven_v3')}
-              className={`text-xs px-3.5 py-1.5 rounded-full font-semibold transition-all cursor-pointer ${
-                selectedModel === 'eleven_v3'
-                  ? 'bg-zinc-900 text-white shadow-sm'
-                  : 'text-zinc-600 hover:text-zinc-900'
-              }`}
-            >
-              Eleven v3
-            </button>
-            <button
-              onClick={() => setSelectedModel('eleven_flash_v2_5')}
-              className={`text-xs px-3.5 py-1.5 rounded-full font-semibold transition-all cursor-pointer ${
-                selectedModel === 'eleven_flash_v2_5'
-                  ? 'bg-zinc-900 text-white shadow-sm'
-                  : 'text-zinc-600 hover:text-zinc-900'
-              }`}
-            >
-              Eleven Flash v2.5
-            </button>
-          </div>
-
-          {/* Voice Selector */}
-          <div className="flex items-center bg-[#F2F2F7] p-1 rounded-full border border-black/5">
-            {(['adam', 'rachel', 'bella', 'josh'] as const).map((v) => (
+        {/* Organized Symmetrical Control Bar */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between bg-[#F2F2F7] px-4 py-2.5 rounded-2xl border border-black/5 gap-3 text-xs">
+          {/* Voice Model Selector with Label */}
+          <div className="flex items-center gap-2">
+            <span className="text-[#86868B] font-semibold uppercase tracking-wider text-[10px] whitespace-nowrap">Voice Model:</span>
+            <div className="flex items-center bg-white p-0.5 rounded-full border border-black/5 shadow-xs">
               <button
-                key={v}
-                onClick={() => setSelectedVoice(v)}
-                className={`px-3 py-1 rounded-full text-xs font-semibold capitalize transition-all cursor-pointer ${
-                  selectedVoice === v
-                    ? 'bg-white text-zinc-900 shadow-sm border border-black/5'
+                onClick={() => setSelectedModel('eleven_v3')}
+                className={`text-xs px-3.5 py-1 rounded-full font-semibold transition-all cursor-pointer whitespace-nowrap ${
+                  selectedModel === 'eleven_v3'
+                    ? 'bg-zinc-900 text-white shadow-xs'
                     : 'text-zinc-600 hover:text-zinc-900'
                 }`}
               >
-                {v}
+                Eleven v3
               </button>
-            ))}
+              <button
+                onClick={() => setSelectedModel('eleven_flash_v2_5')}
+                className={`text-xs px-3.5 py-1 rounded-full font-semibold transition-all cursor-pointer whitespace-nowrap ${
+                  selectedModel === 'eleven_flash_v2_5'
+                    ? 'bg-zinc-900 text-white shadow-xs'
+                    : 'text-zinc-600 hover:text-zinc-900'
+                }`}
+              >
+                Eleven Flash v2.5
+              </button>
+            </div>
+          </div>
+
+          {/* Narrator Voice Selector with Label */}
+          <div className="flex items-center gap-2">
+            <span className="text-[#86868B] font-semibold uppercase tracking-wider text-[10px] whitespace-nowrap">Narrator Voice:</span>
+            <div className="flex items-center bg-white p-0.5 rounded-full border border-black/5 shadow-xs">
+              {(['adam', 'rachel', 'bella', 'josh'] as const).map((v) => (
+                <button
+                  key={v}
+                  onClick={() => setSelectedVoice(v)}
+                  className={`px-3 py-1 rounded-full text-xs font-semibold capitalize transition-all cursor-pointer whitespace-nowrap ${
+                    selectedVoice === v
+                      ? 'bg-zinc-900 text-white shadow-xs'
+                      : 'text-zinc-600 hover:text-zinc-900'
+                  }`}
+                >
+                  {v}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
