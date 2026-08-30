@@ -231,14 +231,14 @@ export const MOCK_TRANSFORMATIONS: Record<string, TransformedOutput> = {
       }
     },
     audioPodcast: {
-      title: '60-Second Intelligence Briefing: Cyber Threat Advisory Q3',
+      title: 'Strategic Briefing: Why OmniTransform AI Was Built',
       duration: '01:00',
-      script: 'Good morning. This is your sixty-second national security intelligence briefing for August thirtieth, twenty-twenty-six. The National Technical Research Organisation has issued a cyber advisory following a forty-two percent increase in ransomware attempts against regional power dispatch centers. Threat actors exploited gateway vulnerabilities to access operational networks across fourteen discoms. Emergency patches have been deployed and critical systems are now operating under strict air-gapped isolation. Power grid operations remain fully stable. Stay tuned for further security updates.',
+      script: 'Welcome to OmniTransform AI, engineered by HRL for the Smart India Hackathon 2026 and the National Technical Research Organisation. Why was this platform built? In modern defense and governance, organizations receive fifty to one hundred-page complex technical advisories daily. Senior leaders need two-minute decision briefs, field operatives need slide presentations, citizens need news in their native regional languages, and analysts need audio broadcasts. Manually converting these documents takes days and creates dangerous information bottlenecks. OmniTransform AI solves this with sovereign single-pass AI: transforming any multi-page document into five synchronized, verified formats in under ten seconds with one hundred percent grounded source citations. This is sovereign intelligence transformation, engineered without compromise.',
       segments: [
-        { timeOffset: '00:00 - 00:15', speaker: 'Analyst', text: 'National security intelligence briefing for August 30, 2026.' },
-        { timeOffset: '00:15 - 00:35', speaker: 'Analyst', text: 'NTRO has issued a high-priority cyber advisory following a 42.8% increase in ransomware attempts targeting SCADA dispatch infrastructure.' },
-        { timeOffset: '00:35 - 00:50', speaker: 'Analyst', text: 'Perimeter breach targeted VPN gateway controllers across 14 discoms. Emergency patches have been deployed.' },
-        { timeOffset: '00:50 - 01:00', speaker: 'Analyst', text: 'Systems are operating under strict air-gap isolation. Transmission grid remains fully stable.' }
+        { timeOffset: '00:00 - 00:14', speaker: 'Executive Lead', text: 'Strategic mission overview: Why OmniTransform AI was engineered by HRL for NTRO and SIH 2026.' },
+        { timeOffset: '00:14 - 00:30', speaker: 'Intelligence Director', text: 'The Critical Problem: 50-100 page technical reports create massive decision bottlenecks across leadership, technical operators, and regional media.' },
+        { timeOffset: '00:30 - 00:46', speaker: 'System Architect', text: 'The Solution: Sovereign single-pass AI transforming complex documents into 5 synchronized assets with 100% grounded citations in under 10s.' },
+        { timeOffset: '00:46 - 01:00', speaker: 'Executive Lead', text: 'The Impact: Zero hallucinations, instant multilingual distribution, and verified sovereign data security.' }
       ]
     }
   }

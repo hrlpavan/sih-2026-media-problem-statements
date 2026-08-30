@@ -103,9 +103,9 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
           <div className="flex items-center gap-2 flex-wrap">
             <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#F2F2F7] text-[11px] font-semibold text-[#1D1D1F] border border-black/5 shadow-sm">
               <ElevenLabsIcon className="w-3 h-3 text-black" />
-              <span>ElevenLabs Multilingual v2</span>
+              <span>ElevenLabs Flash v2.5 (Latest 2026 Model)</span>
             </span>
-            <span className="text-xs text-[#86868B] font-normal">· Turbo v2.5 Neural Engine</span>
+            <span className="text-xs text-[#86868B] font-normal">· Neural Multilingual Intelligence Engine</span>
           </div>
           <h3 className="text-lg sm:text-xl font-bold text-[#1D1D1F] tracking-tight mt-1.5">
             {podcast.title}
@@ -169,7 +169,7 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
               <div>
                 <h4 className="font-bold text-base text-white tracking-tight">{podcast.title}</h4>
                 <p className="text-xs text-zinc-400 font-mono mt-0.5">
-                  ELEVENLABS MULTILINGUAL V2 // VOICE: {selectedVoice.toUpperCase()} (128 KBPS)
+                  ELEVENLABS FLASH V2.5 // VOICE: {selectedVoice.toUpperCase()} (128 KBPS)
                 </p>
               </div>
             </div>
