@@ -18,31 +18,31 @@ export const ExecutiveMemoTab: React.FC<ExecutiveMemoTabProps> = ({
   return (
     <div className="space-y-6">
       {/* On-screen Header */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-3 border-b border-classic-border no-print action-toolbar">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-3 border-b border-zinc-200 no-print action-toolbar">
         <div>
-          <span className="text-xs font-bold text-classic-navy bg-classic-bg px-2.5 py-1 rounded border border-classic-border">
+          <span className="text-xs font-bold text-hrl-crimson bg-hrl-crimson-tint px-2.5 py-1 rounded border border-hrl-crimson/20">
             FORMAT 1: EXECUTIVE BRIEFING MEMORANDUM
           </span>
-          <h3 className="font-serif font-bold text-base text-classic-navy mt-1">{memo.title}</h3>
+          <h3 className="font-bold text-base text-zinc-900 mt-1">{memo.title}</h3>
         </div>
         <button
           onClick={() => window.print()}
-          className="px-4 py-2 rounded-lg bg-classic-navy hover:bg-classic-navy-dark text-white font-bold text-xs transition-all flex items-center gap-2 shadow-classic-sm cursor-pointer"
+          className="px-4 py-2 rounded-full bg-zinc-900 hover:bg-black text-white font-bold text-xs transition-all flex items-center gap-2 shadow-sm cursor-pointer"
         >
-          <Printer className="w-4 h-4 text-classic-ochre" />
+          <Printer className="w-4 h-4 text-hrl-crimson" />
           <span>Save Clean 1-Page PDF</span>
         </button>
       </div>
 
       {/* Pristine Document Sheet */}
-      <div className="bg-white rounded-xl border border-classic-border p-8 shadow-classic-sm print-document-container font-serif">
+      <div className="bg-white rounded-2xl border border-zinc-200 p-8 shadow-sm print-document-container">
         {/* Document Header Metadata with HRL Logo */}
-        <div className="flex items-center justify-between pb-4 mb-4 border-b border-classic-border">
+        <div className="flex items-center justify-between pb-4 mb-4 border-b border-zinc-200">
           <div className="flex items-center gap-3">
             <img src="/hrl_logo_transparent.png" alt="HRL Logo" className="h-8 object-contain" />
             <div>
-              <span className="font-serif font-bold text-sm text-classic-navy block">OMNITRANSFORM INTELLIGENCE BRIEF</span>
-              <span className="font-mono text-[10px] text-classic-slate-muted block">SIH 2026 // NTRO PS-26154 // TEAM HRL</span>
+              <span className="font-bold text-sm text-zinc-900 block">OMNITRANSFORM INTELLIGENCE BRIEF</span>
+              <span className="font-mono text-[10px] text-zinc-500 block">SIH 2026 // NTRO PS-26154 // TEAM HRL</span>
             </div>
           </div>
           <span className="text-rose-700 font-bold text-xs font-mono bg-rose-50 px-2.5 py-1 rounded border border-rose-200">
@@ -50,38 +50,38 @@ export const ExecutiveMemoTab: React.FC<ExecutiveMemoTabProps> = ({
           </span>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pb-6 border-b border-classic-border text-xs print-section font-sans">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pb-6 border-b border-zinc-200 text-xs print-section">
           <div>
-            <span className="text-classic-slate-muted font-bold uppercase text-[10px] block">ISSUING AUTHORITY</span>
-            <span className="font-bold text-classic-navy">{memo.organization}</span>
+            <span className="text-zinc-500 font-bold uppercase text-[10px] block">ISSUING AUTHORITY</span>
+            <span className="font-bold text-zinc-900">{memo.organization}</span>
           </div>
           <div>
-            <span className="text-classic-slate-muted font-bold uppercase text-[10px] block">DOCUMENT DATE</span>
-            <span className="font-bold text-classic-navy">{memo.date}</span>
+            <span className="text-zinc-500 font-bold uppercase text-[10px] block">DOCUMENT DATE</span>
+            <span className="font-bold text-zinc-900">{memo.date}</span>
           </div>
           <div>
-            <span className="text-classic-slate-muted font-bold uppercase text-[10px] block">PREPARED BY</span>
-            <span className="font-bold text-classic-navy">Team HRL (ID: 104580)</span>
+            <span className="text-zinc-500 font-bold uppercase text-[10px] block">PREPARED BY</span>
+            <span className="font-bold text-zinc-900">Team HRL (ID: 104580)</span>
           </div>
           <div>
-            <span className="text-classic-slate-muted font-bold uppercase text-[10px] block">DISTRIBUTION</span>
-            <span className="font-bold text-classic-navy">Senior Leadership</span>
+            <span className="text-zinc-500 font-bold uppercase text-[10px] block">DISTRIBUTION</span>
+            <span className="font-bold text-zinc-900">Senior Leadership</span>
           </div>
         </div>
 
         {/* Section 1 */}
         <div className="mt-6 print-section">
-          <h4 className="font-sans text-xs font-bold text-classic-navy uppercase tracking-wider mb-2">
+          <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider mb-2">
             1. Executive Overview
           </h4>
-          <p className="text-sm text-classic-slate leading-relaxed bg-classic-bg p-4 rounded-lg border border-classic-border font-serif">
+          <p className="text-sm text-zinc-800 leading-relaxed bg-zinc-50 p-4 rounded-xl border border-zinc-200">
             {memo.executiveSummary}
           </p>
         </div>
 
         {/* Section 2 */}
-        <div className="mt-6 print-section font-sans">
-          <h4 className="text-xs font-bold text-classic-navy uppercase tracking-wider mb-3">
+        <div className="mt-6 print-section">
+          <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider mb-3">
             2. Strategic Intelligence Findings (Verified Citations)
           </h4>
           <div className="space-y-3">
@@ -91,13 +91,13 @@ export const ExecutiveMemoTab: React.FC<ExecutiveMemoTabProps> = ({
               return (
                 <div
                   key={idx}
-                  className="p-3.5 rounded-lg border border-classic-border bg-white hover:border-classic-navy/40 transition-all flex items-start justify-between gap-3"
+                  className="p-3.5 rounded-xl border border-zinc-200 bg-white hover:border-zinc-300 transition-all flex items-start justify-between gap-3"
                 >
                   <div className="flex items-start gap-3">
-                    <span className="w-5 h-5 rounded-full bg-classic-navy text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                    <span className="w-5 h-5 rounded-full bg-zinc-900 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
                       {idx + 1}
                     </span>
-                    <p className="text-xs sm:text-sm text-classic-slate font-medium leading-relaxed">
+                    <p className="text-xs sm:text-sm text-zinc-800 font-medium leading-relaxed">
                       {finding.point}
                     </p>
                   </div>
@@ -105,7 +105,7 @@ export const ExecutiveMemoTab: React.FC<ExecutiveMemoTabProps> = ({
                   {cit && (
                     <button
                       onClick={() => onOpenCitation(cit)}
-                      className="shrink-0 text-xs font-bold px-3 py-1 rounded bg-classic-ochre-light hover:bg-classic-navy text-classic-ochre hover:text-white border border-classic-ochre/30 transition-all flex items-center gap-1 group cursor-pointer print-citation-badge"
+                      className="shrink-0 text-xs font-bold px-3 py-1 rounded-full bg-hrl-crimson-tint hover:bg-hrl-crimson text-hrl-crimson hover:text-white border border-hrl-crimson/30 transition-all flex items-center gap-1 group cursor-pointer print-citation-badge"
                       title="Click to view original source PDF page"
                     >
                       <span>Page {cit.pageNumber}</span>
@@ -119,18 +119,18 @@ export const ExecutiveMemoTab: React.FC<ExecutiveMemoTabProps> = ({
         </div>
 
         {/* Section 3 */}
-        <div className="mt-6 print-section font-sans">
-          <h4 className="text-xs font-bold text-classic-navy uppercase tracking-wider mb-3">
+        <div className="mt-6 print-section">
+          <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider mb-3">
             3. Recommended Action Matrix
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {memo.actionItems.map((item, idx) => (
-              <div key={idx} className="p-3.5 rounded-lg bg-classic-bg border border-classic-border">
-                <div className="flex items-center justify-between text-xs font-bold text-classic-navy mb-1">
-                  <span className="text-classic-ochre">{item.priority}</span>
-                  <span className="text-classic-slate-muted font-normal">{item.owner}</span>
+              <div key={idx} className="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200">
+                <div className="flex items-center justify-between text-xs font-bold text-zinc-900 mb-1">
+                  <span className="text-hrl-crimson">{item.priority}</span>
+                  <span className="text-zinc-500 font-normal">{item.owner}</span>
                 </div>
-                <p className="text-xs text-classic-slate leading-normal">{item.action}</p>
+                <p className="text-xs text-zinc-700 leading-normal">{item.action}</p>
               </div>
             ))}
           </div>
