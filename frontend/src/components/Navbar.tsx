@@ -71,6 +71,13 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
 
           {/* Right Action: Pitch Deck Download Button */}
           <div className="flex items-center gap-2">
+            <a
+              href="#project-updates-hub"
+              className="hidden lg:flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#F2F2F7] hover:bg-[#E5E5EA] text-[#1D1D1F] text-xs font-semibold transition-all border border-black/5 cursor-pointer shadow-sm"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-hrl-crimson animate-ping" />
+              <span>Audio Updates</span>
+            </a>
             <button
               onClick={() => setShowVentureModal(true)}
               className="hidden md:flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-zinc-100 hover:bg-zinc-200 text-[#1D1D1F] text-xs font-semibold transition-all border border-black/5 cursor-pointer shadow-sm"
