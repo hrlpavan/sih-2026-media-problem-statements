@@ -8,6 +8,7 @@ import { PipelineVisualizer } from './components/PipelineVisualizer';
 import { OutputDashboard } from './components/OutputDashboard';
 import { ProjectUpdatesAudioHub } from './components/ProjectUpdatesAudioHub';
 import { CitationInspectorModal } from './components/CitationInspectorModal';
+import { VentureStrategyModal } from './components/VentureStrategyModal';
 import { Footer } from './components/Footer';
 import confetti from 'canvas-confetti';
 
@@ -21,6 +22,7 @@ export const App: React.FC = () => {
     MOCK_TRANSFORMATIONS['ntro-advisory-2026']
   );
   const [activeCitation, setActiveCitation] = useState<Citation | null>(null);
+  const [showVentureModal, setShowVentureModal] = useState<boolean>(false);
 
   const handleStartTransform = async () => {
     if (!selectedDoc) return;
@@ -70,6 +72,7 @@ export const App: React.FC = () => {
         currentPersona={currentPersona}
         onPersonaChange={handlePersonaChange}
         isProcessing={isProcessing}
+        onOpenVentureModal={() => setShowVentureModal(true)}
       />
 
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
@@ -99,6 +102,11 @@ export const App: React.FC = () => {
       <CitationInspectorModal
         citation={activeCitation}
         onClose={() => setActiveCitation(null)}
+      />
+
+      <VentureStrategyModal
+        isOpen={showVentureModal}
+        onClose={() => setShowVentureModal(false)}
       />
 
       <Footer />

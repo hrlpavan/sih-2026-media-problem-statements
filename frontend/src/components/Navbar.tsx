@@ -1,16 +1,15 @@
 import React from 'react';
 import type { AudiencePersona } from '../types';
 import { Download, TrendingUp } from 'lucide-react';
-import { VentureStrategyModal } from './VentureStrategyModal';
 
 interface NavbarProps {
   currentPersona: AudiencePersona;
   onPersonaChange: (p: AudiencePersona) => void;
   isProcessing: boolean;
+  onOpenVentureModal: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange, isProcessing }) => {
-  const [showVentureModal, setShowVentureModal] = React.useState(false);
+export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange, isProcessing, onOpenVentureModal }) => {
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-hrl-border shadow-hrl-subtle no-print transition-all">
       {/* Main Navigation */}
@@ -69,7 +68,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
             </button>
           </div>
 
-          {/* Right Action: Pitch Deck Download Button */}
+          {/* Right Actions */}
           <div className="flex items-center gap-2">
             <a
               href="#project-updates-hub"
@@ -79,7 +78,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
               <span>Audio Updates</span>
             </a>
             <button
-              onClick={() => setShowVentureModal(true)}
+              onClick={onOpenVentureModal}
               className="hidden md:flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-zinc-100 hover:bg-zinc-200 text-[#1D1D1F] text-xs font-semibold transition-all border border-black/5 cursor-pointer shadow-sm"
             >
               <TrendingUp className="w-3.5 h-3.5 text-hrl-crimson" />
@@ -95,7 +94,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
           </div>
         </div>
       </div>
-      <VentureStrategyModal isOpen={showVentureModal} onClose={() => setShowVentureModal(false)} />
     </header>
   );
 };
