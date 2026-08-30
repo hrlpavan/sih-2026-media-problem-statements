@@ -1,4 +1,4 @@
-# 🚀 HRL International™ — OmniTransform AI Venture Capital, Financial Model & Go-To-Market (GTM) Master Blueprint
+#  HRL International™ — OmniTransform AI Venture Capital, Financial Model & Go-To-Market (GTM) Master Blueprint
 
 **Company Entity**: HRL International Private Limited™  
 **Flagship Platform**: OmniTransform AI (Gen AI Platform for Automated Content Transformation)  
@@ -17,20 +17,20 @@ This document outlines the complete 19-point institutional Venture Capital, Fina
 
 ---
 
-## 📊 Comprehensive 19-Framework Breakdown
+##  Comprehensive 19-Framework Breakdown
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                     HRL INTERNATIONAL™ VENTURE & STRATEGIC FRAMEWORK                            │
-├────────────────────────────────┬───────────────────────────────┬────────────────────────────────┤
-│ 1. MAP (Milestones & Progress) │ 8. Runway                     │ 15. Sales-Led Growth (SLG)     │
-│ 2. ICP (Ideal Customer Profile)│ 9. Product-Market Fit (PMF)   │ 16. Go-To-Market (GTM) Strategy │
-│ 3. Pre-Seed Stage              │ 10. Founder-Market Fit        │ 17. Growth Flywheel            │
-│ 4. Series A Target             │ 11. TAM, SAM, SOM             │ 18. Network Effects            │
-│ 5. SAFE Note Structuring       │ 12. Competitive Moat          │ 19. Virality Coefficient       │
-│ 6. Bridge Round Strategy       │ 13. Market Wedge              │                                │
-│ 7. Burn Rate Management        │ 14. Product-Led Growth (PLG)  │                                │
-└────────────────────────────────┴───────────────────────────────┴────────────────────────────────┘
+
+                     HRL INTERNATIONAL™ VENTURE & STRATEGIC FRAMEWORK                            
+
+ 1. MAP (Milestones & Progress)  8. Runway                      15. Sales-Led Growth (SLG)     
+ 2. ICP (Ideal Customer Profile) 9. Product-Market Fit (PMF)    16. Go-To-Market (GTM) Strategy 
+ 3. Pre-Seed Stage               10. Founder-Market Fit         17. Growth Flywheel            
+ 4. Series A Target              11. TAM, SAM, SOM              18. Network Effects            
+ 5. SAFE Note Structuring        12. Competitive Moat           19. Virality Coefficient       
+ 6. Bridge Round Strategy        13. Market Wedge                                              
+ 7. Burn Rate Management         14. Product-Led Growth (PLG)                                  
+
 ```
 
 ---
@@ -58,24 +58,24 @@ This document outlines the complete 19-point institutional Venture Capital, Fina
 OmniTransform AI focuses on three strict customer tiers:
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                IDEAL CUSTOMER PROFILE (ICP) TIERS                               │
-├─────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Tier 1: National Security & Sovereign Defense (NTRO, DRDO, RAW, CERT-In, Armed Forces)          │
-│ • Pain Point: 100+ page classified threat feeds require 2-minute decision briefs for ministers. │
-│ • Requirement: 100% Air-Gapped Local Inference (Zero data leaves sovereign intranet).           │
-│ • Contract Value: ₹50 Lakhs - ₹1.5 Cr Annual Sovereign License.                                 │
-├─────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Tier 2: Critical National Infrastructure & PSUs (PowerGrid, NPCIL, Indian Railways, ONGC)       │
-│ • Pain Point: Complex SCADA / OT engineering advisories must be translated into regional alerts.│
-│ • Requirement: Grounded spatial citations, verified multilingual translations (Hi, Kn, Ta).    │
-│ • Contract Value: ₹25 Lakhs - ₹60 Lakhs Annual Enterprise License.                             │
-├─────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Tier 3: Regulated Commercial Enterprises (BFSI, Big Tech Forensics, Healthcare Compliance)      │
-│ • Pain Point: Regulatory compliance audits & risk assessments delayed by manual summarization.  │
-│ • Requirement: SOC-2 Type II, deterministic anti-hallucination guarantees, ElevenLabs Voice AI. │
-│ • Contract Value: ₹15 Lakhs - ₹40 Lakhs SaaS Annual Contract.                                   │
-└─────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+                                IDEAL CUSTOMER PROFILE (ICP) TIERS                               
+
+ Tier 1: National Security & Sovereign Defense (NTRO, DRDO, RAW, CERT-In, Armed Forces)          
+ • Pain Point: 100+ page classified threat feeds require 2-minute decision briefs for ministers. 
+ • Requirement: 100% Air-Gapped Local Inference (Zero data leaves sovereign intranet).           
+ • Contract Value: ₹50 Lakhs - ₹1.5 Cr Annual Sovereign License.                                 
+
+ Tier 2: Critical National Infrastructure & PSUs (PowerGrid, NPCIL, Indian Railways, ONGC)       
+ • Pain Point: Complex SCADA / OT engineering advisories must be translated into regional alerts.
+ • Requirement: Grounded spatial citations, verified multilingual translations (Hi, Kn, Ta).    
+ • Contract Value: ₹25 Lakhs - ₹60 Lakhs Annual Enterprise License.                             
+
+ Tier 3: Regulated Commercial Enterprises (BFSI, Big Tech Forensics, Healthcare Compliance)      
+ • Pain Point: Regulatory compliance audits & risk assessments delayed by manual summarization.  
+ • Requirement: SOC-2 Type II, deterministic anti-hallucination guarantees, ElevenLabs Voice AI. 
+ • Contract Value: ₹15 Lakhs - ₹40 Lakhs SaaS Annual Contract.                                   
+
 ```
 
 ---
@@ -149,18 +149,18 @@ OmniTransform AI focuses on three strict customer tiers:
 ### 11. TAM, SAM, SOM Analysis
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                               TAM / SAM / SOM MARKET BREAKDOWN                                  │
-├─────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ TAM (Total Addressable Market)       │ $18.4 Billion                                            │
-│ • Global Enterprise Document AI, Sovereign GovTech & Intelligence Synthesis Market.             │
-├──────────────────────────────────────┼──────────────────────────────────────────────────────────┤
-│ SAM (Serviceable Available Market)   │ $3.2 Billion                                             │
-│ • India & APAC GovTech, Defense Intelligence, Infrastructure, and Regulated BFSI AI.            │
-├──────────────────────────────────────┼──────────────────────────────────────────────────────────┤
-│ SOM (Serviceable Obtainable Market)  │ $85 Million (₹700 Cr)                                    │
-│ • India Sovereign Defense, Public Sector Utilities & Critical Infrastructure within 36 months. │
-└─────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+                               TAM / SAM / SOM MARKET BREAKDOWN                                  
+
+ TAM (Total Addressable Market)        $18.4 Billion                                            
+ • Global Enterprise Document AI, Sovereign GovTech & Intelligence Synthesis Market.             
+
+ SAM (Serviceable Available Market)    $3.2 Billion                                             
+ • India & APAC GovTech, Defense Intelligence, Infrastructure, and Regulated BFSI AI.            
+
+ SOM (Serviceable Obtainable Market)   $85 Million (₹700 Cr)                                    
+ • India Sovereign Defense, Public Sector Utilities & Critical Infrastructure within 36 months. 
+
 ```
 
 ---
@@ -192,13 +192,13 @@ OmniTransform AI focuses on three strict customer tiers:
 ### 16. Go-To-Market (GTM) Strategy
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                   3-PHASE GTM ROADMAP                                           │
-├─────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Phase 1 (Months 1–6): SIH Grand Finale ➔ NTRO & CERT-In Sovereign Testbed Deployment            │
-│ Phase 2 (Months 7–18): GeM Listing ➔ Onboard 25 State Electricity Boards & Railway Zones       │
-│ Phase 3 (Months 19–36): Expansion into Commercial BFSI, Global Sovereign Defense, & APAC GovTech│
-└─────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+                                   3-PHASE GTM ROADMAP                                           
+
+ Phase 1 (Months 1–6): SIH Grand Finale  NTRO & CERT-In Sovereign Testbed Deployment            
+ Phase 2 (Months 7–18): GeM Listing  Onboard 25 State Electricity Boards & Railway Zones       
+ Phase 3 (Months 19–36): Expansion into Commercial BFSI, Global Sovereign Defense, & APAC GovTech
+
 ```
 
 ---
@@ -226,7 +226,7 @@ graph TD
 
 ---
 
-## 🏛️ Corporate Contact & Information
+##  Corporate Contact & Information
 * **Entity**: HRL International Private Limited™
 * **Managing Director**: Pavan Kumar Sadashiv
 * **GitHub Master Repository**: [https://github.com/hrlpavan/omnitransform-ai-resources](https://github.com/hrlpavan/omnitransform-ai-resources)

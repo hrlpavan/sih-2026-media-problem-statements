@@ -1,11 +1,11 @@
-# 📚 OmniTransform AI — Open-Source Resources, Datasets & Models Guide
+#  OmniTransform AI — Open-Source Resources, Datasets & Models Guide
 
 > **Project**: OmniTransform AI (SIH 2026 PS ID: 26154)  
 > **Repository**: [https://github.com/hrlpavan/sih-2026-media-problem-statements](https://github.com/hrlpavan/sih-2026-media-problem-statements)  
 
 ---
 
-## 1. 📊 Kaggle & HuggingFace Datasets
+## 1.  Kaggle & HuggingFace Datasets
 
 These datasets are used for training, benchmarking, document layout parsing, and multilingual evaluation:
 
@@ -19,7 +19,7 @@ These datasets are used for training, benchmarking, document layout parsing, and
 
 ---
 
-## 2. 🧠 Open-Source Foundation Models (Weights on HuggingFace)
+## 2.  Open-Source Foundation Models (Weights on HuggingFace)
 
 All models are open-source and run locally on on-premise hardware without paid cloud APIs:
 
@@ -33,7 +33,7 @@ All models are open-source and run locally on on-premise hardware without paid c
 
 ---
 
-## 3. 🛠️ Open-Source Software Libraries & Repositories
+## 3.  Open-Source Software Libraries & Repositories
 
 | Software / Tool | License | GitHub Repository / Link | Usage in OmniTransform AI |
 | :--- | :--- | :--- | :--- |
@@ -48,23 +48,23 @@ All models are open-source and run locally on on-premise hardware without paid c
 
 ---
 
-## 4. 📄 Research Papers & Official References
+## 4.  Research Papers & Official References
 
 1. **Retrieval-Augmented Generation (RAG)**:  
    *Lewis et al. (2020)* — *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks* (NeurIPS).  
-   🔗 [arXiv:2005.11401](https://arxiv.org/abs/2005.11401)
+    [arXiv:2005.11401](https://arxiv.org/abs/2005.11401)
 
 2. **Multilingual Indian NLP (IndicTrans2)**:  
    *Gala et al. (2023)* — *IndicTrans2: Towards High-Quality and Accessible Machine Translation for all 22 Scheduled Indian Languages* (AI4Bharat).  
-   🔗 [arXiv:2305.16307](https://arxiv.org/abs/2305.16307)
+    [arXiv:2305.16307](https://arxiv.org/abs/2305.16307)
 
 3. **Llama 3 Foundation Model Architecture**:  
    *Meta AI Research (2024)* — *The Llama 3 Herd of Models*.  
-   🔗 [arXiv:2407.21783](https://arxiv.org/abs/2407.21783)
+    [arXiv:2407.21783](https://arxiv.org/abs/2407.21783)
 
 4. **Transformer Fundamentals**:  
    *Vaswani et al. (2017)* — *Attention Is All You Need* (NeurIPS).  
-   🔗 [arXiv:1706.03762](https://arxiv.org/abs/1706.03762)
+    [arXiv:1706.03762](https://arxiv.org/abs/1706.03762)
 
 5. **Official Portals**:  
    * **Smart India Hackathon 2026 (PS ID 26154)**: [https://www.sih.gov.in/sih2026PS](https://www.sih.gov.in/sih2026PS)  

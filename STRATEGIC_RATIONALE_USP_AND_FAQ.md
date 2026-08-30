@@ -1,4 +1,4 @@
-# 🎯 HRL International™ — Strategic Implementation Rationale, Unique Selling Proposition (USP) & Voice AI FAQ
+#  HRL International™ — Strategic Implementation Rationale, Unique Selling Proposition (USP) & Voice AI FAQ
 
 **Company Entity**: HRL International Private Limited™  
 **Flagship Platform**: OmniTransform AI  
@@ -30,26 +30,26 @@ Commercial generative AI models (OpenAI, Anthropic, Google Cloud) require sendin
 ## 2. The 4 Pillars of OmniTransform AI's Unique Selling Proposition (USP)
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                          THE 4 SOVEREIGN PILLARS OF OUR USP                                     │
-├─────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Pillar 1: Single-Pass 5-in-1 Multi-Format Synthesis                                             │
-│ • Converts raw complex technical documents into 5 synchronized assets in under 10 seconds:      │
-│   (1) 1-Page Executive Memo, (2) 16:9 PPTX Slides, (3) Visual Infographics,                     │
-│   (4) Multilingual Regional News (Hi/Kn/Ta), (5) ElevenLabs 60s Neural Audio Broadcast.         │
-├─────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Pillar 2: 100% Spatial Bounding-Box Coordinate Citation Grounding (Anti-Hallucination)          │
-│ • Every generated bullet point, statistic, and recommendation is hard-linked to millimeter      │
-│   physical PDF coordinates [ymin, xmin, ymax, xmax]. Guaranteed zero hallucination.             │
-├─────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Pillar 3: 100% Air-Gapped Sovereign Hardware Independence                                       │
-│ • Fully deployable on on-premise GPU clusters (NVIDIA H100 / L40S) with zero external           │
-│   internet telemetry, compliant with Common Criteria EAL4+ and STQC defense standards.          │
-├─────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Pillar 4: Native Indic Linguistic Intelligence & ElevenLabs Neural Voice Models                 │
-│ • Real-time crisis diffusion across 70+ languages with ElevenLabs Flagship Eleven v3 and        │
-│   Flash v2.5 models utilizing International Phonetic Alphabet (IPA) for exact acronyms.         │
-└─────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+                          THE 4 SOVEREIGN PILLARS OF OUR USP                                     
+
+ Pillar 1: Single-Pass 5-in-1 Multi-Format Synthesis                                             
+ • Converts raw complex technical documents into 5 synchronized assets in under 10 seconds:      
+   (1) 1-Page Executive Memo, (2) 16:9 PPTX Slides, (3) Visual Infographics,                     
+   (4) Multilingual Regional News (Hi/Kn/Ta), (5) ElevenLabs 60s Neural Audio Broadcast.         
+
+ Pillar 2: 100% Spatial Bounding-Box Coordinate Citation Grounding (Anti-Hallucination)          
+ • Every generated bullet point, statistic, and recommendation is hard-linked to millimeter      
+   physical PDF coordinates [ymin, xmin, ymax, xmax]. Guaranteed zero hallucination.             
+
+ Pillar 3: 100% Air-Gapped Sovereign Hardware Independence                                       
+ • Fully deployable on on-premise GPU clusters (NVIDIA H100 / L40S) with zero external           
+   internet telemetry, compliant with Common Criteria EAL4+ and STQC defense standards.          
+
+ Pillar 4: Native Indic Linguistic Intelligence & ElevenLabs Neural Voice Models                 
+ • Real-time crisis diffusion across 70+ languages with ElevenLabs Flagship Eleven v3 and        
+   Flash v2.5 models utilizing International Phonetic Alphabet (IPA) for exact acronyms.         
+
 ```
 
 ---
@@ -57,33 +57,33 @@ Commercial generative AI models (OpenAI, Anthropic, Google Cloud) require sendin
 ## 3. Interactive Voice AI FAQ (ElevenLabs Flagship Engine)
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                 STRATEGIC AUDIO FAQ MATRIX                                      │
-├─────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Q1: Why must OmniTransform AI be deployed across national security command centers?             │
-│ • Neural Audio Script: "Manual document transformation creates a fatal 24-hour lag during       │
-│   critical cyber incidents. OmniTransform AI collapses this timeline into under ten seconds,    │
-│   generating five synchronized executive and public assets on air-gapped sovereign hardware."   │
-├─────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Q2: What is the core Unique Selling Proposition (USP) that separates OmniTransform AI?          │
-│ • Neural Audio Script: "Our primary USP is single-pass deterministic transformation combined     │
-│   with millimeter-exact spatial coordinate grounding. Every generated metric is backed by      │
-│   an immutable source citation, guaranteeing zero hallucinated data."                           │
-├─────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Q3: How does the platform prevent model hallucinations in high-stakes defense intelligence?     │
-│ • Neural Audio Script: "We enforce zero-temperature deterministic retrieval and spatial token   │
-│   indexing. If a generative claim cannot be aligned with one hundred percent confidence to a    │
-│   physical coordinate in the source PDF, the guardrail system automatically rejects it."        │
-├─────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Q4: How do ElevenLabs neural voice models enhance emergency public communication?               │
-│ • Neural Audio Script: "Utilizing ElevenLabs Eleven v3 and Flash v2.5 models with International  │
-│   Phonetic Alphabet dictionaries, we synthesize studio-grade sixty-second audio briefings in    │
-│   English and Indic regional languages with deterministic low latency."                         │
-├─────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Q5: Can this system operate completely offline in air-gapped military environments?            │
-│ • Neural Audio Script: "Yes. OmniTransform AI is architected from the ground up for sovereign   │
-│   on-premise deployment on local GPU hardware nodes with zero external internet dependencies." │
-└─────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+                                 STRATEGIC AUDIO FAQ MATRIX                                      
+
+ Q1: Why must OmniTransform AI be deployed across national security command centers?             
+ • Neural Audio Script: "Manual document transformation creates a fatal 24-hour lag during       
+   critical cyber incidents. OmniTransform AI collapses this timeline into under ten seconds,    
+   generating five synchronized executive and public assets on air-gapped sovereign hardware."   
+
+ Q2: What is the core Unique Selling Proposition (USP) that separates OmniTransform AI?          
+ • Neural Audio Script: "Our primary USP is single-pass deterministic transformation combined     
+   with millimeter-exact spatial coordinate grounding. Every generated metric is backed by      
+   an immutable source citation, guaranteeing zero hallucinated data."                           
+
+ Q3: How does the platform prevent model hallucinations in high-stakes defense intelligence?     
+ • Neural Audio Script: "We enforce zero-temperature deterministic retrieval and spatial token   
+   indexing. If a generative claim cannot be aligned with one hundred percent confidence to a    
+   physical coordinate in the source PDF, the guardrail system automatically rejects it."        
+
+ Q4: How do ElevenLabs neural voice models enhance emergency public communication?               
+ • Neural Audio Script: "Utilizing ElevenLabs Eleven v3 and Flash v2.5 models with International  
+   Phonetic Alphabet dictionaries, we synthesize studio-grade sixty-second audio briefings in    
+   English and Indic regional languages with deterministic low latency."                         
+
+ Q5: Can this system operate completely offline in air-gapped military environments?            
+ • Neural Audio Script: "Yes. OmniTransform AI is architected from the ground up for sovereign   
+   on-premise deployment on local GPU hardware nodes with zero external internet dependencies." 
+
 ```
 
 ---
@@ -100,7 +100,7 @@ Commercial generative AI models (OpenAI, Anthropic, Google Cloud) require sendin
 
 ---
 
-## 🏛️ Corporate Authority & Contact
+##  Corporate Authority & Contact
 * **Entity**: HRL International Private Limited™
 * **Managing Director**: Pavan Kumar Sadashiv (B.E. CSE AIML, SCEM Mangaluru)
 * **Master Repository**: [https://github.com/hrlpavan/omnitransform-ai-resources](https://github.com/hrlpavan/omnitransform-ai-resources)

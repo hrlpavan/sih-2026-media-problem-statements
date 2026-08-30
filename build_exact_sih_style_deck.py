@@ -178,7 +178,7 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
         for idx, (title, desc) in enumerate(bullet_items):
             p = tf_c.add_paragraph() if idx > 0 else tf_c.paragraphs[0]
             r1 = p.add_run()
-            r1.text = f"● {title}: "
+            r1.text = f" {title}: "
             r1.font.bold = True
             r1.font.size = Pt(11)
             r1.font.name = FONT_BODY
@@ -324,7 +324,7 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
     for title, desc in feas_points:
         pf = tf4.add_paragraph()
         r1 = pf.add_run()
-        r1.text = f"● {title}: "
+        r1.text = f" {title}: "
         r1.font.bold = True
         r1.font.size = Pt(11.5)
         r1.font.color.rgb = COLOR_TEXT
@@ -349,7 +349,7 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
     for title, desc in chall_points:
         p_c = tf4.add_paragraph()
         r1 = p_c.add_run()
-        r1.text = f"● {title}: "
+        r1.text = f" {title}: "
         r1.font.bold = True
         r1.font.size = Pt(11.5)
         r1.font.color.rgb = COLOR_TEXT
@@ -374,7 +374,7 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
     for title, desc in strat_points:
         p_s = tf4.add_paragraph()
         r1 = p_s.add_run()
-        r1.text = f"● {title}: "
+        r1.text = f" {title}: "
         r1.font.bold = True
         r1.font.size = Pt(11.5)
         r1.font.color.rgb = COLOR_TEXT
@@ -460,7 +460,7 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
     for idx, (t, d) in enumerate(imp_items):
         p = tf_imp.add_paragraph() if idx > 0 else tf_imp.paragraphs[0]
         r1 = p.add_run()
-        r1.text = f"● {t}: "
+        r1.text = f" {t}: "
         r1.font.bold = True
         r1.font.size = Pt(10.5)
         r1.font.color.rgb = COLOR_TEXT
@@ -500,7 +500,7 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
     for idx, (t, d) in enumerate(ben_items):
         p = tf_ben.add_paragraph() if idx > 0 else tf_ben.paragraphs[0]
         r1 = p.add_run()
-        r1.text = f"● {t}: "
+        r1.text = f" {t}: "
         r1.font.bold = True
         r1.font.size = Pt(10.5)
         r1.font.color.rgb = COLOR_TEXT
@@ -536,9 +536,9 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
         ("Scenario:", "Rahul, an intelligence analyst at a government agency, receives a 50-page technical threat report at 9:00 AM. He has to present the key findings to senior officers in a 9:30 AM meeting."),
         ("Problem:", "Reading the full 50 pages and manually typing summary slides takes at least 3 hours. Finding the most critical points in a hurry can lead to missing important details."),
         ("Impact with OmniTransform:", "Rahul uploads the PDF to OmniTransform. In 10 seconds, the platform gives him:"),
-        ("● 1-Page Summary Memo", "Clear bullet points with key highlights and numbers."),
-        ("● 5 Presentation Slides", "Formatted and ready to project in the meeting room."),
-        ("● Clickable Citations", "Rahul clicks any bullet point to show the exact page in the raw PDF."),
+        (" 1-Page Summary Memo", "Clear bullet points with key highlights and numbers."),
+        (" 5 Presentation Slides", "Formatted and ready to project in the meeting room."),
+        (" Clickable Citations", "Rahul clicks any bullet point to show the exact page in the raw PDF."),
         ("Benefits:", "Rahul walks into the 9:30 AM meeting fully prepared with accurate, verified facts. What used to take 3 hours was finished in under 10 seconds.")
     ]
 
@@ -578,7 +578,7 @@ def build_exact_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx"):
     for idx, (title, url) in enumerate(links_data):
         p = tf6.add_paragraph() if idx > 0 else tf6.paragraphs[0]
         r1 = p.add_run()
-        r1.text = "❖  "
+        r1.text = "  "
         r1.font.bold = True
         r1.font.size = Pt(14)
         r1.font.color.rgb = COLOR_TEXT

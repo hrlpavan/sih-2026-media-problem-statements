@@ -1,4 +1,4 @@
-# 🥇 SIH 2026 – 100% Winning Strategy & Execution Blueprint
+#  SIH 2026 – 100% Winning Strategy & Execution Blueprint
 
 **Target Problem Statement**: **PS ID 26154**  
 **Title**: **Gen AI Platform for Automated Content Transformation**  
@@ -8,7 +8,7 @@
 
 ---
 
-## 🎯 1. Why PS 26154 Guarantees 1st Place
+##  1. Why PS 26154 Guarantees 1st Place
 
 In hackathons like Smart India Hackathon (SIH), **90% of teams lose during the live 3-minute jury evaluation** because of demo latency, unreliable external APIs, or amateur UI design. 
 
@@ -20,7 +20,7 @@ In hackathons like Smart India Hackathon (SIH), **90% of teams lose during the l
 
 ---
 
-## 🏗️ 2. Core Solution Architecture ("OmniTransform AI")
+##  2. Core Solution Architecture ("OmniTransform AI")
 
 ```mermaid
 flowchart TD
@@ -35,7 +35,7 @@ flowchart TD
 
 ---
 
-## 🏆 3. The 4 "Judge-Killer" Features
+##  3. The 4 "Judge-Killer" Features
 
 ### Feature 1: 100% Grounded Citations & Anti-Hallucination Engine
 - Every single bullet point and generated insight has an interactive **Source Badge**.
@@ -56,7 +56,7 @@ A single toggle button transforms the content for distinct target audiences:
 
 ---
 
-## 🛠️ 4. Technical Stack
+##  4. Technical Stack
 
 - **Frontend**: Next.js 14 / React, TailwindCSS, Lucide Icons, PDF.js for in-browser citation highlighting.
 - **Backend / Engine**: FastAPI (Python), LangChain / LlamaIndex, PyMuPDF / Unstructured for document parsing.
@@ -66,7 +66,7 @@ A single toggle button transforms the content for distinct target audiences:
 
 ---
 
-## 📊 5. 3-Minute Live Jury Pitch Script
+##  5. 3-Minute Live Jury Pitch Script
 
 1. **Minute 0:00 - 0:45 (The Problem)**:
    > *"Judges, government intelligence officers and executives spend 4+ hours daily manually reading 50-page reports and re-formatting them into slide decks, press releases, and briefings. This manual process is slow and error-prone."*

@@ -232,7 +232,7 @@ def create_golden_ratio_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.
     ]
     for kp in s1_key_points:
         p = tf_s1_r.add_paragraph()
-        p.text = f"✔ {kp}"
+        p.text = f" {kp}"
         p.font.size = Pt(10.5)
         p.font.name = FONT_FAMILY
         p.font.color.rgb = RGBColor(225, 238, 255)
@@ -283,11 +283,11 @@ def create_golden_ratio_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.
     pts1 = [
         ("Core Function:", " Ingests raw 50+ page PDFs, threat advisories, and policy documents in a single pass."),
         ("1-to-5 Transformation:", " Automatically produces 5 tailored communication assets in <10s:"),
-        ("1.", " 📊 Executive 1-Page Summary Memo"),
-        ("2.", " 🖥️ Meeting-Ready Slide Deck"),
-        ("3.", " 🎨 Public Visual Infographic Cards"),
-        ("4.", " 📰 Regional Multilingual Press Release"),
-        ("5.", " 🎙️ 60s Voice AI Audio Briefing")
+        ("1.", "  Executive 1-Page Summary Memo"),
+        ("2.", "  Meeting-Ready Slide Deck"),
+        ("3.", "  Public Visual Infographic Cards"),
+        ("4.", "  Regional Multilingual Press Release"),
+        ("5.", "  60s Voice AI Audio Briefing")
     ]
     for idx, (label, text) in enumerate(pts1):
         p = tf_c1.add_paragraph()
@@ -637,10 +637,10 @@ def create_golden_ratio_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.
     p.space_after = Pt(10)
 
     bens = [
-        ("💰 Economic Benefits:", " Reduces enterprise document processing costs by 75%; eliminates expensive third-party graphic and presentation outsourcing."),
-        ("🤝 Social & Governance Impact:", " Bridges the communication gap between technical policymakers and citizens through regional Indic language summaries and visual posters."),
-        ("🛡️ National Security Advantage:", " Maintains tactical information advantage during national security events through instant, multi-format threat dissemination."),
-        ("🌱 Environmental Sustainability:", " Cuts down unnecessary paper report printing through interactive digital briefs and mobile voice summaries.")
+        (" Economic Benefits:", " Reduces enterprise document processing costs by 75%; eliminates expensive third-party graphic and presentation outsourcing."),
+        (" Social & Governance Impact:", " Bridges the communication gap between technical policymakers and citizens through regional Indic language summaries and visual posters."),
+        (" National Security Advantage:", " Maintains tactical information advantage during national security events through instant, multi-format threat dissemination."),
+        (" Environmental Sustainability:", " Cuts down unnecessary paper report printing through interactive digital briefs and mobile voice summaries.")
     ]
     for lbl, text in bens:
         p = tf5_r.add_paragraph()

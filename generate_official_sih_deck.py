@@ -171,11 +171,11 @@ def create_official_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx
     p_rt.space_after = Pt(14)
 
     value_bullets = [
-        "⚡ 1-to-5 Synchronized Multi-Asset Generation in <10s",
-        "🎯 100% Grounded Source Citation & Anti-Hallucination",
-        "🔒 Sovereign Air-Gapped On-Premise Compliance",
-        "🎙️ Integrated Studio-Quality Audio Intelligence Podcast",
-        "🌐 Live Ecosystem: hrl-brand-seo.vercel.app"
+        " 1-to-5 Synchronized Multi-Asset Generation in <10s",
+        " 100% Grounded Source Citation & Anti-Hallucination",
+        " Sovereign Air-Gapped On-Premise Compliance",
+        " Integrated Studio-Quality Audio Intelligence Podcast",
+        " Live Ecosystem: hrl-brand-seo.vercel.app"
     ]
     for vb in value_bullets:
         p = tf_r.add_paragraph()
@@ -223,11 +223,11 @@ def create_official_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx
     pts_a = [
         "• Core Concept: An enterprise Gen AI platform that ingests dense 50+ page PDFs, threat advisories, and policy documents.",
         "• Single-Pass Multi-Output: In under 10 seconds, generates 5 production assets simultaneously:",
-        "  1. 📊 Executive 1-Page Memo",
-        "  2. 🖥️ Keynote Slide Presentation",
-        "  3. 🎨 Visual Infographics & Cards",
-        "  4. 📰 Multilingual Press Release",
-        "  5. 🎙️ 60s Voice Audio Podcast"
+        "  1.  Executive 1-Page Memo",
+        "  2.  Keynote Slide Presentation",
+        "  3.  Visual Infographics & Cards",
+        "  4.  Multilingual Press Release",
+        "  5.  60s Voice Audio Podcast"
     ]
     for pt in pts_a:
         p = tf_a.add_paragraph()
@@ -539,10 +539,10 @@ def create_official_sih_deck(output_path="SIH2026_Idea_Presentation_PS26154.pptx
     p.space_after = Pt(10)
 
     benefits = [
-        ("💰 Economic Benefits:", "Reduces enterprise document processing costs by 75%; eliminates expensive third-party graphic and presentation outsourcing."),
-        ("🤝 Social & Governance Impact:", "Bridges the communication gap between technical policymakers and general citizens through regional Indic language summaries and visual posters."),
-        ("🛡️ National Security Benefit:", "Maintains tactical information advantage during national security events through instant, multi-format threat dissemination."),
-        ("🌱 Environmental Sustainability:", "Drastically cuts down unnecessary paper report printing through interactive digital briefs and mobile voice summaries.")
+        (" Economic Benefits:", "Reduces enterprise document processing costs by 75%; eliminates expensive third-party graphic and presentation outsourcing."),
+        (" Social & Governance Impact:", "Bridges the communication gap between technical policymakers and general citizens through regional Indic language summaries and visual posters."),
+        (" National Security Benefit:", "Maintains tactical information advantage during national security events through instant, multi-format threat dissemination."),
+        (" Environmental Sustainability:", "Drastically cuts down unnecessary paper report printing through interactive digital briefs and mobile voice summaries.")
     ]
     for b_title, b_desc in benefits:
         p = tf5_r.add_paragraph()

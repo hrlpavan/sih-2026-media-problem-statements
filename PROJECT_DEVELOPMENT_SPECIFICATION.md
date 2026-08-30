@@ -1,4 +1,4 @@
-# 🛠️ OmniTransform AI — Complete Technical Development Specification
+#  OmniTransform AI — Complete Technical Development Specification
 
 > **Problem Statement ID**: 26154 (Smart India Hackathon 2026)  
 > **Title**: Gen AI Platform for Automated Content Transformation  
@@ -9,13 +9,13 @@
 
 ## 1. Project Overview & Problem Statement
 
-### 🎯 The Problem:
+###  The Problem:
 Government bodies, intelligence agencies (like NTRO/MoD), and research institutions produce massive volumes of dense, technical 50+ page PDF documents, threat advisories, and policy papers daily. 
 - **Information Overload**: Senior leaders and field officers do not have 3–4 hours to read full documents before urgent meetings.
 - **Manual Bottleneck**: Communication and design teams spend 4–6 hours manually writing memos, designing slide decks, translating to regional languages, and formatting social graphics.
 - **Risk of Fake Data (Hallucinations)**: Using standard public AI tools often creates fabricated numbers or unverified claims without source page links.
 
-### 💡 The Solution (OmniTransform AI):
+###  The Solution (OmniTransform AI):
 A single-pass, sovereign AI platform that ingests any complex document (PDF, DOCX, Research Papers) and automatically outputs **5 synchronized communication formats in under 10 seconds**:
 1. **1-Page Executive Summary Memo** (with clickable page citations).
 2. **Meeting-Ready Slide Deck** (formatted for PowerPoint / Keynote).
@@ -28,19 +28,19 @@ A single-pass, sovereign AI platform that ingests any complex document (PDF, DOC
 ## 2. Complete Technology Stack & Architecture
 
 ```
-┌──────────────────────────────────────────────────────────────────────────────────┐
-│                             FULL TECHNOLOGY STACK                                │
-├──────────────────────────────────────────────────────────────────────────────────┤
-│ Frontend       │ Next.js 14, React 18, TypeScript, Tailwind CSS, PDF.js Canvas  │
-│ Backend API    │ Python 3.11+, FastAPI, Uvicorn, Asynchronous Worker Queues      │
-│ Document Parser│ PyMuPDF (Fitz), pdfplumber (table & coordinate extraction)      │
-│ AI Foundation  │ Meta Llama 3.3 (70B), Mistral Large, IndicBERT (Bhashini)       │
-│ Vector Search  │ FAISS (Facebook AI Similarity Search), Sentence-Transformers    │
-│ Slide Engine   │ Marp Markdown Slide Compiler, HTML5 / Reveal.js                 │
-│ Visual Engine  │ Satori (HTML/CSS to SVG/PNG Canvas Auto-Renderer)               │
-│ Voice Synthesis│ Piper Neural TTS (Offline local engine), ElevenLabs API         │
-│ Security       │ 100% Dockerized, Air-Gapped On-Premise Execution, Zero Cloud API│
-└──────────────────────────────────────────────────────────────────────────────────┘
+
+                             FULL TECHNOLOGY STACK                                
+
+ Frontend        Next.js 14, React 18, TypeScript, Tailwind CSS, PDF.js Canvas  
+ Backend API     Python 3.11+, FastAPI, Uvicorn, Asynchronous Worker Queues      
+ Document Parser PyMuPDF (Fitz), pdfplumber (table & coordinate extraction)      
+ AI Foundation   Meta Llama 3.3 (70B), Mistral Large, IndicBERT (Bhashini)       
+ Vector Search   FAISS (Facebook AI Similarity Search), Sentence-Transformers    
+ Slide Engine    Marp Markdown Slide Compiler, HTML5 / Reveal.js                 
+ Visual Engine   Satori (HTML/CSS to SVG/PNG Canvas Auto-Renderer)               
+ Voice Synthesis Piper Neural TTS (Offline local engine), ElevenLabs API         
+ Security        100% Dockerized, Air-Gapped On-Premise Execution, Zero Cloud API
+
 ```
 
 ---
@@ -49,24 +49,24 @@ A single-pass, sovereign AI platform that ingests any complex document (PDF, DOC
 
 ```
 [ Raw Document Upload ] (PDF / DOCX / Report)
-         │
-         ▼
-[ Stage 1: Spatial Parsing ] ──► Extracts text blocks, headings & tables with coordinates (x, y, page)
-         │
-         ▼
-[ Stage 2: Chunking & Indexing ] ──► Semantic splitting & in-memory FAISS vector indexing
-         │
-         ▼
-[ Stage 3: LLM Orchestrator ] ──► Llama 3 / Mistral with Constrained JSON Schema Prompting
-         │
-         ├───────────────────────┬──────────────────────┬─────────────────────┬──────────────────┐
-         ▼                       ▼                      ▼                     ▼                  ▼
+         
+         
+[ Stage 1: Spatial Parsing ]  Extracts text blocks, headings & tables with coordinates (x, y, page)
+         
+         
+[ Stage 2: Chunking & Indexing ]  Semantic splitting & in-memory FAISS vector indexing
+         
+         
+[ Stage 3: LLM Orchestrator ]  Llama 3 / Mistral with Constrained JSON Schema Prompting
+         
+         
+                                                                                             
    1. Exec Memo            2. Slide Deck          3. Infographic        4. Press Release   5. Voice Audio
   (Markdown / PDF)        (Marp / HTML5)         (Satori Canvas)         (IndicBERT)        (Piper TTS)
-         │                       │                      │                     │                  │
-         └───────────────────────┴──────────────────────┴─────────────────────┴──────────────────┘
-                                                        │
-                                                        ▼
+                                                                                             
+         
+                                                        
+                                                        
                              [ Stage 4: Interactive Verification UI ]
                              • Live preview of all 5 assets
                              • Click-to-verify reverse PDF citation highlighting

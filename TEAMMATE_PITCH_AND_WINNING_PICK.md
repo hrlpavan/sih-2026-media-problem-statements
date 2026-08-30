@@ -1,8 +1,8 @@
-# 🏆 SIH 2026: The 100% Winning Problem Statement & Teammate Pitch Guide
+#  SIH 2026: The 100% Winning Problem Statement & Teammate Pitch Guide
 
 ---
 
-## 🎯 1. The Chosen Problem Statement
+##  1. The Chosen Problem Statement
 
 * **Problem Statement ID**: **`26154`**
 * **Title**: **Gen AI Platform for Automated Content Transformation**
@@ -12,16 +12,16 @@
 
 ---
 
-## 📉 Why This Has The Lowest Competition & Highest Win Rate
+##  Why This Has The Lowest Competition & Highest Win Rate
 
-### ❌ Why Other Problem Statements Are Traps:
+###  Why Other Problem Statements Are Traps:
 1. **Generic Topics (Agriculture, Attendance, Flood Alerts)**:
    * **500 to 1,000+ teams** submit for the same basic ideas.
    * Judges see 50 identical crop disease detection apps and get bored.
 2. **Hardware / IoT Topics**:
    * Hardware has a high chance of failing during the 3-minute venue demo due to Wi-Fi drops, battery issues, or loose wiring.
 
-### ✅ Why PS ID 26154 is the Sweet Spot (Low Competition + 100% Win Potential):
+###  Why PS ID 26154 is the Sweet Spot (Low Competition + 100% Win Potential):
 1. **Low Competition**: Casual student teams get intimidated by words like *"Automated Content Transformation"* and *"Disparate Source Ingestion"*, thinking it's too complex or just a ChatGPT wrapper.
 2. **High Ministry Weight (NTRO)**: NTRO is directly under the National Security Advisor (NSA) and Prime Minister's Office. Winning an NTRO problem statement carries massive prestige.
 3. **Flawless Live Demo**: 100% deterministic software that runs reliably within 10 seconds. Zero risk of venue hardware failure.
@@ -29,14 +29,14 @@
 
 ---
 
-## 🗣️ How To Explain This Project To Your Teammates (In Simple Words)
+##  How To Explain This Project To Your Teammates (In Simple Words)
 
-### 💡 The 1-Line Pitch:
+###  The 1-Line Pitch:
 > **"It is like Canva + ChatGPT + ElevenLabs combined into one sovereign AI tool for Government & Intelligence Officers."**
 
 ---
 
-### 🚨 The Real Problem (What happens today):
+###  The Real Problem (What happens today):
 Government officers, intelligence analysts, and directors have to read **massive 40–50 page reports, technical advisories, and policy documents every single day**.
 
 They waste **4 to 5 hours** every day trying to manually convert that one document into:
@@ -48,27 +48,27 @@ They waste **4 to 5 hours** every day trying to manually convert that one docume
 
 ---
 
-### ⚡ Our Solution (*"OmniTransform AI"*):
+###  Our Solution (*"OmniTransform AI"*):
 The officer simply **drags and drops any 30-page PDF document** into our portal and clicks one button. 
 
 Within **10 seconds**, our AI automatically generates **5 ready-to-use media outputs**:
 
 ```
- 📄 Raw 30-Page Govt Report / Threat Advisory
-               │
-               ▼  (10 Seconds OmniTransform Engine)
- ┌─────────────────────────────────────────────────────────────┐
- │ 1. 📊 1-Page Executive Memo (With exact source citations)   │
- │ 2. 🖥️ Interactive Slide Deck (Apple Keynote Style)          │
- │ 3. 🎨 Visual Infographic & Social Card (Auto-rendered image)│
- │ 4. 📰 Multilingual Press Release (English + Hindi/Regional) │
- │ 5. 🎙️ 60-Second Audio Intelligence Podcast (Voice AI)       │
- └─────────────────────────────────────────────────────────────┘
+  Raw 30-Page Govt Report / Threat Advisory
+               
+                 (10 Seconds OmniTransform Engine)
+ 
+  1.  1-Page Executive Memo (With exact source citations)   
+  2.  Interactive Slide Deck (Apple Keynote Style)          
+  3.  Visual Infographic & Social Card (Auto-rendered image)
+  4.  Multilingual Press Release (English + Hindi/Regional) 
+  5.  60-Second Audio Intelligence Podcast (Voice AI)       
+ 
 ```
 
 ---
 
-## 🔒 The Secret Weapon: Zero Hallucination Citations
+##  The Secret Weapon: Zero Hallucination Citations
 
 Government agencies hate AI when it makes things up ("hallucinations"). 
 
@@ -79,7 +79,7 @@ In our tool:
 
 ---
 
-## 👥 How to Split Work Among 6 Teammates
+##  How to Split Work Among 6 Teammates
 
 | Teammate | Role | Responsibility |
 | :--- | :--- | :--- |
@@ -92,7 +92,7 @@ In our tool:
 
 ---
 
-## ⏱️ The 3-Minute Winning Jury Presentation Flow
+##  The 3-Minute Winning Jury Presentation Flow
 
 * **0:00 - 0:45**: Show the problem — *"Government officers waste 5 hours daily converting dense reports into presentations and briefs."*
 * **0:45 - 2:00 (The Live Demo)**: Drop a real 20-page government PDF live. Watch the system generate all 5 outputs with citations in 10 seconds.

@@ -1,4 +1,4 @@
-# ⚙️ HRL International™ — Intelligent Process Automation (IPA) System Architecture
+#  HRL International™ — Intelligent Process Automation (IPA) System Architecture
 
 **Company Entity**: HRL International Private Limited™  
 **Flagship Platform**: OmniTransform AI  
@@ -22,19 +22,19 @@ Traditional manual processing requires **14 to 24 human hours** across multiple 
 ## 2. The Bottleneck: Manual vs. Traditional RPA vs. OmniTransform IPA
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                PROCESS AUTOMATION PARADIGM COMPARISON                           │
-├─────────────────────────┬──────────────────────────┬───────────────────────┬────────────────────┤
-│ Dimension               │ Traditional Manual       │ Traditional RPA       │ OmniTransform IPA  │
-├─────────────────────────┼──────────────────────────┼───────────────────────┼────────────────────┤
-│ Processing Latency      │ 14 – 24 Hours            │ 30 – 60 Minutes       │ < 10 Seconds       │
-│ Document Understanding  │ High (Human fatigue)     │ None (Rigid rules)    │ Deep Multi-Modal   │
-│ Multi-Format Outputs    │ Fragmented (5 Teams)     │ Single Template Only  │ 5 Synchronized     │
-│ Hallucination Risk      │ Human Error / Oversight  │ Script Failure        │ 0.0% (Bounding Box)│
-│ Indic Translation       │ Days (External agency)   │ Literal Dictionary    │ Real-Time Indic    │
-│ Audio Broadcasting      │ Manual Studio Recording  │ Robotic Synthesizer   │ ElevenLabs Neural  │
-│ Sovereign Air-Gap       │ Manual Hard Copies       │ Cloud API Dependent   │ 100% On-Prem Node  │
-└─────────────────────────┴──────────────────────────┴───────────────────────┴────────────────────┘
+
+                                PROCESS AUTOMATION PARADIGM COMPARISON                           
+
+ Dimension                Traditional Manual        Traditional RPA        OmniTransform IPA  
+
+ Processing Latency       14 – 24 Hours             30 – 60 Minutes        < 10 Seconds       
+ Document Understanding   High (Human fatigue)      None (Rigid rules)     Deep Multi-Modal   
+ Multi-Format Outputs     Fragmented (5 Teams)      Single Template Only   5 Synchronized     
+ Hallucination Risk       Human Error / Oversight   Script Failure         0.0% (Bounding Box)
+ Indic Translation        Days (External agency)    Literal Dictionary     Real-Time Indic    
+ Audio Broadcasting       Manual Studio Recording   Robotic Synthesizer    ElevenLabs Neural  
+ Sovereign Air-Gap        Manual Hard Copies        Cloud API Dependent    100% On-Prem Node  
+
 ```
 
 ---
@@ -79,28 +79,28 @@ graph TD
 The core innovation of OmniTransform AI's IPA engine is **Single-Pass Parallel Directed Acyclic Graph (DAG) Execution**. Rather than running sequential pipelines, 5 specialized generative workers execute concurrently in memory:
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                           5 SYNCHRONIZED ASSET SYNTHESIS WORKERS                                │
-├─────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Worker A: Executive Memorandum                                                                  │
-│ • Formats high-level strategic intelligence into an authentic 1-page executive briefing memo.   │
-│ • Enforces strict A4 print layout, sovereign crest, and classified marking indicators.          │
-├─────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Worker B: 16:9 Presentation Slide Deck                                                          │
-│ • Synthesizes a structured 3-slide briefing deck (Executive Summary, Threat Vector, Mitigation).│
-│ • Programmatically generates a downloadable PowerPoint presentation (`.pptx`) via python-pptx. │
-├─────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Worker C: Visual Infographics & Metric Cards                                                    │
-│ • Generates visual metric cards with trend indicators, color-coded threat velocity badges.     │
-├─────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Worker D: Indic Multilingual Press Engine                                                       │
-│ • Synthesizes public safety press releases and media advisories in Hindi, Kannada, and Tamil.   │
-│ • Strips sensitive technical markers for citizen-safe public diffusion.                         │
-├─────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Worker E: ElevenLabs Neural Audio Broadcast                                                     │
-│ • Converts synthesized intelligence into 60-second broadcast audio using ElevenLabs models.     │
-│ • Applies IPA phonetic dictionary mappings for acronyms and renders downloadable MP3/M4A audio. │
-└─────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+                           5 SYNCHRONIZED ASSET SYNTHESIS WORKERS                                
+
+ Worker A: Executive Memorandum                                                                  
+ • Formats high-level strategic intelligence into an authentic 1-page executive briefing memo.   
+ • Enforces strict A4 print layout, sovereign crest, and classified marking indicators.          
+
+ Worker B: 16:9 Presentation Slide Deck                                                          
+ • Synthesizes a structured 3-slide briefing deck (Executive Summary, Threat Vector, Mitigation).
+ • Programmatically generates a downloadable PowerPoint presentation (`.pptx`) via python-pptx. 
+
+ Worker C: Visual Infographics & Metric Cards                                                    
+ • Generates visual metric cards with trend indicators, color-coded threat velocity badges.     
+
+ Worker D: Indic Multilingual Press Engine                                                       
+ • Synthesizes public safety press releases and media advisories in Hindi, Kannada, and Tamil.   
+ • Strips sensitive technical markers for citizen-safe public diffusion.                         
+
+ Worker E: ElevenLabs Neural Audio Broadcast                                                     
+ • Converts synthesized intelligence into 60-second broadcast audio using ElevenLabs models.     
+ • Applies IPA phonetic dictionary mappings for acronyms and renders downloadable MP3/M4A audio. 
+
 ```
 
 ---
@@ -121,21 +121,21 @@ The core innovation of OmniTransform AI's IPA engine is **Single-Pass Parallel D
 ## 4. Performance Metrics & SLA Benchmarks
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                 IPA PERFORMANCE BENCHMARKS                                      │
-├───────────────────────────────────────────────────┬─────────────────────────────────────────────┤
-│ Total End-to-End Processing Latency               │ 9.2 Seconds (Target SLA: < 10.0s)           │
-├───────────────────────────────────────────────────┼─────────────────────────────────────────────┤
-│ Grounding Verification Accuracy                   │ 98.4% Source Factual Alignment              │
-├───────────────────────────────────────────────────┼─────────────────────────────────────────────┤
-│ Hallucination Score                               │ 0.0% (Enforced by Coordinate Guardrails)    │
-├───────────────────────────────────────────────────┼─────────────────────────────────────────────┤
-│ Time Reduction vs Human Team                      │ 99.8% Acceleration (14 Hours ➔ 9.2s)        │
-├───────────────────────────────────────────────────┼─────────────────────────────────────────────┤
-│ Supported Indic Languages                         │ Hindi (hi), Kannada (kn), Tamil (ta)        │
-├───────────────────────────────────────────────────┼─────────────────────────────────────────────┤
-│ Audio Latency (ElevenLabs Flash v2.5)             │ < 2.5s First-Byte Stream Latency            │
-└───────────────────────────────────────────────────┴─────────────────────────────────────────────┘
+
+                                 IPA PERFORMANCE BENCHMARKS                                      
+
+ Total End-to-End Processing Latency                9.2 Seconds (Target SLA: < 10.0s)           
+
+ Grounding Verification Accuracy                    98.4% Source Factual Alignment              
+
+ Hallucination Score                                0.0% (Enforced by Coordinate Guardrails)    
+
+ Time Reduction vs Human Team                       99.8% Acceleration (14 Hours  9.2s)        
+
+ Supported Indic Languages                          Hindi (hi), Kannada (kn), Tamil (ta)        
+
+ Audio Latency (ElevenLabs Flash v2.5)              < 2.5s First-Byte Stream Latency            
+
 ```
 
 ---
@@ -225,7 +225,7 @@ class IntelligentProcessAutomationEngine:
 
 ---
 
-## 🏛️ Corporate Authority & Contact
+##  Corporate Authority & Contact
 * **Entity**: HRL International Private Limited™
 * **Managing Director**: Pavan Kumar Sadashiv (B.E. CSE AIML, SCEM Mangaluru)
 * **Master Repository**: [https://github.com/hrlpavan/omnitransform-ai-resources](https://github.com/hrlpavan/omnitransform-ai-resources)

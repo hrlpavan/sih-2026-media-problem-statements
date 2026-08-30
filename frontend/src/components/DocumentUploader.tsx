@@ -181,7 +181,7 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
                 <div className="shrink-0 mt-1">
                   {isSelected ? (
                     <span className="w-5 h-5 rounded-full bg-hrl-crimson text-white flex items-center justify-center text-xs font-bold">
-                      ✓
+                      
                     </span>
                   ) : (
                     <span className="w-5 h-5 rounded-full border border-zinc-300 block" />

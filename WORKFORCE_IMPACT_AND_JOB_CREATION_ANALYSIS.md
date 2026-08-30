@@ -1,4 +1,4 @@
-# 📊 HRL International™ — OmniTransform AI: Workforce Economic Impact, Job Displacement & Net Job Creation Analysis
+#  HRL International™ — OmniTransform AI: Workforce Economic Impact, Job Displacement & Net Job Creation Analysis
 
 **Company Entity**: HRL International Private Limited™  
 **Flagship Platform**: OmniTransform AI  
@@ -24,21 +24,21 @@ This whitepaper provides an empirical, data-driven analysis of **workforce trans
 ## 2. Quantitative Labor Market Matrix
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                        WORKFORCE IMPACT AT SCALE (36-MONTH PROJECTION)                          │
-├───────────────────────────────────────────────────┬─────────────────────────────────────────────┤
-│ Total Manual Formatting Roles Realigned           │ 6,200 Roles (Repetitive Copy-Paste Tasks)   │
-├───────────────────────────────────────────────────┼─────────────────────────────────────────────┤
-│ Direct New High-Skilled Tech Jobs Created         │ 7,800 Direct Specialized Positions          │
-├───────────────────────────────────────────────────┼─────────────────────────────────────────────┤
-│ Indirect Ecosystem & Operational Jobs Created     │ 17,700 Operational & Field Response Jobs    │
-├───────────────────────────────────────────────────┼─────────────────────────────────────────────┤
-│ Net Positive Job Creation Delta                   │ +19,300 Net High-Value Jobs                 │
-├───────────────────────────────────────────────────┼─────────────────────────────────────────────┤
-│ Human Productivity Multiplier                     │ 1 Analyst + OmniTransform = 14x Output      │
-├───────────────────────────────────────────────────┼─────────────────────────────────────────────┤
-│ Average Salary Uplift for Re-Skilled Workers      │ +65% (From Typist/Clerk to AI Operator)     │
-└───────────────────────────────────────────────────┴─────────────────────────────────────────────┘
+
+                        WORKFORCE IMPACT AT SCALE (36-MONTH PROJECTION)                          
+
+ Total Manual Formatting Roles Realigned            6,200 Roles (Repetitive Copy-Paste Tasks)   
+
+ Direct New High-Skilled Tech Jobs Created          7,800 Direct Specialized Positions          
+
+ Indirect Ecosystem & Operational Jobs Created      17,700 Operational & Field Response Jobs    
+
+ Net Positive Job Creation Delta                    +19,300 Net High-Value Jobs                 
+
+ Human Productivity Multiplier                      1 Analyst + OmniTransform = 14x Output      
+
+ Average Salary Uplift for Re-Skilled Workers       +65% (From Typist/Clerk to AI Operator)     
+
 ```
 
 ---
@@ -46,19 +46,19 @@ This whitepaper provides an empirical, data-driven analysis of **workforce trans
 ## 3. Displaced / Automated Roles vs. New Roles Created
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                           ROLES AUTOMATED vs. NEW JOBS CREATED                                  │
-├─────────────────────────────────────────┬───────────────────────────────────────────────────────┤
-│ Roles Automated / Realigned             │ New High-Value Jobs Created                           │
-├─────────────────────────────────────────┼───────────────────────────────────────────────────────┤
-│ 1. Manual Document Typists & Summarizers│ 1. Sovereign AI Model & Edge Cluster Engineers        │
-│ 2. Repetitive Slide Deck Copy-Pasters   │ 2. Spatial Grounding & Verification Auditors          │
-│ 3. Rote Infographic Graphic Adjusters   │ 3. Indic Linguistic AI Evaluators (Hi, Kn, Ta)        │
-│ 4. Literal Text Translators (Drafts)    │ 4. ElevenLabs Phonetic Lexicon & Voice Directors      │
-│ 5. Manual Audio Studio Voice Recorders  │ 5. Rapid Cyber Incident Commanders (Field Operatives)  │
-│ 6. Routine Data Entry Clerks            │ 6. Air-Gapped Hardware & HSM Security Technicians     │
-│ 7. Static Report Assemblers             │ 7. Sovereign GovTech Integrators (GeM & Enterprise)   │
-└─────────────────────────────────────────┴───────────────────────────────────────────────────────┘
+
+                           ROLES AUTOMATED vs. NEW JOBS CREATED                                  
+
+ Roles Automated / Realigned              New High-Value Jobs Created                           
+
+ 1. Manual Document Typists & Summarizers 1. Sovereign AI Model & Edge Cluster Engineers        
+ 2. Repetitive Slide Deck Copy-Pasters    2. Spatial Grounding & Verification Auditors          
+ 3. Rote Infographic Graphic Adjusters    3. Indic Linguistic AI Evaluators (Hi, Kn, Ta)        
+ 4. Literal Text Translators (Drafts)     4. ElevenLabs Phonetic Lexicon & Voice Directors      
+ 5. Manual Audio Studio Voice Recorders   5. Rapid Cyber Incident Commanders (Field Operatives)  
+ 6. Routine Data Entry Clerks             6. Air-Gapped Hardware & HSM Security Technicians     
+ 7. Static Report Assemblers              7. Sovereign GovTech Integrators (GeM & Enterprise)   
+
 ```
 
 ---
@@ -87,22 +87,22 @@ These roles involve mechanical data transfer with zero creative or strategic inp
 Deploying OmniTransform AI across 500+ government and enterprise units creates a new class of **Sovereign AI Professionals**:
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                   NEW JOB TITLES & DEMAND                                       │
-├──────────────────────────────────────────┬──────────────┬───────────────────────────────────────┤
-│ Job Title                                │ Target Hires │ Key Responsibilities                  │
-├──────────────────────────────────────────┼──────────────┼───────────────────────────────────────┤
-│ Sovereign LLM & Edge Inference Engineer  │ 1,800        │ Deploy & maintain on-prem GPU nodes   │
-│ Citation Grounding & Audit Analyst       │ 2,400        │ Audit millimeter spatial citations    │
-│ Indic Linguistic AI Specialist           │ 1,500        │ Train & fine-tune regional models     │
-│ ElevenLabs Audio Prompt & Voice Curator  │ 900          │ Manage IPA phonetic dictionaries      │
-│ Critical Infrastructure Cyber Commander  │ 6,500        │ Act on instant multi-format alerts    │
-│ Air-Gapped Hardware Systems Specialist   │ 2,100        │ Maintain physical air-gapped servers  │
-│ GovTech GeM Integration Consultant       │ 1,100        │ Enterprise deployment across PSUs     │
-│ Inter-Agency Intelligence Coordinator    │ 9,200        │ Coordinate regional disaster teams    │
-├──────────────────────────────────────────┼──────────────┼───────────────────────────────────────┤
-│ TOTAL NET NEW JOBS                       │ 25,500+      │ Across India (GovTech & Enterprise)   │
-└──────────────────────────────────────────┴──────────────┴───────────────────────────────────────┘
+
+                                   NEW JOB TITLES & DEMAND                                       
+
+ Job Title                                 Target Hires  Key Responsibilities                  
+
+ Sovereign LLM & Edge Inference Engineer   1,800         Deploy & maintain on-prem GPU nodes   
+ Citation Grounding & Audit Analyst        2,400         Audit millimeter spatial citations    
+ Indic Linguistic AI Specialist            1,500         Train & fine-tune regional models     
+ ElevenLabs Audio Prompt & Voice Curator   900           Manage IPA phonetic dictionaries      
+ Critical Infrastructure Cyber Commander   6,500         Act on instant multi-format alerts    
+ Air-Gapped Hardware Systems Specialist    2,100         Maintain physical air-gapped servers  
+ GovTech GeM Integration Consultant        1,100         Enterprise deployment across PSUs     
+ Inter-Agency Intelligence Coordinator     9,200         Coordinate regional disaster teams    
+
+ TOTAL NET NEW JOBS                        25,500+       Across India (GovTech & Enterprise)   
+
 ```
 
 ---
@@ -112,17 +112,17 @@ Deploying OmniTransform AI across 500+ government and enterprise units creates a
 To illustrate the real-world employment effect, consider the **14 State Electricity Distribution Companies (Discoms)** monitored by NTRO:
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                           14 DISCOMS WORKFORCE ALLOCATION COMPARISON                            │
-├──────────────────────────────────────────┬───────────────────────┬──────────────────────────────┤
-│ Metric                                   │ Before OmniTransform  │ After OmniTransform (IPA)    │
-├──────────────────────────────────────────┼───────────────────────┼──────────────────────────────┤
-│ Personnel assigned to report formatting  │ 140 Clerks (10/unit)  │ 0 (Fully Automated)          │
-│ Personnel acting on threat mitigation    │ 28 Field Engineers    │ 168 Active Cyber Responders  │
-│ Average Time to Contain SCADA Breach     │ 36 Hours              │ 18 Minutes                   │
-│ Economic Loss Prevented per Incident     │ ₹2.5 Crores           │ ₹48.0 Crores                 │
-│ Job Satisfaction & Skill Rating          │ 32% (High Burnout)    │ 94% (Strategic Authority)    │
-└──────────────────────────────────────────┴───────────────────────┴──────────────────────────────┘
+
+                           14 DISCOMS WORKFORCE ALLOCATION COMPARISON                            
+
+ Metric                                    Before OmniTransform   After OmniTransform (IPA)    
+
+ Personnel assigned to report formatting   140 Clerks (10/unit)   0 (Fully Automated)          
+ Personnel acting on threat mitigation     28 Field Engineers     168 Active Cyber Responders  
+ Average Time to Contain SCADA Breach      36 Hours               18 Minutes                   
+ Economic Loss Prevented per Incident      ₹2.5 Crores            ₹48.0 Crores                 
+ Job Satisfaction & Skill Rating           32% (High Burnout)     94% (Strategic Authority)    
+
 ```
 
 **Key Takeaway**: The 140 clerks who previously copy-pasted reports were not terminated; they were **re-skilled into Sovereign AI Grounding Operators and Threat Response Coordinators**, increasing field response capacity by **600%**.
@@ -156,7 +156,7 @@ graph LR
 
 ---
 
-## 🏛️ Corporate Authority & Commitment
+##  Corporate Authority & Commitment
 * **Entity**: HRL International Private Limited™
 * **Managing Director**: Pavan Kumar Sadashiv (B.E. CSE AIML, SCEM Mangaluru)
 * **Master Repository**: [https://github.com/hrlpavan/omnitransform-ai-resources](https://github.com/hrlpavan/omnitransform-ai-resources)

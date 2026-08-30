@@ -1,9 +1,9 @@
-# ⚡ OmniTransform AI — Open-Source Resource Bundle & Repository
+#  OmniTransform AI — Open-Source Resource Bundle & Repository
 
 [![Live HTTPS Web Application](https://img.shields.io/badge/LIVE%20DEMO-HTTPS%20Web%20Application-brightgreen?style=for-the-badge&logo=github)](https://hrlpavan.github.io/omnitransform-ai-resources/)
 [![GitHub Pages Deployment](https://img.shields.io/badge/DEPLOYMENT-GitHub%20Pages-blue?style=for-the-badge&logo=githubpages)](https://hrlpavan.github.io/omnitransform-ai-resources/)
 
-> 🚀 **Live Production URL**: **[https://hrlpavan.github.io/omnitransform-ai-resources/](https://hrlpavan.github.io/omnitransform-ai-resources/)**  
+>  **Live Production URL**: **[https://hrlpavan.github.io/omnitransform-ai-resources/](https://hrlpavan.github.io/omnitransform-ai-resources/)**  
 > **Smart India Hackathon (SIH 2026)** | **Problem Statement ID**: `26154`  
 > **Title**: *Gen AI Platform for Automated Content Transformation*  
 > **Organization**: National Technical Research Organisation (NTRO)  
@@ -14,19 +14,19 @@
 
 ---
 
-## 🎯 Repository Overview
+##  Repository Overview
 
 This repository contains the complete resource bundle, presentation decks, system architecture diagrams, open-source dataset references, and development specifications for **OmniTransform AI** — an automated, single-pass sovereign Gen AI platform that transforms complex 50+ page documents into 5 synchronized communication assets in under 10 seconds:
 
-1. 📄 **1-Page Executive Summary Memo** (with clickable page citations).
-2. 🖥️ **Meeting-Ready Slide Deck** (formatted for PowerPoint / Keynote).
-3. 🎨 **Visual Infographics & Data Cards** (high-res auto-rendered metrics).
-4. 📰 **Multilingual Press Release** (English, Hindi, Kannada, Tamil, etc.).
-5. 🎙️ **60-Second Neural Audio Briefing** (podcast for mobile listening).
+1.  **1-Page Executive Summary Memo** (with clickable page citations).
+2.  **Meeting-Ready Slide Deck** (formatted for PowerPoint / Keynote).
+3.  **Visual Infographics & Data Cards** (high-res auto-rendered metrics).
+4.  **Multilingual Press Release** (English, Hindi, Kannada, Tamil, etc.).
+5.  **60-Second Neural Audio Briefing** (podcast for mobile listening).
 
 ---
 
-## 📦 Key Deliverables & Documents in this Repository
+##  Key Deliverables & Documents in this Repository
 
 | File / Resource | Description |
 | :--- | :--- |
@@ -41,13 +41,13 @@ This repository contains the complete resource bundle, presentation decks, syste
 
 ---
 
-## 🏗️ System Architecture Flowchart
+##  System Architecture Flowchart
 
 ![OmniTransform AI Architecture](./omnitransform_pipeline_flowchart.png)
 
 ---
 
-## 🧠 Open-Source Foundation Models & Datasets
+##  Open-Source Foundation Models & Datasets
 
 ### Open-Source Models (HuggingFace):
 * **Meta Llama 3.1 (8B / 70B Instruct)**: `meta-llama/Meta-Llama-3.1-8B-Instruct`
@@ -65,7 +65,7 @@ This repository contains the complete resource bundle, presentation decks, syste
 
 ---
 
-## 🚀 Quick Local Setup
+##  Quick Local Setup
 
 ```bash
 # 1. Clone the repository
@@ -84,6 +84,6 @@ python generate_clean_flowchart.py omnitransform_pipeline_flowchart.png
 
 ---
 
-## 🌐 Official Competition Links
+##  Official Competition Links
 * **Smart India Hackathon 2026 Portal**: [https://www.sih.gov.in/sih2026PS](https://www.sih.gov.in/sih2026PS) (PS ID: `26154`)
 * **National Technical Research Organisation (NTRO)**: [https://ntro.gov.in](https://ntro.gov.in)

@@ -47,14 +47,14 @@ def create_deck(output_path="OmniTransform_AI_Pitch_Deck.pptx"):
         },
         {
             "badge": "THE SOLUTION",
-            "title": "OmniTransform AI: 1 Ingestion ➔ 5 Synchronized Assets",
+            "title": "OmniTransform AI: 1 Ingestion  5 Synchronized Assets",
             "subtitle": "Drag and drop any 30+ page PDF; receive 5 production-ready media formats in under 10 seconds.",
             "points": [
-                "1. 📊 1-Page Executive Memo: High-level tactical summary with actionable bullet points.",
-                "2. 🖥️ Interactive Presentation Deck: Keynote-grade slide layout ready for leadership meetings.",
-                "3. 🎨 Visual Infographic & Social Card: Auto-rendered canvas assets for public and press outreach.",
-                "4. 📰 Multilingual Press Release: Automated regional translation (English, Hindi, Indic languages).",
-                "5. 🎙️ 60-Second AI Voice Intelligence Briefing: Studio-quality audio podcast for mobile officials."
+                "1.  1-Page Executive Memo: High-level tactical summary with actionable bullet points.",
+                "2.  Interactive Presentation Deck: Keynote-grade slide layout ready for leadership meetings.",
+                "3.  Visual Infographic & Social Card: Auto-rendered canvas assets for public and press outreach.",
+                "4.  Multilingual Press Release: Automated regional translation (English, Hindi, Indic languages).",
+                "5.  60-Second AI Voice Intelligence Briefing: Studio-quality audio podcast for mobile officials."
             ]
         },
         {
@@ -97,10 +97,10 @@ def create_deck(output_path="OmniTransform_AI_Pitch_Deck.pptx"):
             "title": "Proactive Engineering & Risk Defense",
             "subtitle": "Addressing enterprise reliability, data security, and performance constraints.",
             "points": [
-                "Risk: AI Hallucination ➔ Solution: Strict RAG boundaries and regex coordinate verification.",
-                "Risk: Sensitive Data Leaks ➔ Solution: 100% on-premise air-gapped open-weight model deployment.",
-                "Risk: Complex Charts & Tables ➔ Solution: Multimodal Vision-Language Models (VLM) for diagram extraction.",
-                "Risk: Large File Processing Latency ➔ Solution: Map-reduce parallelized document chunking pipeline."
+                "Risk: AI Hallucination  Solution: Strict RAG boundaries and regex coordinate verification.",
+                "Risk: Sensitive Data Leaks  Solution: 100% on-premise air-gapped open-weight model deployment.",
+                "Risk: Complex Charts & Tables  Solution: Multimodal Vision-Language Models (VLM) for diagram extraction.",
+                "Risk: Large File Processing Latency  Solution: Map-reduce parallelized document chunking pipeline."
             ]
         },
         {
