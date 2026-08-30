@@ -14,9 +14,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-hrl-border shadow-hrl-subtle no-print transition-all">
       {/* Main Navigation */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 gap-3">
           {/* Brand Logo & Platform Title */}
-          <div className="flex items-center space-x-3.5">
+          <div className="flex items-center space-x-3 shrink-0">
             <a href="#" className="flex items-center">
               <img
                 src="/hrl_logo_transparent.png"
@@ -30,16 +30,16 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
             </div>
           </div>
 
-          {/* Symmetrical Segmented Persona Selector */}
-          <div className="flex items-center space-x-1 bg-hrl-surface p-1 rounded-full border border-hrl-border">
-            <span className="text-[11px] text-hrl-muted font-medium px-2.5 hidden sm:inline">Audience:</span>
+          {/* Symmetrical Segmented Persona Selector - Constant Height */}
+          <div className="flex items-center bg-[#F2F2F7] p-1 rounded-full border border-black/5 h-9 shrink-0">
+            <span className="text-[11px] text-[#86868B] font-semibold px-2.5 hidden sm:inline whitespace-nowrap">Audience:</span>
             <button
               onClick={() => onPersonaChange('executive')}
               disabled={isProcessing}
-              className={`text-xs px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 cursor-pointer ${
+              className={`text-xs px-3 h-7 rounded-full font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap flex items-center justify-center ${
                 currentPersona === 'executive'
-                  ? 'bg-hrl-dark text-white shadow-sm font-semibold'
-                  : 'text-hrl-body hover:text-hrl-dark'
+                  ? 'bg-zinc-900 text-white shadow-sm'
+                  : 'text-zinc-600 hover:text-zinc-900'
               }`}
             >
               Executive
@@ -47,10 +47,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
             <button
               onClick={() => onPersonaChange('analyst')}
               disabled={isProcessing}
-              className={`text-xs px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 cursor-pointer ${
+              className={`text-xs px-3 h-7 rounded-full font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap flex items-center justify-center ${
                 currentPersona === 'analyst'
-                  ? 'bg-hrl-dark text-white shadow-sm font-semibold'
-                  : 'text-hrl-body hover:text-hrl-dark'
+                  ? 'bg-zinc-900 text-white shadow-sm'
+                  : 'text-zinc-600 hover:text-zinc-900'
               }`}
             >
               Technical
@@ -58,42 +58,45 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
             <button
               onClick={() => onPersonaChange('citizen')}
               disabled={isProcessing}
-              className={`text-xs px-3.5 py-1.5 rounded-full font-medium transition-all duration-200 cursor-pointer ${
+              className={`text-xs px-3 h-7 rounded-full font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap flex items-center justify-center ${
                 currentPersona === 'citizen'
-                  ? 'bg-hrl-dark text-white shadow-sm font-semibold'
-                  : 'text-hrl-body hover:text-hrl-dark'
+                  ? 'bg-zinc-900 text-white shadow-sm'
+                  : 'text-zinc-600 hover:text-zinc-900'
               }`}
             >
               Public
             </button>
           </div>
 
-          {/* Right Actions */}
-          <div className="flex items-center gap-2">
+          {/* Right Actions - All strictly constant h-9, whitespace-nowrap, single-line */}
+          <div className="flex items-center gap-2 shrink-0">
             <a
               href="#project-updates-hub"
-              className="hidden lg:flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#F2F2F7] hover:bg-[#E5E5EA] text-[#1D1D1F] text-xs font-semibold transition-all border border-black/5 cursor-pointer shadow-sm"
+              className="hidden lg:flex items-center gap-1.5 px-3.5 h-9 rounded-full bg-[#F2F2F7] hover:bg-[#E5E5EA] text-[#1D1D1F] text-xs font-semibold transition-all border border-black/5 cursor-pointer shadow-sm whitespace-nowrap"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-hrl-crimson animate-ping" />
               <span>Audio Updates</span>
             </a>
+
             <a
               href="#voice-faq-hub"
-              className="hidden xl:flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#F2F2F7] hover:bg-[#E5E5EA] text-[#1D1D1F] text-xs font-semibold transition-all border border-black/5 cursor-pointer shadow-sm"
+              className="hidden xl:flex items-center gap-1.5 px-3.5 h-9 rounded-full bg-[#F2F2F7] hover:bg-[#E5E5EA] text-[#1D1D1F] text-xs font-semibold transition-all border border-black/5 cursor-pointer shadow-sm whitespace-nowrap"
             >
               <HelpCircle className="w-3.5 h-3.5 text-zinc-700" />
               <span>Voice FAQ</span>
             </a>
+
             <button
               onClick={onOpenVentureModal}
-              className="hidden md:flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-zinc-100 hover:bg-zinc-200 text-[#1D1D1F] text-xs font-semibold transition-all border border-black/5 cursor-pointer shadow-sm"
+              className="hidden md:flex items-center gap-1.5 px-3.5 h-9 rounded-full bg-[#F2F2F7] hover:bg-[#E5E5EA] text-[#1D1D1F] text-xs font-semibold transition-all border border-black/5 cursor-pointer shadow-sm whitespace-nowrap"
             >
               <TrendingUp className="w-3.5 h-3.5 text-hrl-crimson" />
               <span>Venture & GTM</span>
             </button>
+
             <a
               href="https://github.com/hrlpavan/omnitransform-ai-resources/raw/main/SIH2026_Idea_Presentation_PS26154.pptx"
-              className="bg-hrl-blue hover:bg-hrl-blue-dark text-white px-4 sm:px-5 py-2 rounded-full text-xs font-semibold shadow-sm hover:shadow transition-all duration-200 flex items-center gap-1.5 cursor-pointer"
+              className="bg-hrl-blue hover:bg-hrl-blue-dark text-white px-4 sm:px-5 h-9 rounded-full text-xs font-semibold shadow-sm hover:shadow transition-all duration-200 flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Pitch Deck</span>
