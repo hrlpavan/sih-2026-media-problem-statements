@@ -1,129 +1,89 @@
-# 🚀 Smart India Hackathon (SIH 2026) – Media & Related Problem Statements Guide
+# ⚡ OmniTransform AI — Open-Source Resource Bundle & Repository
 
-> **Official SIH Portal**: [sih.gov.in/sih2026PS](https://www.sih.gov.in/sih2026PS)  
-> **Official SIH 2026 Presentation (.pptx)**: [Download SIH2026_Idea_Presentation_PS26154.pptx](https://github.com/hrlpavan/sih-2026-media-problem-statements/raw/main/SIH2026_Idea_Presentation_PS26154.pptx)  
-> **Architecture Flowchart**: [View omnitransform_pipeline_flowchart.png](https://github.com/hrlpavan/sih-2026-media-problem-statements/blob/main/omnitransform_pipeline_flowchart.png)  
-> **Dedicated Integration Blueprint**: [`HRL_SIH2026_INTEGRATION_MAP.md`](https://github.com/hrlpavan/sih-2026-media-problem-statements/blob/main/HRL_SIH2026_INTEGRATION_MAP.md)  
+[![Live HTTPS Web Application](https://img.shields.io/badge/LIVE%20DEMO-HTTPS%20Web%20Application-brightgreen?style=for-the-badge&logo=github)](https://hrlpavan.github.io/omnitransform-ai-resources/)
+[![GitHub Pages Deployment](https://img.shields.io/badge/DEPLOYMENT-GitHub%20Pages-blue?style=for-the-badge&logo=githubpages)](https://hrlpavan.github.io/omnitransform-ai-resources/)
 
-> [!IMPORTANT]
-> ### 🏆 Official Pitch Deck & Strategy Documents:
-> 👉 **Official PowerPoint Deck**: **[SIH2026_Idea_Presentation_PS26154.pptx](https://github.com/hrlpavan/sih-2026-media-problem-statements/raw/main/SIH2026_Idea_Presentation_PS26154.pptx)**  
-> 👉 **Winning Strategy & Pitch Guide**: **[WINNING_STRATEGY_PS26154.md](https://github.com/hrlpavan/sih-2026-media-problem-statements/blob/main/WINNING_STRATEGY_PS26154.md)**  
-> 👉 **Technical Development Spec**: **[PROJECT_DEVELOPMENT_SPECIFICATION.md](https://github.com/hrlpavan/sih-2026-media-problem-statements/blob/main/PROJECT_DEVELOPMENT_SPECIFICATION.md)**  
-> 👉 **Open-Source Resources & Datasets**: **[OPEN_SOURCE_RESOURCES_AND_DATASETS.md](https://github.com/hrlpavan/sih-2026-media-problem-statements/blob/main/OPEN_SOURCE_RESOURCES_AND_DATASETS.md)**  
-
----
-
-## 🔗 HRL International × SIH 2026 Problem Statement Synergy Matrix
-
-| SIH 2026 PS ID & Title | Ministry / Organization | Category & Theme | HRL Synergy & Implementation Approach |
-| :--- | :--- | :--- | :--- |
-| **PS 26154**<br>**Gen AI Platform for Automated Content Transformation** | National Technical Research Organisation (**NTRO**) | Software<br>*(Blockchain & Cybersecurity)* | **100% Core Business Fit**: Ingest raw threat reports/news/briefs ➔ LLM insight extraction ➔ Auto-generate branded social carousels, slide decks, infographics, and press releases. |
-| **PS 26152**<br>**Social Media Analytics** | National Technical Research Organisation (**NTRO**) | Software<br>*(Blockchain & Cybersecurity)* | **Creator & Brand Network Fit**: Leverage HRL's 2.5M+ reach network to deploy multilingual sentiment analysis, narrative trend forecasting, and entity knowledge graph mapping. |
-| **PS 26096**<br>**Digital Heritage Archive & Audio-Visual Knowledge Platform** | Ministry of Social Justice and Empowerment (**MoSJE**) | Software<br>*(Smart Education)* | **Audio-Visual Engineering Fit**: Ingest historical audio/video footage, perform Whisper-based speech transcription, OCR manuscript indexing, and semantic vector search. |
-| **PS 26063**<br>**Polar Science Outreach & Media Dissemination Portal** | Ministry of Earth Sciences (**MoES**) | Software<br>*(Smart Education)* | **Media Dissemination & UI Fit**: Adapt HRL's Apple-standard design system for public science journalism with interactive 3D virtual exhibits, media kits, and press releases. |
-| **PS 26101**<br>**AI-Powered Voice Cloning Detection** | Indian Cyber Crime Coordination Centre (**I4C**) | Software<br>*(Blockchain & Cybersecurity)* | **Voice AI & Forensics Fit**: Extend HRL's ElevenLabs voice stack with real-time acoustic anomaly detection and vocoder artifact analysis to detect synthetic audio. |
-| **PS 26173**<br>**iTantra: Multilingual TTS & STT Transceiver for Low-Bitrate Links** | **ISRO** | Software<br>*(Smart Automation)* | **Generative Audio Fit**: Multilingual neural speech synthesis (TTS) & recognition (STT) for compressed voice tokens across low-bandwidth channels. |
-| **PS 26199 / 26216**<br>**Student Innovation – Tertiary: Entertainment, Hospitality & Retail** | **AICTE** | Software / Hardware<br>*(Miscellaneous)* | **Flagship Startup Product**: Direct submission of HRL International’s proprietary media engineering & creator suite as a scalable enterprise platform. |
+> 🚀 **Live Production URL**: **[https://hrlpavan.github.io/omnitransform-ai-resources/](https://hrlpavan.github.io/omnitransform-ai-resources/)**  
+> **Smart India Hackathon (SIH 2026)** | **Problem Statement ID**: `26154`  
+> **Title**: *Gen AI Platform for Automated Content Transformation*  
+> **Organization**: National Technical Research Organisation (NTRO)  
+> **Theme**: Artificial Intelligence / Blockchain & Cybersecurity  
+> **Category**: Software  
+> **Team Name**: HRL  
+> **Founder & Managing Director**: Pavan Kumar Sadashiv  
 
 ---
 
-## 📑 Complete Media Problem Statements Breakdown
+## 🎯 Repository Overview
 
-### 1. Direct Media, Social Media & Content Generation
+This repository contains the complete resource bundle, presentation decks, system architecture diagrams, open-source dataset references, and development specifications for **OmniTransform AI** — an automated, single-pass sovereign Gen AI platform that transforms complex 50+ page documents into 5 synchronized communication assets in under 10 seconds:
 
-#### **PS ID: 26152 — Social Media Analytics**
-- **Organization**: National Technical Research Organisation (NTRO)
-- **Category**: Software | **Theme**: Blockchain & Cybersecurity
-- **Scope**: Aspect-based sentiment analysis, demographic profiling, trend detection, influencer scoring, and community graph clustering across social networks.
-- **Tech Stack**: Python (FastAPI), PyTorch, HuggingFace Transformers (RoBERTa, Llama, IndicBERT), NetworkX / Neo4j Graph DB, Next.js + D3.js.
-
-#### **PS ID: 26154 — Gen AI Platform for Automated Content Transformation**
-- **Organization**: National Technical Research Organisation (NTRO)
-- **Category**: Software | **Theme**: Blockchain & Cybersecurity
-- **Scope**: AI platform converting source documents (news, reports, advisories) into target media formats (infographics, news briefs, press releases, social threads, slide presentations).
-- **Tech Stack**: LangChain / LlamaIndex, Gemini Pro / Mistral / DeepSeek, ReportLab, Canvas API, React.
-
-#### **PS ID: 26063 — Integrated Polar Science Outreach & Media Dissemination Portal**
-- **Organization**: Ministry of Earth Sciences (MoES)
-- **Category**: Software | **Theme**: Smart Education
-- **Scope**: Public science dissemination portal with multimedia asset repository, 3D WebGL virtual exhibits, media download kits, and reach tracking.
-- **Tech Stack**: Next.js, Cloudflare R2 / AWS S3, Three.js / WebGL, Meilisearch.
-
-#### **PS ID: 26096 — Digital Heritage Archive & Audio-Visual Knowledge Platform**
-- **Organization**: Ministry of Social Justice and Empowerment (MoSJE)
-- **Category**: Software | **Theme**: Smart Education
-- **Scope**: Archival and restoration of historical speeches, manuscripts, and video footage with automated speech-to-text transcription, OCR, and semantic search.
-- **Tech Stack**: Whisper / IndicWhisper, PaddleOCR, Qdrant Vector DB, FFmpeg, React.
+1. 📄 **1-Page Executive Summary Memo** (with clickable page citations).
+2. 🖥️ **Meeting-Ready Slide Deck** (formatted for PowerPoint / Keynote).
+3. 🎨 **Visual Infographics & Data Cards** (high-res auto-rendered metrics).
+4. 📰 **Multilingual Press Release** (English, Hindi, Kannada, Tamil, etc.).
+5. 🎙️ **60-Second Neural Audio Briefing** (podcast for mobile listening).
 
 ---
 
-### 2. Audio, Speech, Voice AI & Deepfake Detection
+## 📦 Key Deliverables & Documents in this Repository
 
-#### **PS ID: 26101 — AI-Powered Voice Cloning Impersonation Attack Detection**
-- **Organization**: Indian Cyber Crime Coordination Centre (I4C)
-- **Category**: Software | **Theme**: Blockchain & Cybersecurity
-- **Scope**: Real-time detection of AI-generated synthetic voices and cloned audio in telephony and VoIP streams using acoustic anomaly models.
-- **Tech Stack**: PyTorch, Librosa, RawNet3, Audio Spectrogram Transformer (AST), WebRTC.
-
-#### **PS ID: 26173 — iTantra: Indian Multilingual TTS & STT Transceiver**
-- **Organization**: Indian Space Research Organisation (ISRO)
-- **Category**: Software | **Theme**: Smart Automation
-- **Scope**: Edge STT, neural token compression, and multilingual TTS voice re-synthesis over low-bitrate radio links.
-- **Tech Stack**: Android SDK, ONNX Runtime Mobile, Whisper.cpp / Vosk, FastSpeech2 / VITS.
-
-#### **PS ID: 26172 — Low Latency Voice Activator for Edge Devices**
-- **Organization**: Indian Space Research Organisation (ISRO)
-- **Category**: Hardware | **Theme**: Smart Automation
-- **Scope**: Lightweight Keyword Spotting (KWS) and acoustic wake-word engine on low-power microcontrollers.
-- **Tech Stack**: TinyML, TensorFlow Lite for Microcontrollers (TFLM), Edge Impulse, C++.
-
-#### **PS ID: 26040 — AI/ML Adaptive Noise Cancellation (ANC) for Speech**
-- **Organization**: DRDO
-- **Category**: Software | **Theme**: Smart Automation
-- **Scope**: Speech enhancement suppressing non-stationary and impulsive noises while preserving voice intelligibility.
+| File / Resource | Description |
+| :--- | :--- |
+| **[`SIH2026_Idea_Presentation_PS26154.pptx`](./SIH2026_Idea_Presentation_PS26154.pptx)** | **Official 6-Slide PowerPoint Presentation Deck** ready for portal submission. |
+| **[`omnitransform_pipeline_flowchart.png`](./omnitransform_pipeline_flowchart.png)** | High-resolution 300 DPI End-to-End System Architecture Flowchart. |
+| **[`PROJECT_DEVELOPMENT_SPECIFICATION.md`](./PROJECT_DEVELOPMENT_SPECIFICATION.md)** | Complete technical blueprint, component breakdown, and jury defense Q&A. |
+| **[`OPEN_SOURCE_RESOURCES_AND_DATASETS.md`](./OPEN_SOURCE_RESOURCES_AND_DATASETS.md)** | Full guide to Kaggle datasets, HuggingFace models, and GitHub libraries. |
+| **[`WINNING_STRATEGY_PS26154.md`](./WINNING_STRATEGY_PS26154.md)** | 100% winning execution strategy, jury pitch script, and scoring criteria. |
+| **[`TEAMMATE_PITCH_AND_WINNING_PICK.md`](./TEAMMATE_PITCH_AND_WINNING_PICK.md)** | Simple, plain-English explanation for team members and role distribution. |
+| **[`build_exact_sih_style_deck.py`](./build_exact_sih_style_deck.py)** | Python script utilizing `python-pptx` to generate the presentation deck. |
+| **[`generate_clean_flowchart.py`](./generate_clean_flowchart.py)** | Python script using `matplotlib` to render the clean system flowchart. |
 
 ---
 
-### 3. Video Media, CCTV Analytics & Surveillance Forensics
+## 🏗️ System Architecture Flowchart
 
-#### **PS ID: 26150 — Multi-Vendor DVR/NVR Forensic Analysis Tool**
-- **Organization**: National Technical Research Organisation (NTRO)
-- **Category**: Software | **Theme**: Blockchain & Cybersecurity
-- **Scope**: Carving raw H.264/H.265 video frames from proprietary surveillance DVR/NVR file systems, timestamp reconstruction, and cryptographic hash auditing.
-- **Tech Stack**: C++, Rust, Python, FFmpeg libavcodec, PyQt / Electron GUI.
-
-#### **PS ID: 26187 — AI-Based Video Analytics Platform for Border Surveillance**
-- **Organization**: Ministry of Home Affairs (MHA)
-- **Category**: Software | **Theme**: Blockchain & Cybersecurity
-- **Scope**: Real-time computer vision on legacy CCTV streams (human/vehicle detection, facial recognition, ANPR, intrusion tripwires).
-
-#### **PS ID: 26158 — Single-Pass Drone Video to 3D Model Generation**
-- **Organization**: National Technical Research Organisation (NTRO)
-- **Category**: Software | **Theme**: Robotics and Drones
-- **Scope**: Constructing dense 3D photogrammetric meshes and point clouds from single-pass aerial drone video feeds.
+![OmniTransform AI Architecture](./omnitransform_pipeline_flowchart.png)
 
 ---
 
-### 4. Media Intelligence in Law Enforcement
+## 🧠 Open-Source Foundation Models & Datasets
 
-#### **PS ID: 26189 — AI-Powered Criminal Network Analysis System**
-- **Organization**: Ministry of Home Affairs (MHA)
-- **Category**: Software | **Theme**: Blockchain & Cybersecurity
-- **Scope**: Ingesting social media feeds, CDR logs, and case records into entity-relationship knowledge graphs.
+### Open-Source Models (HuggingFace):
+* **Meta Llama 3.1 (8B / 70B Instruct)**: `meta-llama/Meta-Llama-3.1-8B-Instruct`
+* **Mistral-7B-Instruct-v0.3**: `mistralai/Mistral-7B-Instruct-v0.3`
+* **IndicTrans2 (Bhashini)**: `ai4bharat/indictrans2-en-indic-1B`
+* **BGE-Small-EN-v1.5**: `BAAI/bge-small-en-v1.5`
+* **Piper Neural TTS**: `rhasspy/piper`
+
+### Kaggle & Benchmark Datasets:
+* **PubLayNet & DocBank** (Document Layout & Coordinate Parsing): [Kaggle / IBM Research](https://www.kaggle.com/)
+* **Samanantar Indic Translation Corpus** (49M parallel pairs): [HuggingFace / AI4Bharat](https://huggingface.co/datasets/ai4bharat/samanantar)
+* **PIB Government Releases Corpus**: [Kaggle / Open Data](https://www.kaggle.com/)
+* **Multi-News Summarization Dataset**: [HuggingFace](https://huggingface.co/datasets/multi_news)
+* **Common Voice India & IndicTTS**: [HuggingFace / Mozilla](https://huggingface.co/datasets/mozilla-foundation/common_voice_11_0)
 
 ---
 
-### 5. Media & Entertainment (Student Innovation)
+## 🚀 Quick Local Setup
 
-- **PS ID: 26199 (Software) / 26216 (Hardware)**: Tertiary Sectors – Entertainment, Media, Hospitality & Retail *(AICTE)*
-- **PS ID: 26208 (Software) / 26225 (Hardware)**: Interactive Media & Civilization Games *(AICTE)*
+```bash
+# 1. Clone the repository
+git clone https://github.com/hrlpavan/omnitransform-ai-resources.git
+cd omnitransform-ai-resources
+
+# 2. Install dependencies
+pip install python-pptx matplotlib pillow
+
+# 3. Generate Presentation Deck
+python build_exact_sih_style_deck.py SIH2026_Idea_Presentation_PS26154.pptx
+
+# 4. Generate Architecture Flowchart
+python generate_clean_flowchart.py omnitransform_pipeline_flowchart.png
+```
 
 ---
 
-## 📁 Repository Contents
-
-- [`README.md`](https://github.com/hrlpavan/sih-2026-media-problem-statements/blob/main/README.md) – Full Master Guide & Problem Statement Breakdown.
-- [`HRL_SIH2026_INTEGRATION_MAP.md`](https://github.com/hrlpavan/sih-2026-media-problem-statements/blob/main/HRL_SIH2026_INTEGRATION_MAP.md) – Direct Implementation & Synergy Blueprint for HRL International.
-- [`problem_statements.json`](https://github.com/hrlpavan/sih-2026-media-problem-statements/blob/main/problem_statements.json) – All 226 parsed SIH 2026 problem statements.
-- [`parse_sih.py`](https://github.com/hrlpavan/sih-2026-media-problem-statements/blob/main/parse_sih.py) – SIH scraper and parser script.
+## 🌐 Official Competition Links
+* **Smart India Hackathon 2026 Portal**: [https://www.sih.gov.in/sih2026PS](https://www.sih.gov.in/sih2026PS) (PS ID: `26154`)
+* **National Technical Research Organisation (NTRO)**: [https://ntro.gov.in](https://ntro.gov.in)
