@@ -39,7 +39,7 @@ export const ExecutiveMemoTab: React.FC<ExecutiveMemoTabProps> = ({
         {/* Document Header Metadata with HRL Logo */}
         <div className="flex items-center justify-between pb-4 mb-4 border-b border-zinc-200">
           <div className="flex items-center gap-3">
-            <img src="/hrl_logo_transparent.png" alt="HRL Logo" className="h-8 object-contain" />
+            <img src="/hrl_logo_transparent.png" alt="HRL Logo" className="h-6 object-contain" />
             <div>
               <span className="font-bold text-sm text-zinc-900 block">OMNITRANSFORM INTELLIGENCE BRIEF</span>
               <span className="font-mono text-[10px] text-zinc-500 block">SIH 2026 // NTRO PS-26154 // TEAM HRL</span>

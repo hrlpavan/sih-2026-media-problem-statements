@@ -39,9 +39,9 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
     <div className="mb-10 uploader-section">
       {/* Hero Section (Matching HRL Master Brand System) */}
       <div className="text-center max-w-3xl mx-auto pt-8 pb-4 hero-brand-section no-print">
-        {/* Crimson Brand Kicker */}
-        <div className="inline-block font-semibold text-xs uppercase tracking-widest text-hrl-crimson mb-3 bg-hrl-crimson-tint px-3.5 py-1 rounded-full border border-hrl-crimson/20">
-          HRL International Private Limited™ · Smart India Hackathon 2026
+        {/* Clean Official HRL Kicker (Unboxed & Elegant) */}
+        <div className="text-xs font-semibold text-hrl-crimson tracking-widest uppercase mb-3">
+          HRL International Private Limited
         </div>
 
         {/* Ultra-Bold High-Contrast Headline */}

@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
       <div className="border-b border-hrl-dark-border py-5 bg-black/40">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <img src="/hrl_logo_transparent.png" alt="HRL" className="h-7 object-contain brightness-0 invert" />
+            <img src="/hrl_logo_transparent.png" alt="HRL" className="h-5 sm:h-6 object-contain brightness-0 invert" />
             <span className="text-xs font-semibold text-zinc-300">
               HRL International Private Limited™ · Smart India Hackathon 2026
             </span>
@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-2.5 mb-3">
-              <img src="/hrl_logo_transparent.png" alt="HRL" className="h-7 object-contain brightness-0 invert" />
+              <img src="/hrl_logo_transparent.png" alt="HRL" className="h-5 sm:h-6 object-contain brightness-0 invert" />
               <span className="font-bold text-sm text-white">OmniTransform AI</span>
             </div>
             <p className="text-xs text-zinc-400 leading-relaxed mb-3">
