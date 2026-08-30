@@ -2,8 +2,8 @@ import React from 'react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-white border-t border-zinc-200 mt-20 pt-8 pb-12 text-[#6E6E73] text-[11px] sm:text-xs leading-relaxed no-print">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+    <footer className="bg-white border-t border-zinc-200 mt-20 pt-10 pb-14 text-[#6E6E73] text-[11px] sm:text-xs leading-relaxed no-print w-full">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 space-y-8">
         {/* 4-Item Legal & Official Accreditation Notes */}
         <div className="space-y-1.5 font-normal text-[#86868B] text-[11px] sm:text-xs">
           <p>
@@ -47,7 +47,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Copyright & Footer Links */}
         <div className="flex flex-col lg:flex-row items-start justify-between gap-6 pt-1">
           {/* Copyright Text */}
-          <div className="max-w-lg text-[#86868B] text-[11px] leading-relaxed">
+          <div className="max-w-xl text-[#86868B] text-[11px] leading-relaxed">
             Copyright © 2026 Pavan Kumar Sadashiv. HRL International™ and HRL International Private Limited™ are asserted trademarks of Pavan Kumar Sadashiv. All rights reserved.
           </div>
 

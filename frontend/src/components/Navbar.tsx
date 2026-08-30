@@ -12,21 +12,21 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange, isProcessing, onOpenVentureModal }) => {
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-hrl-border shadow-hrl-subtle no-print transition-all w-full">
-      {/* Main Navigation Container */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 gap-3">
+      {/* Fluid Full-Width Navigation Container */}
+      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-24">
+        <div className="flex items-center justify-between h-16 gap-3 sm:gap-6">
           {/* Brand Logo & Platform Title */}
           <div className="flex items-center space-x-3 shrink-0">
             <a href="#" className="flex items-center">
               <img
                 src="./hrl_logo_transparent.png"
                 alt="HRL International"
-                className="h-5 sm:h-6 object-contain"
+                className="h-5 sm:h-6 md:h-6.5 object-contain"
               />
             </a>
             <div className="hidden sm:block pl-3 border-l border-hrl-border">
-              <span className="font-bold text-sm tracking-tight text-zinc-900 block leading-tight">OmniTransform AI</span>
-              <span className="text-[10px] text-zinc-400 font-medium tracking-wider uppercase block leading-none mt-0.5">Content Transformation Platform</span>
+              <span className="font-bold text-sm sm:text-base tracking-tight text-zinc-900 block leading-tight">OmniTransform AI</span>
+              <span className="text-[9px] sm:text-[10px] text-zinc-400 font-medium tracking-wider uppercase block leading-none mt-0.5">Content Transformation Platform</span>
             </div>
           </div>
 
@@ -68,8 +68,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
             </button>
           </div>
 
-          {/* Right Action Pills - Always with full labels and pristine proportions */}
-          <div className="flex items-center gap-2 shrink-0">
+          {/* Right Action Pills - Proportional & Fluid */}
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <a
               href="#project-updates-hub"
               className="hidden lg:flex items-center gap-1.5 px-3.5 h-9 rounded-full bg-[#F2F2F7] hover:bg-[#E5E5EA] text-[#1D1D1F] text-xs font-semibold transition-all border border-black/5 cursor-pointer shadow-xs whitespace-nowrap"
@@ -88,7 +88,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
 
             <button
               onClick={onOpenVentureModal}
-              className="hidden md:flex items-center gap-1.5 px-3.5 h-9 rounded-full bg-[#F2F2F7] hover:bg-[#E5E5EA] text-[#1D1D1F] text-xs font-semibold transition-all border border-black/5 cursor-pointer shadow-xs whitespace-nowrap"
+              className="hidden sm:flex items-center gap-1.5 px-3.5 h-9 rounded-full bg-[#F2F2F7] hover:bg-[#E5E5EA] text-[#1D1D1F] text-xs font-semibold transition-all border border-black/5 cursor-pointer shadow-xs whitespace-nowrap"
             >
               <TrendingUp className="w-3.5 h-3.5 text-hrl-crimson" />
               <span>Venture & GTM</span>
@@ -96,7 +96,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
 
             <a
               href="https://github.com/hrlpavan/omnitransform-ai-resources/raw/main/SIH2026_Idea_Presentation_PS26154.pptx"
-              className="bg-hrl-blue hover:bg-hrl-blue-dark text-white px-4 h-9 rounded-full text-xs font-semibold shadow-xs hover:shadow transition-all duration-200 flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
+              className="bg-hrl-blue hover:bg-hrl-blue-dark text-white px-4.5 h-9 rounded-full text-xs font-semibold shadow-xs hover:shadow transition-all duration-200 flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Pitch Deck</span>
