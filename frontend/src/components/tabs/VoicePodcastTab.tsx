@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Play, Pause, RotateCcw, Volume2, Download, Radio } from 'lucide-react';
+import { Play, Pause, RotateCcw, Volume2, Download } from 'lucide-react';
 
 interface VoicePodcastTabProps {
   podcast: {
@@ -9,6 +9,14 @@ interface VoicePodcastTabProps {
     segments: { timeOffset: string; speaker: string; text: string }[];
   };
 }
+
+// Official ElevenLabs Icon Component
+const ElevenLabsIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
+    <path d="M7 3.5C7 2.67157 7.67157 2 8.5 2H9.5C10.3284 2 11 2.67157 11 3.5V20.5C11 21.3284 10.3284 22 9.5 22H8.5C7.67157 22 7 21.3284 7 20.5V3.5Z" />
+    <path d="M13 3.5C13 2.67157 13.6716 2 14.5 2H15.5C16.3284 2 17 2.67157 17 3.5V20.5C17 21.3284 16.3284 22 15.5 22H14.5C13.6716 22 13 21.3284 13 20.5V3.5Z" />
+  </svg>
+);
 
 export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -93,11 +101,12 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-3 border-b border-zinc-200 no-print">
         <div>
           <div className="flex items-center gap-2">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-hrl-crimson bg-hrl-crimson-tint px-2.5 py-0.5 rounded border border-hrl-crimson/20">
-              ELEVENLABS MULTILINGUAL V2
+            <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-900 bg-zinc-100 px-2.5 py-1 rounded-full border border-zinc-300 flex items-center gap-1.5 shadow-sm">
+              <ElevenLabsIcon className="w-3 h-3 text-zinc-900" />
+              <span>ELEVENLABS MULTILINGUAL V2</span>
             </span>
             <span className="text-xs text-zinc-400">·</span>
-            <span className="text-xs text-zinc-500 font-mono">NEURAL AUDIO SYNTHESIS</span>
+            <span className="text-xs text-zinc-500 font-mono">TURBO V2.5 NEURAL ENGINE</span>
           </div>
           <h3 className="text-base font-bold text-zinc-900 mt-1">
             {podcast.title}
@@ -149,19 +158,23 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
         <div className="max-w-2xl mx-auto">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3.5">
-              <div className="w-12 h-12 rounded-2xl bg-hrl-crimson flex items-center justify-center text-white shadow-lg shadow-hrl-crimson/30">
-                <Radio className="w-6 h-6" />
+              {/* Official ElevenLabs Logo Badge Container */}
+              <div className="w-12 h-12 rounded-2xl bg-white text-zinc-950 flex items-center justify-center shadow-lg">
+                <ElevenLabsIcon className="w-6 h-6 text-black" />
               </div>
               <div>
-                <h4 className="font-bold text-base text-white">{podcast.title}</h4>
-                <p className="text-xs text-zinc-400 font-mono">
-                  MODEL: ELEVENLABS TURBO V2.5 // VOICE: {selectedVoice.toUpperCase()}
+                <div className="flex items-center gap-2">
+                  <h4 className="font-bold text-base text-white">{podcast.title}</h4>
+                </div>
+                <p className="text-xs text-zinc-400 font-mono mt-0.5">
+                  ELEVENLABS MULTILINGUAL V2 // VOICE: {selectedVoice.toUpperCase()} (128 KBPS)
                 </p>
               </div>
             </div>
-            <span className="text-xs font-mono font-semibold bg-white/10 px-3 py-1 rounded-full text-zinc-300 border border-white/10">
-              60s Brief
-            </span>
+            <div className="flex items-center gap-1.5 bg-white/10 px-3 py-1 rounded-full text-zinc-300 border border-white/10 text-xs font-mono">
+              <ElevenLabsIcon className="w-3 h-3 text-white" />
+              <span>60s Audio</span>
+            </div>
           </div>
 
           {/* Dynamic Audio Frequency Waveform */}
@@ -221,10 +234,13 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
       {/* Synchronized Script Transcript */}
       <div className="bg-white rounded-2xl border border-zinc-200 p-6 shadow-sm">
         <div className="flex items-center justify-between mb-4 pb-2 border-b border-zinc-100">
-          <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider">
-            ElevenLabs Synthesized Script Transcript
-          </h4>
-          <span className="text-[11px] font-mono text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded">
+          <div className="flex items-center gap-2">
+            <ElevenLabsIcon className="w-3.5 h-3.5 text-zinc-900" />
+            <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider">
+              ElevenLabs Synthesized Script Transcript
+            </h4>
+          </div>
+          <span className="text-[11px] font-mono text-zinc-500 bg-zinc-100 px-2.5 py-0.5 rounded border border-zinc-200">
             DETERMINISTIC LATENCY &lt; 2.5S
           </span>
         </div>
