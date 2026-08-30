@@ -20,7 +20,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
               <img
                 src="./hrl_logo_transparent.png"
                 alt="HRL International"
-                className="h-4.5 sm:h-5 object-contain"
+                className="h-5 sm:h-6 max-h-6 w-auto object-contain block"
               />
             </a>
             <div className="hidden sm:block pl-3 border-l border-black/[0.08]">
