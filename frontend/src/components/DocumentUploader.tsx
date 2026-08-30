@@ -132,18 +132,6 @@ export const DocumentUploader: React.FC<DocumentUploaderProps> = ({
         </div>
       </div>
 
-      {/* Seamlessly Blended Institutional Trust Bar */}
-      <div className="max-w-4xl mx-auto my-6 px-4 py-2 border-y border-zinc-100 flex flex-col sm:flex-row items-center justify-between gap-4 no-print opacity-95">
-        <img
-          src="/sih_official_header_banner_transparent.png"
-          alt="Ministry of Education | AICTE | MoE Innovation Cell | Smart India Hackathon 2026"
-          className="h-8 sm:h-9 object-contain mix-blend-multiply"
-        />
-        <div className="flex items-center gap-2 text-xs text-hrl-muted font-medium">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-          <span>Government of India Innovation Initiative</span>
-        </div>
-      </div>
 
       {/* Document Ingestion Canvas (Symmetrical 50/50 Split) */}
       <div className="bg-white rounded-3xl border border-hrl-border p-6 sm:p-8 shadow-hrl-card max-w-4xl mx-auto no-print">
