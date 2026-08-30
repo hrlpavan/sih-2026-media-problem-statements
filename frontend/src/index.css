@@ -3,12 +3,32 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
   body {
-    @apply bg-white text-hrl-dark font-sans antialiased selection:bg-hrl-crimson selection:text-white;
+    @apply bg-zinc-50 text-[#1D1D1F] font-sans antialiased selection:bg-hrl-crimson selection:text-white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.012em;
   }
+}
+
+/* Hide scrollbar for smooth horizontal touch swipe on smartphones & tablets */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Fluid responsive container constraints */
+.universal-fluid-container {
+  width: 100%;
+  max-width: min(92vw, 1200px);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Audio Waveform Bars */
