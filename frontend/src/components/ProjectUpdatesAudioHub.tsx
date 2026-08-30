@@ -200,11 +200,11 @@ export const ProjectUpdatesAudioHub: React.FC = () => {
 
         {/* Master Controls: Model & Full Briefing Trigger */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto">
-          {/* Model Switcher */}
-          <div className="flex items-center bg-[#F2F2F7] p-1 rounded-full border border-black/5 self-start sm:self-auto">
+          {/* Model Switcher Pill */}
+          <div className="flex items-center bg-[#F2F2F7] p-1 rounded-full border border-black/5 shrink-0">
             <button
               onClick={() => setSelectedModel('eleven_v3')}
-              className={`text-xs px-3.5 py-1.5 rounded-full font-semibold transition-all cursor-pointer ${
+              className={`text-xs px-3.5 py-1.5 rounded-full font-semibold transition-all cursor-pointer whitespace-nowrap ${
                 selectedModel === 'eleven_v3'
                   ? 'bg-zinc-900 text-white shadow-sm'
                   : 'text-zinc-600 hover:text-zinc-900'
@@ -214,7 +214,7 @@ export const ProjectUpdatesAudioHub: React.FC = () => {
             </button>
             <button
               onClick={() => setSelectedModel('eleven_flash_v2_5')}
-              className={`text-xs px-3.5 py-1.5 rounded-full font-semibold transition-all cursor-pointer ${
+              className={`text-xs px-3.5 py-1.5 rounded-full font-semibold transition-all cursor-pointer whitespace-nowrap ${
                 selectedModel === 'eleven_flash_v2_5'
                   ? 'bg-zinc-900 text-white shadow-sm'
                   : 'text-zinc-600 hover:text-zinc-900'

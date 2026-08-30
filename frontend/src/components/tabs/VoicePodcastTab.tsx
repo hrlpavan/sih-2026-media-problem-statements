@@ -258,7 +258,7 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
                   : 'text-[#86868B] hover:text-[#1D1D1F]'
               }`}
             >
-              Eleven v3 (Flagship)
+              Eleven v3
             </button>
             <button
               onClick={() => switchModel('eleven_flash_v2_5')}
@@ -268,7 +268,7 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
                   : 'text-[#86868B] hover:text-[#1D1D1F]'
               }`}
             >
-              Eleven Flash v2.5 (Low Latency)
+              Eleven Flash v2.5
             </button>
           </div>
         </div>
