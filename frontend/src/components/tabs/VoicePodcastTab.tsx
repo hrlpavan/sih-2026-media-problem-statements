@@ -10,8 +10,8 @@ interface VoicePodcastTabProps {
   };
 }
 
-// Official ElevenLabs Icon Component
-const ElevenLabsIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
+// Official ElevenLabs Vector Logo Component
+const ElevenLabsIcon: React.FC<{ className?: string }> = ({ className = "w-3.5 h-3.5" }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
     <path d="M7 3.5C7 2.67157 7.67157 2 8.5 2H9.5C10.3284 2 11 2.67157 11 3.5V20.5C11 21.3284 10.3284 22 9.5 22H8.5C7.67157 22 7 21.3284 7 20.5V3.5Z" />
     <path d="M13 3.5C13 2.67157 13.6716 2 14.5 2H15.5C16.3284 2 17 2.67157 17 3.5V20.5C17 21.3284 16.3284 22 15.5 22H14.5C13.6716 22 13 21.3284 13 20.5V3.5Z" />
@@ -97,46 +97,51 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
 
   return (
     <div className="space-y-6">
-      {/* Header & Voice Selector Bar */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-3 border-b border-zinc-200 no-print">
+      {/* Apple Design Header & Toolbar */}
+      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 pb-4 border-b border-black/5 no-print">
         <div>
-          <div className="flex items-center gap-2">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-900 bg-zinc-100 px-2.5 py-1 rounded-full border border-zinc-300 flex items-center gap-1.5 shadow-sm">
-              <ElevenLabsIcon className="w-3 h-3 text-zinc-900" />
-              <span>ELEVENLABS MULTILINGUAL V2</span>
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#F2F2F7] text-[11px] font-semibold text-[#1D1D1F] border border-black/5 shadow-sm">
+              <ElevenLabsIcon className="w-3 h-3 text-black" />
+              <span>ElevenLabs Multilingual v2</span>
             </span>
-            <span className="text-xs text-zinc-400">·</span>
-            <span className="text-xs text-zinc-500 font-mono">TURBO V2.5 NEURAL ENGINE</span>
+            <span className="text-xs text-[#86868B] font-normal">· Turbo v2.5 Neural Engine</span>
           </div>
-          <h3 className="text-base font-bold text-zinc-900 mt-1">
+          <h3 className="text-lg sm:text-xl font-bold text-[#1D1D1F] tracking-tight mt-1.5">
             {podcast.title}
           </h3>
         </div>
 
-        {/* ElevenLabs Voice Selection Pills */}
-        <div className="flex items-center gap-2">
-          <div className="flex items-center bg-zinc-100 p-1 rounded-full border border-zinc-200">
-            <span className="text-[11px] text-zinc-500 font-medium px-2 hidden md:inline">Voice:</span>
+        {/* Apple Segmented Voice Selector & Download */}
+        <div className="flex items-center gap-2.5 flex-wrap">
+          <div className="flex items-center bg-[#F2F2F7] p-1 rounded-full border border-black/5 shadow-sm">
+            <span className="text-[11px] text-[#86868B] font-medium px-2.5 hidden sm:inline">Voice:</span>
             <button
               onClick={() => setSelectedVoice('adam')}
-              className={`text-xs px-3 py-1 rounded-full font-medium transition-all cursor-pointer ${
-                selectedVoice === 'adam' ? 'bg-zinc-900 text-white font-semibold shadow-sm' : 'text-zinc-600 hover:text-zinc-900'
+              className={`text-xs px-3.5 py-1 rounded-full font-medium transition-all duration-200 cursor-pointer ${
+                selectedVoice === 'adam'
+                  ? 'bg-white text-[#1D1D1F] font-semibold shadow-[0_1px_3px_rgba(0,0,0,0.12)]'
+                  : 'text-[#86868B] hover:text-[#1D1D1F]'
               }`}
             >
               Adam (Executive)
             </button>
             <button
               onClick={() => setSelectedVoice('rachel')}
-              className={`text-xs px-3 py-1 rounded-full font-medium transition-all cursor-pointer ${
-                selectedVoice === 'rachel' ? 'bg-zinc-900 text-white font-semibold shadow-sm' : 'text-zinc-600 hover:text-zinc-900'
+              className={`text-xs px-3.5 py-1 rounded-full font-medium transition-all duration-200 cursor-pointer ${
+                selectedVoice === 'rachel'
+                  ? 'bg-white text-[#1D1D1F] font-semibold shadow-[0_1px_3px_rgba(0,0,0,0.12)]'
+                  : 'text-[#86868B] hover:text-[#1D1D1F]'
               }`}
             >
               Rachel (News)
             </button>
             <button
               onClick={() => setSelectedVoice('antoni')}
-              className={`text-xs px-3 py-1 rounded-full font-medium transition-all cursor-pointer ${
-                selectedVoice === 'antoni' ? 'bg-zinc-900 text-white font-semibold shadow-sm' : 'text-zinc-600 hover:text-zinc-900'
+              className={`text-xs px-3.5 py-1 rounded-full font-medium transition-all duration-200 cursor-pointer ${
+                selectedVoice === 'antoni'
+                  ? 'bg-white text-[#1D1D1F] font-semibold shadow-[0_1px_3px_rgba(0,0,0,0.12)]'
+                  : 'text-[#86868B] hover:text-[#1D1D1F]'
               }`}
             >
               Antoni (Technical)
@@ -145,27 +150,24 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
 
           <button
             onClick={() => alert('Downloading ElevenLabs 60s synthesized broadcast (MP3)...')}
-            className="px-3.5 py-1.5 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-semibold text-xs border border-zinc-300 transition-all flex items-center gap-1.5 cursor-pointer"
+            className="px-4 py-1.5 rounded-full bg-[#F2F2F7] hover:bg-[#E5E5EA] text-[#1D1D1F] font-semibold text-xs border border-black/5 transition-all duration-200 flex items-center gap-1.5 cursor-pointer shadow-sm"
           >
-            <Download className="w-3.5 h-3.5 text-zinc-600" />
+            <Download className="w-3.5 h-3.5 text-[#86868B]" />
             <span>Download MP3</span>
           </button>
         </div>
       </div>
 
       {/* Dark Cinema OLED Audio Player Card */}
-      <div className="bg-[#0A0A0C] text-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-zinc-800">
+      <div className="bg-[#0A0A0C] text-white rounded-[24px] p-6 sm:p-8 shadow-2xl border border-white/10">
         <div className="max-w-2xl mx-auto">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3.5">
-              {/* Official ElevenLabs Logo Badge Container */}
               <div className="w-12 h-12 rounded-2xl bg-white text-zinc-950 flex items-center justify-center shadow-lg">
                 <ElevenLabsIcon className="w-6 h-6 text-black" />
               </div>
               <div>
-                <div className="flex items-center gap-2">
-                  <h4 className="font-bold text-base text-white">{podcast.title}</h4>
-                </div>
+                <h4 className="font-bold text-base text-white tracking-tight">{podcast.title}</h4>
                 <p className="text-xs text-zinc-400 font-mono mt-0.5">
                   ELEVENLABS MULTILINGUAL V2 // VOICE: {selectedVoice.toUpperCase()} (128 KBPS)
                 </p>
@@ -177,8 +179,8 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
             </div>
           </div>
 
-          {/* Dynamic Audio Frequency Waveform */}
-          <div className="h-16 flex items-center justify-center gap-1.5 my-6 bg-black/60 rounded-2xl px-6 border border-zinc-800/80">
+          {/* Dynamic Frequency Bars */}
+          <div className="h-16 flex items-center justify-center gap-1.5 my-6 bg-black/60 rounded-2xl px-6 border border-white/5">
             {[4, 12, 24, 18, 8, 28, 20, 14, 30, 22, 16, 24, 12, 6, 26, 18, 10, 22, 14, 8, 16, 28, 20, 12, 24, 16, 8, 20, 14].map((h, i) => (
               <div
                 key={i}
@@ -206,7 +208,7 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
             </div>
           </div>
 
-          {/* Playback Controls */}
+          {/* Controls */}
           <div className="flex items-center justify-center gap-6 mt-6">
             <button
               onClick={resetPlay}
@@ -231,16 +233,16 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
         </div>
       </div>
 
-      {/* Synchronized Script Transcript */}
-      <div className="bg-white rounded-2xl border border-zinc-200 p-6 shadow-sm">
+      {/* Transcript */}
+      <div className="bg-white rounded-[20px] border border-black/5 p-6 shadow-sm">
         <div className="flex items-center justify-between mb-4 pb-2 border-b border-zinc-100">
           <div className="flex items-center gap-2">
-            <ElevenLabsIcon className="w-3.5 h-3.5 text-zinc-900" />
-            <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider">
+            <ElevenLabsIcon className="w-3.5 h-3.5 text-[#1D1D1F]" />
+            <h4 className="text-xs font-bold text-[#1D1D1F] uppercase tracking-wider">
               ElevenLabs Synthesized Script Transcript
             </h4>
           </div>
-          <span className="text-[11px] font-mono text-zinc-500 bg-zinc-100 px-2.5 py-0.5 rounded border border-zinc-200">
+          <span className="text-[11px] font-mono text-[#86868B] bg-[#F2F2F7] px-2.5 py-0.5 rounded-full border border-black/5">
             DETERMINISTIC LATENCY &lt; 2.5S
           </span>
         </div>
@@ -249,14 +251,14 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
           {podcast.segments.map((seg, idx) => (
             <div
               key={idx}
-              className="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200 flex items-start gap-4"
+              className="p-3.5 rounded-[14px] bg-[#F9F9FB] border border-black/5 flex items-start gap-4"
             >
-              <span className="text-xs font-bold font-mono text-hrl-crimson bg-hrl-crimson-tint px-2.5 py-1 rounded shrink-0">
+              <span className="text-xs font-bold font-mono text-hrl-crimson bg-hrl-crimson-tint px-2.5 py-1 rounded-full shrink-0">
                 {seg.timeOffset}
               </span>
               <div>
-                <span className="text-xs font-bold text-zinc-900 block mb-0.5">{seg.speaker}</span>
-                <p className="text-xs text-zinc-700 leading-relaxed font-medium">{seg.text}</p>
+                <span className="text-xs font-bold text-[#1D1D1F] block mb-0.5">{seg.speaker}</span>
+                <p className="text-xs text-[#515154] leading-relaxed font-normal">{seg.text}</p>
               </div>
             </div>
           ))}

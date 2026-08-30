@@ -24,28 +24,28 @@ export const OutputDashboard: React.FC<OutputDashboardProps> = ({ output, onOpen
   ];
 
   return (
-    <div className="bg-white rounded-3xl border border-hrl-border p-6 sm:p-8 shadow-hrl-card max-w-4xl mx-auto mb-12">
-      {/* Title & Confidence Strip */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-hrl-border no-print">
+    <div className="bg-white rounded-[28px] border border-black/5 p-6 sm:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04),0_1px_2px_rgba(0,0,0,0.02)] max-w-4xl mx-auto mb-12">
+      {/* Title & Verification Header */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-5 border-b border-zinc-100 no-print">
         <div>
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-5 h-5 text-emerald-600" />
-            <h2 className="text-lg sm:text-xl font-bold text-hrl-dark tracking-tight">
+            <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+            <h2 className="text-lg font-bold text-[#1D1D1F] tracking-tight">
               Transformation Complete · 5 Formats Ready
             </h2>
           </div>
-          <p className="text-xs text-hrl-body mt-1">
-            Processed {output.sourcePageCount} pages in {(output.processingTimeMs / 1000).toFixed(1)}s · Every fact verified with spatial coordinate citations.
+          <p className="text-xs text-[#86868B] mt-0.5 font-normal">
+            Synthesized {output.sourcePageCount} pages in {(output.processingTimeMs / 1000).toFixed(1)}s · Verified source citations.
           </p>
         </div>
 
-        <span className="text-xs font-bold text-emerald-800 bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200">
-          100% Grounded in Source Document
+        <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50/80 px-3 py-1 rounded-full border border-emerald-200/60">
+          100% Grounded in Source
         </span>
       </div>
 
-      {/* Symmetrical Bento Tabs Navigation */}
-      <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 my-6 p-1.5 bg-hrl-surface rounded-2xl border border-hrl-border tabs-navigation-strip no-print">
+      {/* Apple Squircle Segmented Tabs Bar (macOS / iOS HIG Design) */}
+      <div className="grid grid-cols-2 sm:grid-cols-5 gap-1.5 my-6 p-1.5 bg-[#F2F2F7] rounded-[20px] border border-black/5 tabs-navigation-strip no-print">
         {tabs.map((t) => {
           const Icon = t.icon;
           const isActive = activeTab === t.id;
@@ -54,18 +54,20 @@ export const OutputDashboard: React.FC<OutputDashboardProps> = ({ output, onOpen
             <button
               key={t.id}
               onClick={() => setActiveTab(t.id as any)}
-              className={`p-3 rounded-xl font-medium transition-all duration-200 text-left flex flex-col justify-between cursor-pointer ${
+              className={`p-3 rounded-[14px] text-left transition-all duration-200 flex flex-col justify-between cursor-pointer ${
                 isActive
-                  ? 'bg-white text-hrl-dark shadow-sm border border-hrl-border font-bold scale-[1.01]'
-                  : 'text-hrl-body hover:text-hrl-dark hover:bg-zinc-200/50'
+                  ? 'bg-white text-[#1D1D1F] shadow-[0_3px_10px_rgba(0,0,0,0.08),0_1px_2px_rgba(0,0,0,0.04)] border border-black/5 font-semibold'
+                  : 'text-[#86868B] hover:text-[#1D1D1F] hover:bg-white/40 font-normal'
               }`}
             >
-              <div className="flex items-center justify-between mb-1.5">
-                <Icon className={`w-4 h-4 ${isActive ? 'text-hrl-crimson' : 'text-hrl-muted'}`} />
-                {isActive && <span className="w-2 h-2 rounded-full bg-hrl-crimson" />}
+              <div className="flex items-center justify-between mb-2">
+                <Icon className={`w-4 h-4 transition-colors ${isActive ? 'text-hrl-crimson' : 'text-[#86868B]'}`} />
+                {isActive && <span className="w-1.5 h-1.5 rounded-full bg-hrl-crimson" />}
               </div>
-              <span className="text-xs font-bold block leading-tight">{t.label}</span>
-              <span className="text-[10px] block text-hrl-muted mt-0.5 font-normal">
+              <span className={`text-[12px] block leading-tight tracking-tight ${isActive ? 'font-bold text-[#1D1D1F]' : 'font-medium'}`}>
+                {t.label}
+              </span>
+              <span className="text-[10.5px] block text-[#86868B] mt-0.5 leading-tight font-normal">
                 {t.desc}
               </span>
             </button>
