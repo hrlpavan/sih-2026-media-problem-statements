@@ -8,6 +8,7 @@ import { DocumentUploader } from './components/DocumentUploader';
 import { PipelineVisualizer } from './components/PipelineVisualizer';
 import { OutputDashboard } from './components/OutputDashboard';
 import { ProjectUpdatesAudioHub } from './components/ProjectUpdatesAudioHub';
+import { VoiceFAQSection } from './components/VoiceFAQSection';
 import { CitationInspectorModal } from './components/CitationInspectorModal';
 import { VentureStrategyModal } from './components/VentureStrategyModal';
 import { WorkforceModal } from './components/WorkforceModal';
@@ -103,6 +104,8 @@ export const App: React.FC = () => {
         )}
 
         <ProjectUpdatesAudioHub />
+
+        <VoiceFAQSection />
       </main>
 
       <CitationInspectorModal

@@ -1,6 +1,6 @@
 import React from 'react';
 import type { AudiencePersona } from '../types';
-import { Download, TrendingUp } from 'lucide-react';
+import { Download, TrendingUp, HelpCircle } from 'lucide-react';
 
 interface NavbarProps {
   currentPersona: AudiencePersona;
@@ -76,6 +76,13 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPersona, onPersonaChange,
             >
               <span className="w-1.5 h-1.5 rounded-full bg-hrl-crimson animate-ping" />
               <span>Audio Updates</span>
+            </a>
+            <a
+              href="#voice-faq-hub"
+              className="hidden xl:flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#F2F2F7] hover:bg-[#E5E5EA] text-[#1D1D1F] text-xs font-semibold transition-all border border-black/5 cursor-pointer shadow-sm"
+            >
+              <HelpCircle className="w-3.5 h-3.5 text-zinc-700" />
+              <span>Voice FAQ</span>
             </a>
             <button
               onClick={onOpenVentureModal}
