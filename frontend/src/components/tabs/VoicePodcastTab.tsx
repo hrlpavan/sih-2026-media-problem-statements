@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { Play, Pause, RotateCcw, Volume2, Download, Sliders, Check, Copy, ChevronDown } from 'lucide-react';
 
 interface VoicePodcastTabProps {
@@ -42,7 +42,7 @@ const ELEVENLABS_VOICES: VoiceProfile[] = [
     gender: 'Female',
     voiceId: 'EXAVITQu4vr4xnSDxMaL',
     description: 'Soft, expressive, natural narration',
-    pitch: 1.25
+    pitch: 1.30
   },
   {
     id: 'adam',
@@ -50,7 +50,7 @@ const ELEVENLABS_VOICES: VoiceProfile[] = [
     gender: 'Male',
     voiceId: 'pNInz6obpgDQGcFmaJgB',
     description: 'Deep, confident, standard English voice',
-    pitch: 0.95
+    pitch: 0.90
   },
   {
     id: 'josh',
@@ -58,7 +58,7 @@ const ELEVENLABS_VOICES: VoiceProfile[] = [
     gender: 'Male',
     voiceId: 'TxGEqnHWrfWFTFGW9XjX',
     description: 'Deep, warm, conversational tone',
-    pitch: 0.85
+    pitch: 0.80
   }
 ];
 
@@ -77,44 +77,73 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
 
   const currentVoice = ELEVENLABS_VOICES.find(v => v.id === selectedVoiceId) || ELEVENLABS_VOICES[2];
 
-  useEffect(() => {
-    let timer: any;
-    if (isPlaying && !audioRef.current) {
-      timer = setInterval(() => {
-        setCurrentSeconds((prev) => {
-          if (prev >= 60) {
-            handleStop();
-            return 0;
-          }
-          return prev + 1;
-        });
-      }, 1000);
+  // Stop previous audio and switch track when voice changes
+  const switchVoice = (voiceId: string) => {
+    setSelectedVoiceId(voiceId);
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current = null;
     }
-    return () => clearInterval(timer);
-  }, [isPlaying]);
-
-  const handlePlay = () => {
-    if (!audioRef.current) {
-      const audio = new Audio('/OmniTransform_AI_ElevenLabs_Briefing.m4a');
-      audio.onended = () => {
-        setIsPlaying(false);
-        setCurrentSeconds(0);
-      };
-      audio.ontimeupdate = () => {
-        setCurrentSeconds(Math.floor(audio.currentTime));
-      };
-      audioRef.current = audio;
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
     }
     
-    audioRef.current.play().then(() => {
+    if (isPlaying) {
+      setTimeout(() => {
+        playTrack(voiceId, selectedModel);
+      }, 100);
+    }
+  };
+
+  const switchModel = (model: 'eleven_v3' | 'eleven_flash_v2_5') => {
+    setSelectedModel(model);
+    if (audioRef.current) {
+      audioRef.current.playbackRate = model === 'eleven_flash_v2_5' ? 1.15 : 1.0;
+    }
+  };
+
+  const playTrack = (voiceId: string, model: 'eleven_v3' | 'eleven_flash_v2_5') => {
+    const audioSrc = `/OmniTransform_AI_Briefing_${voiceId}.m4a`;
+    const audio = new Audio(audioSrc);
+    audio.playbackRate = model === 'eleven_flash_v2_5' ? 1.15 : 1.0;
+    
+    audio.onended = () => {
+      setIsPlaying(false);
+      setCurrentSeconds(0);
+    };
+    audio.ontimeupdate = () => {
+      setCurrentSeconds(Math.floor(audio.currentTime));
+    };
+    
+    audioRef.current = audio;
+    
+    audio.play().then(() => {
       setIsPlaying(true);
     }).catch(() => {
-      // Fallback to Web Speech API with selected voice pitch
+      // Web Speech API Fallback
       if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(podcast.script);
-        utterance.rate = selectedModel === 'eleven_flash_v2_5' ? 1.1 : 0.95;
+        utterance.rate = model === 'eleven_flash_v2_5' ? 1.15 : 1.0;
         utterance.pitch = currentVoice.pitch;
+        
+        const voices = window.speechSynthesis.getVoices();
+        if (voices.length > 0) {
+          if (voiceId === 'rachel') {
+            const fv = voices.find(v => v.name.includes('Samantha') || v.name.includes('Victoria'));
+            if (fv) utterance.voice = fv;
+          } else if (voiceId === 'bella') {
+            const fv = voices.find(v => v.name.includes('Moira') || v.name.includes('Tessa') || v.name.includes('Karen'));
+            if (fv) utterance.voice = fv;
+          } else if (voiceId === 'josh') {
+            const mv = voices.find(v => v.name.includes('Fred') || v.name.includes('Rishi'));
+            if (mv) utterance.voice = mv;
+          } else {
+            const mv = voices.find(v => v.name.includes('Daniel') || v.name.includes('Alex'));
+            if (mv) utterance.voice = mv;
+          }
+        }
+
         utterance.onend = () => {
           setIsPlaying(false);
           setCurrentSeconds(0);
@@ -124,6 +153,10 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
       }
       setIsPlaying(true);
     });
+  };
+
+  const handlePlay = () => {
+    playTrack(selectedVoiceId, selectedModel);
   };
 
   const handleStop = () => {
@@ -201,12 +234,12 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
           </button>
 
           <a
-            href="/OmniTransform_AI_ElevenLabs_Briefing.mp3"
-            download="OmniTransform_AI_ElevenLabs_Briefing.mp3"
+            href={`/OmniTransform_AI_Briefing_${selectedVoiceId}.mp3`}
+            download={`OmniTransform_AI_Briefing_${currentVoice.name}.mp3`}
             className="px-4 py-1.5 rounded-full bg-zinc-900 hover:bg-black text-white font-semibold text-xs transition-all duration-200 flex items-center gap-1.5 cursor-pointer shadow-sm hover:shadow"
           >
             <Download className="w-3.5 h-3.5 text-hrl-crimson" />
-            <span>Download MP3</span>
+            <span>Download {currentVoice.name} MP3</span>
           </a>
         </div>
       </div>
@@ -218,7 +251,7 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
           <span className="text-[11px] text-[#86868B] font-semibold uppercase tracking-wider pl-1">Model:</span>
           <div className="flex items-center bg-white/80 p-0.5 rounded-full border border-black/5">
             <button
-              onClick={() => setSelectedModel('eleven_v3')}
+              onClick={() => switchModel('eleven_v3')}
               className={`text-xs px-3 py-1 rounded-full font-semibold transition-all duration-200 cursor-pointer ${
                 selectedModel === 'eleven_v3'
                   ? 'bg-zinc-900 text-white shadow-sm'
@@ -228,7 +261,7 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
               eleven_v3 (Expressive)
             </button>
             <button
-              onClick={() => setSelectedModel('eleven_flash_v2_5')}
+              onClick={() => switchModel('eleven_flash_v2_5')}
               className={`text-xs px-3 py-1 rounded-full font-semibold transition-all duration-200 cursor-pointer ${
                 selectedModel === 'eleven_flash_v2_5'
                   ? 'bg-zinc-900 text-white shadow-sm'
@@ -248,7 +281,7 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
             return (
               <button
                 key={v.id}
-                onClick={() => setSelectedVoiceId(v.id)}
+                onClick={() => switchVoice(v.id)}
                 className={`text-xs px-3 py-1 rounded-full font-medium transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
                   isSelected
                     ? 'bg-white text-[#1D1D1F] font-bold shadow-[0_1px_3px_rgba(0,0,0,0.12)] border border-black/5'
@@ -264,7 +297,7 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
         </div>
       </div>
 
-      {/* Voice Parameters Configuration Console (Expanded drawer) */}
+      {/* Voice Parameters Configuration Console */}
       {showSettings && (
         <div className="bg-white rounded-[20px] p-5 border border-black/5 shadow-[0_4px_20px_rgba(0,0,0,0.04)] no-print animate-in fade-in-50 duration-200">
           <div className="flex items-center justify-between pb-3 mb-4 border-b border-zinc-100">
@@ -433,7 +466,7 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
             </h4>
           </div>
           <span className="text-[11px] text-[#86868B]">
-            Official Voice ID Reference & Ideal Use Cases
+            Click any voice card to instantly switch audio persona
           </span>
         </div>
 
@@ -443,7 +476,7 @@ export const VoicePodcastTab: React.FC<VoicePodcastTabProps> = ({ podcast }) => 
             return (
               <div
                 key={v.id}
-                onClick={() => setSelectedVoiceId(v.id)}
+                onClick={() => switchVoice(v.id)}
                 className={`p-4 rounded-[14px] border transition-all cursor-pointer flex flex-col justify-between ${
                   isSelected
                     ? 'border-hrl-crimson bg-hrl-crimson-tint/40 shadow-sm'
